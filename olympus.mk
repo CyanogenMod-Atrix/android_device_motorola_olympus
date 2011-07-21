@@ -23,18 +23,31 @@
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
+PRODUCT_COPY_FILES += \
+    device/motorola/olympus/init.mapphone_cdma.rc:root/init.mapphone_cdma.rc \
+    device/motorola/olympus/init.mapphone_umts.rc:root/init.mapphone_umts.rc \
+    device/motorola/olympus/ueventd.rc:root/ueventd.rc
 
-## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
+## (2) Also get non-open-source CDMA-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
+# media config xml file
+PRODUCT_COPY_FILES += \
+    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml
 
+## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
+
+# we have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# droid2 uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
+
+# copy all kernel modules under the "modules" directory to system/lib/modules
+PRODUCT_COPY_FILES += $(shell \
+    find device/motorola/olympus/modules -name '*.ko' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
+    | tr '\n' ' ')
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/motorola/olympus/kernel
@@ -45,8 +58,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+$(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
+
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=1
+DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
+
 PRODUCT_NAME := generic_olympus
 PRODUCT_DEVICE := olympus
