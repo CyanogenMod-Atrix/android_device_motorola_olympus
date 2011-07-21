@@ -55,7 +55,7 @@ BOARD_HAS_JANKY_BACKBUFFER := true
 TARGET_PREBUILT_KERNEL := device/motorola/olympus/kernel
 TARGET_USERIMAGES_USE_EXT4 := true
 # Below is a sample of how you can tweak the mount points using the board config.
-BOARD_HAS_NO_MISC_PARTITION := ture
+BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_RECOVERY_IGNORE_BOOTABLES := true
 BOARD_DATA_DEVICE := /dev/block/mmcblk0p16
 BOARD_DATA_FILESYSTEM := ext3
