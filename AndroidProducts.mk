@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_olympus.mk
+    $(LOCAL_DIR)/olympus.mk

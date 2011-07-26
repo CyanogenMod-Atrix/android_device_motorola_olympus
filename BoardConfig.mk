@@ -24,8 +24,10 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-USE_CAMERA_STUB := false
-BOARD_USES_GENERIC_AUDIO := false
+#FAUX123 TODO stub out camera for now
+USE_CAMERA_STUB := true
+#FAUX123 TODO stub out Audio for now
+BOARD_USES_GENERIC_AUDIO := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := olympus
@@ -41,19 +43,22 @@ TARGET_HAVE_TEGRA_ERRATA_657451 := true
 BOARD_CUSTOM_GRAPHICS := ../../../device/motorola/olympus/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/olympus/recovery/recovery_ui.c
 BOARD_HAS_SDCARD_INTERNAL := true
-BOARD_KERNEL_CMDLINE := 
-BOARD_KERNEL_BASE := 0x
-BOARD_PAGE_SIZE := 0x
+
+BOARD_KERNEL_CMDLINE :=
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_PAGE_SIZE := 0x00000800
+
 BOARD_HAS_NO_MISC_PARTITION := true
 # fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00380000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x08c60000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00800000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x13500000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x40000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_JANKY_BACKBUFFER := true
 TARGET_PREBUILT_KERNEL := device/motorola/olympus/kernel
-TARGET_USERIMAGES_USE_EXT4 := true
+#faux123, don't use ext4 for now
+#TARGET_USERIMAGES_USE_EXT4 := false
 # Below is a sample of how you can tweak the mount points using the board config.
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_RECOVERY_IGNORE_BOOTABLES := true
