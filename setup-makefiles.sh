@@ -86,6 +86,7 @@ mkdir -p ../../../vendor/motorola/olympus/overlay/packages/apps/Launcher2/res/la
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor-blobs.mk
+
 # Copyright (C) 2011 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -122,35 +123,18 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so
 
-# Wifi
-#PRODUCT_COPY_FILES += \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-apsta.bin:system/etc/wl/rtecdc-apsta.bin \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-mfgtest.bin:system/etc/wl/rtecdc-mfgtest.bin \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc.bin:system/etc/wl/rtecdc.bin
-
 # OMX
 PRODUCT_COPY_FILES += \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libdivxdrm.so:system/lib/libdivxdrm.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblge_divxdrm.so:system/lib/liblge_divxdrm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediaplugin.so:system/lib/libhwmediaplugin.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediaplugin.so:obj/lib/libhwmediaplugin.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediarecorder.so:system/lib/libhwmediarecorder.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediarecorder.so:obj/lib/libhwmediarecorder.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsecureclock.so:system/lib/libsecureclock.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbridge.so:system/lib/libbridge.so
 
 PRODUCT_COPY_FILES += \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/flex/flex.db:system/etc/flex/flex.db \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/flex/flex.xml:system/etc/flex/flex.xml \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/BCM4329B1_002.002.023.0735.0745.hcd:system/etc/firmware/BCM4329B1_002.002.023.0735.0745.hcd \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/bin/motion:system/bin/motion \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_daemon:system/bin/nvrm_daemon \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_avp.axf:system/bin/nvrm_avp.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_core.axf:system/bin/nvddk_audiofx_core.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_avp.axf:system/bin/nvrm_avp.axf \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvmm_wmaprodec.axf:system/bin/nvmm_wmaprodec.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvmm_wmadec.axf:system/bin/nvmm_wmadec.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvmm_wavdec.axf:system/bin/nvmm_wavdec.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvmm_vc1dec.axf:system/bin/nvmm_vc1dec.axf \\
@@ -170,38 +154,24 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvmm_aacdec.axf:system/bin/nvmm_aacdec.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_transport.axf:system/bin/nvddk_audiofx_transport.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_core.axf:system/bin/nvddk_audiofx_core.axf \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/bin/hdmid:system/bin/hdmid \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/bin/bridgeutil:system/bin/bridgeutil \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:system/lib/libril.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvos.so:system/lib/libnvos.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/lge-ril.so:system/lib/lge-ril.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvapputil.so:system/lib/libnvapputil.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_camera.so:system/lib/libnvmm_camera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:system/lib/libcamera.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_imager.so:system/lib/libnvodm_imager.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_graphics.so:system/lib/libnvrm_graphics.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_2d.so:system/lib/libnvddk_2d.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvsm.so:system/lib/libnvsm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_utils.so:system/lib/libnvmm_utils.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm.so:system/lib/libnvmm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvdispmgr_d.so:system/lib/libnvdispmgr_d.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvdispmgr_d.so:obj/lib/libnvdispmgr_d.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_audiofx.so:system/lib/libnvddk_audiofx.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_query.so:system/lib/libnvodm_query.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_misc.so:system/lib/libnvodm_misc.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_dtvtuner.so:system/lib/libnvodm_dtvtuner.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_channel.so:system/lib/libnvrm_channel.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvdispatch_helper.so:system/lib/libnvdispatch_helper.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomxilclient.so:system/lib/libnvomxilclient.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_logger.so:system/lib/libnvmm_logger.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcgdrv.so:system/lib/libcgdrv.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_audio.so:system/lib/libnvmm_audio.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_contentpipe.so:system/lib/libnvmm_contentpipe.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_image.so:system/lib/libnvmm_image.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_manager.so:system/lib/libnvmm_manager.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_misc.so:system/lib/libnvmm_misc.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_parser.so:system/lib/libnvmm_parser.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_tracklist.so:system/lib/libnvmm_tracklist.so \\
@@ -211,17 +181,5 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_writer.so:system/lib/libnvmm_writer.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_service.so:system/lib/libnvmm_service.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomx.so:system/lib/libnvomx.so 
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvwsi.so:system/lib/libnvwsi.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgeswcodecs.so:system/lib/liblgeswcodecs.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgemmevrc.so:system/lib/liblgemmevrc.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgemmqcelp.so:system/lib/liblgemmqcelp.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgemmec3.so:system/lib/liblgemmec3.so
-
-# Wi-Fi Calling
-#PRODUCT_COPY_FILES += \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/app/Kineto.apk:system/app/Kineto.apk \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libganril.so:system/lib/libganril.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libkineto.so:system/lib/libkineto.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/librilswitch.so:system/lib/librilswitch.so
 
 EOF
