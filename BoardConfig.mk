@@ -27,7 +27,7 @@
 #FAUX123 TODO stub out camera for now
 USE_CAMERA_STUB := true
 #FAUX123 TODO stub out Audio for now
-BOARD_USES_GENERIC_AUDIO := true
+BOARD_USES_GENERIC_AUDIO := false
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := olympus
