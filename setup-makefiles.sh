@@ -1,8 +1,10 @@
 DEVICE=olympus
+VENDOR=motorola
 
 mkdir -p ../../../vendor/motorola/$DEVICE
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor.mk
+#(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
