@@ -107,6 +107,7 @@ adb pull /system/lib/libnvmm_videorenderer.so ../../../vendor/$VENDOR/$DEVICE/pr
 adb pull /system/lib/libnvidia_display_jni.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_audio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvec.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libbluetoothd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 
 # Pull nvidia framework libs
@@ -155,6 +156,10 @@ adb pull /system/bin/nvmm_jpegdec.axf ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/bin/nvrm_avp.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/tegrastats ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/bluetoothd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
 

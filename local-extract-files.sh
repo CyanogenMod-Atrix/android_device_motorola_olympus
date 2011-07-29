@@ -107,6 +107,7 @@ cp system/lib/libnvmm_videorenderer.so ../../../vendor/$VENDOR/$DEVICE/proprieta
 cp system/lib/libnvidia_display_jni.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvmm_audio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvec.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libbluetoothd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 
 # Pull nvidia framework libs
@@ -155,6 +156,10 @@ cp system/bin/nvmm_jpegdec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/nvrm_avp.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/tegrastats ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/bluetoothd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
 

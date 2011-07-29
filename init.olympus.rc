@@ -403,22 +403,25 @@ service vold /system/bin/vold
     socket vold stream 0660 root mount
     ioprio be 2
 
-service tund /system/bin/tund
+#faux123 start debuggerd earlier for logcat
+service debuggerd /system/bin/debuggerd
     class pre-zygote_services
-    socket tund stream 0660 vpn system
-    ioprio be 2
+
+#faux123 tund is missing dependency
+#reloc_library[1311]:  1388 cannot locate 'do_dhcp_as_secondary'...
+#service tund /system/bin/tund
+#    class pre-zygote_services
+#    socket tund stream 0660 vpn system
+#    ioprio be 2
 
 service netd /system/bin/netd
     class pre-zygote_services
     socket netd stream 0660 root system
 
-service nexus /system/bin/nexus
-    class pre-zygote_services
-    socket nexus stream 0660 root system
-    disabled
-
-service debuggerd /system/bin/debuggerd
-    class pre-zygote_services
+#service nexus /system/bin/nexus
+#    class pre-zygote_services
+#    socket nexus stream 0660 root system
+#    disabled
 
 service ril-daemon /system/bin/rild
     class pre-zygote_services
@@ -495,11 +498,11 @@ service installd /system/bin/installd
     class post-zygote_services
     socket installd stream 600 system system
 
-
+# Faux123, WTF is this?
 # Copy 12M/batch files
-service 12m_files_copy /system/etc/12m_files_copy.sh
-     class pre-zygote_services
-     oneshot
+#service 12m_files_copy /system/etc/12m_files_copy.sh
+#     class pre-zygote_services
+#     oneshot
 
 service racoon /system/bin/racoon
     class post-zygote_services
@@ -529,15 +532,15 @@ service dumpstate /system/bin/dumpstate -s
     disabled
     oneshot
 
-service ap_fmloader /system/bin/logwrapper /system/bin/wlan_loader -f /system/etc/wifi/fw_tiwlan_ap.bin -i /system/etc/wifi/tiwlan_ap.ini -e /pds/wifi/nvs_map.bin
-    class post-zygote_services
-    disabled
-    oneshot
+#service ap_fmloader /system/bin/logwrapper /system/bin/wlan_loader -f /system/etc/wifi/#fw_tiwlan_ap.bin -i /system/etc/wifi/tiwlan_ap.ini -e /pds/wifi/nvs_map.bin
+#    class post-zygote_services
+#    disabled
+#    oneshot
 
-service ap_fmloader_rfmd /system/bin/logwrapper /system/bin/wlan_loader -f /system/etc/wifi/fw_tiwlan_ap_rfmd.bin -i /system/etc/wifi/tiwlan_ap_rfmd.ini -e /pds/wifi/nvs_map.bin
-    class post-zygote_services
-    disabled
-    oneshot
+#service ap_fmloader_rfmd /system/bin/logwrapper /system/bin/wlan_loader -f /system/etc/wifi/#fw_tiwlan_ap_rfmd.bin -i /system/etc/wifi/tiwlan_ap_rfmd.ini -e /pds/wifi/nvs_map.bin
+#    class post-zygote_services
+#    disabled
+#    oneshot
 
 service hostapd /system/bin/logwrapper /system/bin/Hostapd /data/misc/wifi/hostapd.conf
     class post-zygote_services
