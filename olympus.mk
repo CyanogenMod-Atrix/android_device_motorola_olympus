@@ -26,6 +26,8 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/init.mapphone_cdma.rc:root/init.mapphone_cdma.rc \
     device/motorola/olympus/init.mapphone_umts.rc:root/init.mapphone_umts.rc \
+    device/motorola/olympus/init.goldfish.rc:root/init.goldfish.rc \
+    device/motorola/olympus/init_prep_keypad.sh:root/init_prep_keypad.sh \
     device/motorola/olympus/ueventd.rc:root/ueventd.rc
 
 ## (2) Also get non-open-source CDMA-specific aspects if available

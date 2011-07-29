@@ -1056,6 +1056,9 @@ on boot
 	chgrp system /data/am2data.db
 	chgrp system /data/am2data.db.meta
 
+# Enable ADB
+    write /dev/usb_device_mode msc_adb
+
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
 
