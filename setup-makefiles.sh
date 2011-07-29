@@ -29,11 +29,6 @@ EOF
 USE_CAMERA_STUB := false
 EOF
 
-mkdir -p ../../../vendor/motorola/olympus/overlay/packages/apps/Launcher2/res/layout
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/motorola/olympus/overlay/packages/apps/Launcher2/res/layout/all_apps.xml
-
-EOF
-
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor-blobs.mk
 
 PRODUCT_COPY_FILES += \\

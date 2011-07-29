@@ -25,21 +25,13 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-#################################################################
-#                                                               #
-#   /system/app folder                                          #
-#                                                               #
-#                                                               #
-#################################################################
+
+# system apps
 #cp system/app/PhoneConfig.apk ../../../vendor/motorola/$DEVICE/proprietary
 #cp system/app/ProgramMenu.apk ../../../vendor/motorola/$DEVICE/proprietary
 #cp system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietaryadb
-#################################################################
-#                                                               #
-#   /system/bin folder                                          #
-#                                                               #
-#                                                               #
-#################################################################
+
+# system libs
 cp system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libaudiopolicy.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libcgdrv.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -71,6 +63,9 @@ cp system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/li
 
 
 # Pull needed NV libs
+cp system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/librds_util.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libril_rds.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvddk_2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvodm_dtvtuner.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -169,7 +164,7 @@ cp system/bin/nvrm_daemon ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/nvmm_jpegenc.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/nvddk_audiofx_transport.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/nvmm_mp2dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-#cp system/bin/test ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/ap_gain.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/memtest_mode ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/nvmm_mpeg4dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin

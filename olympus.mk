@@ -64,5 +64,34 @@ $(call inherit-product, build/target/product/full_base.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
+# Board-specific init
+PRODUCT_COPY_FILES += \
+    device/motorola/olympus/init.olympus.rc:root/init.rc \
+    device/motorola/olympus/vold.fstab:system/etc/vold.fstab \
+    device/motorola/olympus/gps.conf:system/etc/gps.conf \
+    device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
+    device/motorola/olympus/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml \
+    device/motorola/olympus/egl.cfg:system/lib/egl/egl.cfg
+
+#keyboard files
+PRODUCT_COPY_FILES += \
+    device/motorola/olympus/keylayout/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \
+    device/motorola/olympus/keychars/tegra-kbc.kcm.bin:system/usr/keychars/tegra-kbc.kcm.bin \
+    device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/motorola/olympus/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl \
+    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/usb_keyboard_102_en_us.kcm.bin
+
+# Permission files
+PRODUCT_COPY_FILES += \
+    device/motorola/olympus/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    device/motorola/olympus/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    device/motorola/olympus/permissions/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    device/motorola/olympus/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    device/motorola/olympus/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    device/motorola/olympus/permissions/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    device/motorola/olympus/permissions/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    device/motorola/olympus/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
+
 PRODUCT_NAME := generic_olympus
 PRODUCT_DEVICE := olympus
