@@ -119,32 +119,12 @@ cp system/lib/egl/libGLESv1_CM_tegra.so ../../../vendor/$VENDOR/$DEVICE/propriet
 cp system/lib/egl/libGLESv2_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 cp system/lib/egl/libGLES_android.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 
-# Pull nvidia permissions
-cp system/etc/permissions/com.nvidia.display.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
-
-
 # Pull HW libs
 cp system/lib/hw/gps.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 cp system/lib/hw/gralloc.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 cp system/lib/hw/overlay.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 cp system/lib/hw/lights.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 cp system/lib/hw/sensors.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-
-# Pull keychar files
-#cp system/usr/keychars/evfwd.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keychars/usb_keyboard_102_en_us.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keychars/tegra-kbc.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keychars/qwerty.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keychars/qwerty2.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-
-# Pull keylayout files
-#cp system/usr/keylayout/cpcap-key.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/AVRCP.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/evfwd.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/qwerty.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/tegra-kbc.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#cp system/usr/keylayout/usb_keyboard_102_en_us.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Pull bin files
 cp system/bin/nvmm_vc1dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin

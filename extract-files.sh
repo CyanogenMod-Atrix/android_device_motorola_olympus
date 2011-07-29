@@ -119,32 +119,12 @@ adb pull /system/lib/egl/libGLESv1_CM_tegra.so ../../../vendor/$VENDOR/$DEVICE/p
 adb pull /system/lib/egl/libGLESv2_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/egl/libGLES_android.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 
-# Pull nvidia permissions
-adb pull /system/etc/permissions/com.nvidia.display.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
-
-
 # Pull HW libs
 adb pull /system/lib/hw/gps.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/gralloc.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/overlay.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/lights.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-
-# Pull keychar files
-#adb pull /system/usr/keychars/evfwd.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keychars/usb_keyboard_102_en_us.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keychars/tegra-kbc.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keychars/qwerty.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keychars/qwerty2.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-
-# Pull keylayout files
-#adb pull /system/usr/keylayout/cpcap-key.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/AVRCP.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/evfwd.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/qwerty.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/tegra-kbc.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
-#adb pull /system/usr/keylayout/usb_keyboard_102_en_us.kl ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Pull bin files
 adb pull /system/bin/nvmm_vc1dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
