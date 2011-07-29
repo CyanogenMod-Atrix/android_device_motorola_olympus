@@ -25,21 +25,13 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-#################################################################
-#                                                               #
-#   /system/app folder                                          #
-#                                                               #
-#                                                               #
-#################################################################
+
+# system apps
 #adb pull /system/app/PhoneConfig.apk ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/app/ProgramMenu.apk ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietaryadb
-#################################################################
-#                                                               #
-#   /system/bin folder                                          #
-#                                                               #
-#                                                               #
-#################################################################
+
+# system libs
 adb pull /system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libcgdrv.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -71,6 +63,11 @@ adb pull /system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprie
 
 
 # Pull needed NV libs
+adb pull /system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/librds_util.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libril_rds.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libaudioflinger.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libsystem_server.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvddk_2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvodm_dtvtuner.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
