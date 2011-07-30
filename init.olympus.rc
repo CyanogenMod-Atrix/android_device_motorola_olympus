@@ -138,6 +138,8 @@ on boot
     setprop wifi.interface eth0
     setprop softap.interface wl0.1
 
+# battery driver permissions
+    mkdir /pds 0755 root root
 
 # multimedia power regulators
     chown root system /sys/devices/platform/reg-virt-vcam/enabled

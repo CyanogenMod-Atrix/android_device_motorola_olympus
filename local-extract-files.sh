@@ -162,6 +162,8 @@ cp system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/bluetoothd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
 

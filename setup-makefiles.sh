@@ -89,6 +89,8 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bluetoothd:system/bin/bluetoothd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/sdptool:system/bin/sdptool \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/Hostapd:system/bin/Hostapd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd
 
 # system libs
 PRODUCT_COPY_FILES += \\

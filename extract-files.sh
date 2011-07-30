@@ -162,6 +162,8 @@ adb pull /system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/bluetoothd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
 
