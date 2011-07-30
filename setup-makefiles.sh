@@ -60,6 +60,7 @@ PRODUCT_COPY_FILES += \\
 
 # Bin
 PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/mot_boot_mode:system/bin/mot_boot_mode \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/ap_gain.bin:system/bin/ap_gain.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_daemon:system/bin/nvrm_daemon \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_avp.axf:system/bin/nvrm_avp.axf \\
@@ -88,6 +89,11 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bluetoothd:system/bin/bluetoothd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/sdptool:system/bin/sdptool \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/Hostapd:system/bin/Hostapd \\
+
+# system libs
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmirror.so:system/lib/libmirror.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvwsi.so:system/lib/libnvwsi.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_camera.so:system/lib/libnvmm_camera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\

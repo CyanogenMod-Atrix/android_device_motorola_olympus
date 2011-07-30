@@ -32,6 +32,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 #adb pull /system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietaryadb
 
 # system libs
+adb pull /system/lib/libmirror.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libcgdrv.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -128,6 +129,7 @@ adb pull /system/lib/hw/lights.tegra.so ../../../vendor/$VENDOR/$DEVICE/propriet
 adb pull /system/lib/hw/sensors.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 # Pull bin files
+adb pull /system/bin/mot_boot_mode ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_vc1dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_wmaprodec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_h264dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
