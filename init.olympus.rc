@@ -2,6 +2,8 @@ on init
     export PHONE_STORAGE /mnt/emmc
     # create mountpoints for internal "SD"
     mkdir /mnt/emmc 0000 system system
+    # battery driver permissions
+    mkdir /pds 0755 root root
 
 on fs
 # mount mtd partitions
@@ -106,9 +108,6 @@ on boot
 
     # nvodmcam permissions
     chmod 666 /dev/nvodmcam
-
-    # battery driver permissions
-    mkdir /pds 0755 root root
 
     # mount PDS partition
     exec /system/bin/remountpds -d /dev/block/mmcblk0p3 -m rw
