@@ -1,6 +1,6 @@
+on init
     export PHONE_STORAGE /mnt/emmc
-
-# create mountpoints for internal "SD"
+    # create mountpoints for internal "SD"
     mkdir /mnt/emmc 0000 system system
 
 on fs
