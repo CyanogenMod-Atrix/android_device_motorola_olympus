@@ -23,6 +23,9 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
@@ -113,6 +116,7 @@ adb pull /system/lib/libbattd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_manager.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libcamera_client.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libmoto_ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libnmea.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 
 # Pull nvidia framework libs
@@ -168,6 +172,8 @@ adb pull /system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+
 
 # Pull bt files
 
@@ -184,6 +190,11 @@ adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEV
 adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+
+#pull subsystem configuration settings
+adb pull /system/etc/touchpad/20/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
+adb pull /ystem/etc/touchpad/21/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
+adb pull /system/etc/touchpad/22/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 adb pull /system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 
 # Pull Opencore libs

@@ -23,6 +23,9 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
@@ -113,6 +116,7 @@ cp system/lib/libbattd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvmm_manager.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libcamera_client.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libmoto_ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libnmea.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # Pull nvidia framework libs
 #cp system/framework/com.nvidia.display.jar ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -167,6 +171,8 @@ cp system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+
 
 # Pull bt files
 
@@ -183,6 +189,11 @@ cp system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/pro
 cp system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+
+#pull subsystem configuration settings
+cp system/etc/touchpad/20/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
+cp system/etc/touchpad/21/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
+cp system/etc/touchpad/22/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 cp system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 
 # Pull Opencore libs

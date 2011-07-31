@@ -92,5 +92,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/permissions/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     device/motorola/olympus/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
 
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+
 PRODUCT_NAME := generic_olympus
 PRODUCT_DEVICE := olympus
+PRODUCT_MODEL := MB860
