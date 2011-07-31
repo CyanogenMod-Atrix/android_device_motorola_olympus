@@ -2,3 +2,4 @@
 # system.prop for olympus
 #
 ro.sf.lcd_density = 240
+dalvik.vm.heapsize=42m
