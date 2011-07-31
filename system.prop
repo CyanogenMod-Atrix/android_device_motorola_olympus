@@ -18,4 +18,3 @@ wifi.supplicant_scan_interval = 45
 
 # To set wifi (AP) driver's firmware path
 ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin
-
