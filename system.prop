@@ -7,5 +7,3 @@ rild.libpath=/system/lib/libmoto_ril.so
 
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
-
-
