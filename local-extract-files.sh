@@ -109,7 +109,10 @@ cp system/lib/libnvidia_display_jni.so ../../../vendor/$VENDOR/$DEVICE/proprieta
 cp system/lib/libnvmm_audio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvec.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libbluetoothd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-
+cp system/lib/libbattd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libnvmm_manager.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libcamera_client.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libmoto_ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # Pull nvidia framework libs
 #cp system/framework/com.nvidia.display.jar ../../../vendor/$VENDOR/$DEVICE/proprietary/lib

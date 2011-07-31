@@ -102,10 +102,13 @@ on boot
     # nvodmcam permissions
     chmod 666 /dev/nvodmcam
 
-# mount PDS partition
+    # battery driver permissions
+    mkdir /pds 0755 root root
+
+    # mount PDS partition
     exec /system/bin/remountpds -d /dev/block/mmcblk0p3 -m rw
 
-# bluetooth permissions
+    # bluetooth permissions
     chmod 0664 /pds/bt/bt_bdaddr
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
@@ -115,7 +118,7 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     write /sys/class/rfkill/rfkill0/state 1
 
-# bluetooth for BCM
+    # bluetooth for BCM
     chown root bluetooth /proc/bt_power
     chown root bluetooth /proc/bt_stat
     chown root bluetooth /proc/bt_status
@@ -126,7 +129,7 @@ on boot
     chmod 0664 /proc/bt_status
     chmod 0664 /proc/bluetooth/sleep/proto
 
-# wlan permissions
+    # wlan permissions
     mkdir /data/misc/wifi 0771 wifi wifi  
     mkdir /data/misc/wifi/sockets 0771 system wifi 
     chown system wifi /data/misc/wifi/sockets 
@@ -138,16 +141,13 @@ on boot
     setprop wifi.interface eth0
     setprop softap.interface wl0.1
 
-# battery driver permissions
-    mkdir /pds 0755 root root
-
-# multimedia power regulators
+    # multimedia power regulators
     chown root system /sys/devices/platform/reg-virt-vcam/enabled
     chown root system /sys/devices/platform/reg-virt-vcsi/enabled
     chown root system /sys/devices/platform/reg-virt-vcsi_2/enabled
     chown root system /sys/devices/platform/reg-virt-sw5/enabled
 
-# create the necessary dirs for tpapi with proper permission
+    # create the necessary dirs for tpapi with proper permission
     mkdir /data/tpapi
     mkdir /data/tpapi/etc
     mkdir /data/tpapi/etc/tpa
@@ -164,7 +164,7 @@ on boot
     chmod 0660 /dev/nvaes
     chown system system /dev/nvaes
 
-# for feature 33302 device encryption
+    # for feature 33302 device encryption
     mkdir /data/emt
     chmod 0700 /data/emt
     exec /system/bin/enc_mgt_tool
