@@ -42,7 +42,8 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.tegra.so:system/lib/hw/overlay.tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.olympus.so:system/lib/hw/sensors.olympus.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.olympus.so:system/lib/hw/gps.olympus.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.olympus.so:system/lib/hw/gps.olympus.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.tegra.so:system/lib/hw/lights.tegra.so
 
 # EGL
 PRODUCT_COPY_FILES += \\
@@ -92,6 +93,16 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/touchpad:system/bin/touchpad
+
+# Wifi firmware
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin:system/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin:system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin:system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin:system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
 
 # subsystem configurations
 PRODUCT_COPY_FILES += \\

@@ -8,4 +8,14 @@ rild.libpath=/system/lib/libmoto_ril.so
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
 
+#special moto usb handling
+ro.usb.use_custom_service=1
+
+# Time between scans in seconds. Keep it high to minimize battery drain.
+# This only affects the case in which there are remembered access points,
+# but none are in range.
+wifi.supplicant_scan_interval = 45
+
+# To set wifi (AP) driver's firmware path
+ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin
 

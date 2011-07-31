@@ -23,6 +23,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
@@ -173,9 +174,14 @@ cp system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
-
 # Pull bt files
 
+# Pull Wifi userland firmware
+cp system/etc/firmware/wifi/nvram.txt ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+cp system/etc/firmware/wifi/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+cp system/etc/firmware/wifi/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+cp system/etc/firmware/wifi/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+cp system/etc/wifi/wpa_supplicant.conf ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
 
 # Pull camera files
 cp system/lib/libcamera.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
