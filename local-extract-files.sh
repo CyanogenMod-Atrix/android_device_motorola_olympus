@@ -39,7 +39,7 @@ cp system/lib/liblog.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libstdc++.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-cp system/bin/am2server../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/am2server ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/app/GfxEngine.apk ../../../vendor/$VENDOR/$DEVICE/proprietary/app
 cp system/etc/am2server.pubkey ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 cp system/lib/libAuthUDMDrv_1750A100.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
