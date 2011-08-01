@@ -13,6 +13,7 @@ on fs
     mount ext4 /dev/block/mmcblk0p15 /cache nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
 
 on post-fs
+    symlink /system/lib /vendor/lib
     # once everything is setup, no need to modify /
     mkdir /mnt/usbdisk_1.0 0000 system system
     mkdir /mnt/usbdisk_1.1 0000 system system

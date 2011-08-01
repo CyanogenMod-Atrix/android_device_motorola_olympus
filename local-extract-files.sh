@@ -34,6 +34,17 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 #cp system/app/PhoneConfig.apk ../../../vendor/motorola/$DEVICE/proprietary
 #cp system/app/ProgramMenu.apk ../../../vendor/motorola/$DEVICE/proprietary
 #cp system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietaryadb
+# fingerprint stuff
+cp system/lib/liblog.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libstdc++.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/bin/am2server../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/app/GfxEngine.apk ../../../vendor/$VENDOR/$DEVICE/proprietary/app
+cp system/etc/am2server.pubkey ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
+cp system/lib/libAuthUDMDrv_1750A100.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libam2app.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libam2server.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # system libs
 cp system/lib/libmirror.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
