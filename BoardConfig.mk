@@ -108,3 +108,6 @@ WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/dhd.ko"
 #WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin nvram_path=/system/etc/wl/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
+
+#Fix _sync functions for RIL
+TARGET_MOTO_SYNC_FUNCTIONS := true
