@@ -109,9 +109,6 @@ on boot
     # nvodmcam permissions
     chmod 666 /dev/nvodmcam
 
-    # mount PDS partition
-    exec /system/bin/remountpds -d /dev/block/mmcblk0p3 -m rw
-
     # bluetooth permissions
     chmod 0664 /pds/bt/bt_bdaddr
     chmod 0660 /dev/ttyHS2
@@ -430,6 +427,13 @@ on property:persist.service.adb.enable=1
 # MOT change to statically link android usb module
 #    insmod /system/lib/hw/g_android.ko
     start adbd
+
+# mount PDS partition
+#    exec /system/bin/remountpds -d /dev/block/mmcblk0p3 -m rw
+
+# now fix stupid moto permissions
+    exec /system/bin/pds_perm_fix.sh
+
 
 # Battery Daemon
 service battd /system/bin/battd
