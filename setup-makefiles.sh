@@ -38,11 +38,12 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so
 
 # FINGERPRINT
+PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblog.so:system/lib/liblog.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/libstdc++.so:system/lib/libstdc++.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/stdc++.so:system/lib/libstdc++.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libm.so:system/lib/libm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libc.so:system/lib/libc.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libAuthUDMDrv_1750A100.so:system/lib/libAuthUDMDrv_1750A100.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libAuthUDMDrv_1750A100.so:system/lib/libAuthUDMDrv_1750A100.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libam2app.so:system/lib/libam2app.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libam2server.so:system/lib/libam2server.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/am2server:system/bin/am2server \\
