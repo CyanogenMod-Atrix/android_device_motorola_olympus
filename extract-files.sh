@@ -36,10 +36,6 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 #adb pull /system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietaryadb
 
 # fingerprint stuff
-adb pull /system/lib/liblog.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libstdc++.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/bin/am2server ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/app/GfxEngine.apk ../../../vendor/$VENDOR/$DEVICE/proprietary/app
 adb pull /system/etc/am2server.pubkey ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
