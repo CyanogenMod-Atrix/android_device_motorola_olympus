@@ -25,5 +25,5 @@ cd /pds
 /system/xbin/busybox find -group 9009 -exec chgrp 1000 {} \;
 
 #make system r/o again for safety
-system/xbin/mount -o remount,ro /system
+/system/xbin/mount -o remount,ro /system
 
