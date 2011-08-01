@@ -11,6 +11,7 @@ on fs
     mount ext4 /dev/block/mmcblk0p12 /system noatime nodiratime wait ro barrier=1
     mount ext4 /dev/block/mmcblk0p16 /data nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p15 /cache nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
+    exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
 
 on post-fs
     symlink /system/lib /vendor/lib
@@ -428,13 +429,6 @@ on property:persist.service.adb.enable=1
 # MOT change to statically link android usb module
 #    insmod /system/lib/hw/g_android.ko
     start adbd
-
-# mount PDS partition
-#    exec /system/bin/remountpds -d /dev/block/mmcblk0p3 -m rw
-
-# now fix stupid moto permissions
-    exec /system/bin/pds_perm_fix.sh
-
 
 # Battery Daemon
 service battd /system/bin/battd
