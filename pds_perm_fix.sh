@@ -7,7 +7,8 @@ then
     dd if=/dev/block/mmcblk0p3 of=/data/pds-CM7.img
 
     #mount the fake pds
-    /system/xbin/busybox mount -o loop,rw /data/pds-CM7.img /pds
+    /system/xbin/losetup /dev/block/loop0 /data/pds-CM7.img
+    /system/xbin/busybox mount -o rw /dev/block/loop0 /pds
 
     cd /pds
     #find and fix moto users first
@@ -26,7 +27,8 @@ then
     echo "Backed up, permission fixed and mounted PDS"
 else
     #mount the fake pds
-    /system/xbin/busybox mount -o loop,rw /data/pds-CM7.img /pds
+    /system/xbin/losetup /dev/block/loop0 /data/pds-CM7.img
+    /system/xbin/busybox mount -o rw /dev/block/loop0 /pds
 
     echo "Mounted PDS only."
 fi
