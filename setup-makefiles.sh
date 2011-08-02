@@ -138,7 +138,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_audiofx.so:system/lib/libnvddk_audiofx.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_dtvtuner.so:system/lib/libnvodm_dtvtuner.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvdispatch_helper.so:system/lib/libnvdispatch_helper.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomxilclient.so:system/lib/libnvomxilclient.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcgdrv.so:system/lib/libcgdrv.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_audio.so:system/lib/libnvmm_audio.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_contentpipe.so:system/lib/libnvmm_contentpipe.so \\
@@ -151,7 +150,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_vp6_video.so:system/lib/libnvmm_vp6_video.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_writer.so:system/lib/libnvmm_writer.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvmm_service.so:system/lib/libnvmm_service.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomx.so:system/lib/libnvomx.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvos.so:system/lib/libnvos.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_query.so:system/lib/libnvodm_query.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_misc.so:system/lib/libnvodm_misc.so \\
@@ -164,5 +162,16 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnmea.so:system/lib/libnmea.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbattd.so:system/lib/libbattd.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_channel.so:system/lib/libnvrm_channel.so
+
+# VIDEO
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomx.so:system/lib/libnvomx.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvomxilclient.so:system/lib/libnvomxilclient.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libstagefright_omx.so:system/lib/libstagefright_omx.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \\
 
 EOF
