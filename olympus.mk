@@ -31,9 +31,10 @@ PRODUCT_COPY_FILES += \
 ## (2) Also get non-open-source CDMA-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
-# motorola pds permission fix script
+# motorola pds & ril permission fix scripts
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    device/motorola/olympus/moto_fix.sh:system/bin/moto_fix.sh
 
 ## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
 
