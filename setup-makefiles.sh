@@ -107,12 +107,13 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/touchpad:system/bin/touchpad
 
-# Wifi firmware
+# Wifi/bt firmware
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin:system/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin:system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin:system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/BCM4329B1_002.002.023.0757.0780.hcd:system/etc/BCM4329B1_002.002.023.0757.0780.hcd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 

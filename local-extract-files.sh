@@ -182,6 +182,7 @@ cp system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
+cp system/etc/BCM4329B1_002.002.023.0757.0780.hcd ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 
 # Pull Wifi userland firmware
 cp system/etc/firmware/wifi/nvram.txt ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl

@@ -111,3 +111,7 @@ WIFI_DRIVER_MODULE_NAME     := "dhd"
 
 #Fix _sync functions for RIL
 TARGET_MOTO_SYNC_FUNCTIONS := true
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
