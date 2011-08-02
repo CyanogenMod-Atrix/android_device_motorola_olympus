@@ -48,8 +48,6 @@ adb pull /system/lib/libmirror.so ../../../vendor/$VENDOR/$DEVICE/proprietary/li
 adb pull /system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libcgdrv.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libGLESv1_CM.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libGLESv2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libopencore_common.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libopencore_download.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -73,7 +71,6 @@ adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEV
 adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libstagefright_omx.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # Pull needed NV libs
 adb pull /system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -136,7 +133,6 @@ adb pull /system/lib/libnmea.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/egl/libEGL_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/egl/libGLESv1_CM_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/egl/libGLESv2_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
-adb pull /system/lib/egl/libGLES_android.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 
 # Pull HW libs
 adb pull /system/lib/hw/gps.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw

@@ -47,8 +47,6 @@ cp system/lib/libmirror.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libaudiopolicy.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libcgdrv.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-cp system/lib/libGLESv1_CM.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-cp system/lib/libGLESv2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libopencore_common.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libopencore_download.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -69,7 +67,6 @@ cp system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/pro
 cp system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-cp system/lib/libstagefright_omx.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libhwmediarecorder.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
@@ -134,7 +131,6 @@ cp system/lib/libnmea.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/egl/libEGL_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 cp system/lib/egl/libGLESv1_CM_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 cp system/lib/egl/libGLESv2_tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
-cp system/lib/egl/libGLES_android.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 
 # Pull HW libs
 cp system/lib/hw/gps.olympus.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw

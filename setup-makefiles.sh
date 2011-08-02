@@ -56,9 +56,6 @@ PRODUCT_COPY_FILES += \\
 
 # EGL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libGLESv1_CM.so:system/lib/libGLESv1_CM.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libGLESv2.so:system/lib/libGLESv2.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so
@@ -177,7 +174,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \\
-#    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libstagefright_omx.so:system/lib/libstagefright_omx.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
 
 EOF
