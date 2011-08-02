@@ -12,7 +12,6 @@ on fs
     mount ext4 /dev/block/mmcblk0p16 /data nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p15 /cache nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
-    exec /system/bin/logwrapper /system/bin/moto_fix.sh
 
 on post-fs
     symlink /system/lib /vendor/lib
