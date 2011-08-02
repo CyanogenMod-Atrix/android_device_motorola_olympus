@@ -3,7 +3,20 @@
 #
 ro.sf.lcd_density=240
 dalvik.vm.heapsize=42m
+
+#RIL
 rild.libpath=/system/lib/libmoto_ril.so
+persist.ril.mux.noofchannels=9
+persist.ril.mux.ttydevice=/dev/ttyHS3
+ro.telephony.call_ring.multiple=false
+persist.ril.modem.ttydevice=/dev/ttySPI0
+persist.ril.modem.mode=2
+persist.ril.features=0x24
+persist.ril.mux.retries=500
+persist.ril.mux.sleep=2
+ro.kernel.android.ril=yes
+persist.ril.pppd.start.fail.max=16
+
 
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
