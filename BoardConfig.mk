@@ -24,10 +24,11 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-#FAUX123 TODO stub out camera for now
 USE_CAMERA_STUB := true
-#FAUX123 TODO stub out Audio for now
 BOARD_USES_GENERIC_AUDIO := false
+
+# inherit from the proprietary version
+-include vendor/motorola/olympus/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := olympus
