@@ -65,7 +65,6 @@ PRODUCT_COPY_FILES += \\
 
 # OMX
 PRODUCT_COPY_FILES += \\
-
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvsm.so:system/lib/libnvsm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediaplugin.so:system/lib/libhwmediaplugin.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhwmediaplugin.so:obj/lib/libhwmediaplugin.so \\
