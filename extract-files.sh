@@ -120,7 +120,6 @@ adb pull /system/lib/libnvec.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libbluetoothd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libbattd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_manager.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libcamera_client.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libmoto_ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnmea.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
