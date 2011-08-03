@@ -177,6 +177,7 @@ adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/mdm_panicd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 
 # Pull bt files
