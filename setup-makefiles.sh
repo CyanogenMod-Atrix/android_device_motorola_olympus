@@ -103,6 +103,12 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/mdm_panicd:system/bin/mdm_panicd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/rild:system/bin/rild \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd:system/bin/pppd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/secclkd:system/bin/secclkd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/testpppd:system/bin/testpppd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd-ril:system/bin/pppd-ril \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/chat-ril:system/bin/chat-ril \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/touchpad:system/bin/touchpad
 
 # Wifi/bt firmware
@@ -119,7 +125,8 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/20/touchpad.cfg:system/etc/touchpad/20/touchpad.cfg \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/21/touchpad.cfg:system/etc/touchpad/21/touchpad.cfg \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/22/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/22/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/ppp/peers/pppd-ril.options:system/etc/ppp/peers/pppd-ril.options
 
 # system libs
 PRODUCT_COPY_FILES += \\
@@ -156,6 +163,12 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_query.so:system/lib/libnvodm_query.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvodm_misc.so:system/lib/libnvodm_misc.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_graphics.so:system/lib/libnvrm_graphics.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_aes_user.so:system/lib/libnvddk_aes_user.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpppd_plugin.so:system/lib/libpppd_plugin.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpppd_plugin-ril.so:system/lib/libpppd_plugin-ril.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libtpa.so:system/lib/libtpa.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libtpa_core.so:system/lib/libtpa_core.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:system/lib/libril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril_rds.so:system/lib/libril_rds.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmoto_ril.so:system/lib/libmoto_ril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/librds_util.so:system/lib/librds_util.so \\

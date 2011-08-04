@@ -24,6 +24,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
@@ -69,17 +70,22 @@ cp system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/pro
 cp system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libhwmediarecorder.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libpppd_plugin-ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libpppd_plugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 
 # Pull needed NV libs
 cp system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/librds_util.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libril_rds.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libtpa.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libtpa_core.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+cp system/lib/libnvddk_aes_user.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvddk_2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvodm_dtvtuner.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvsm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-cp system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvmm_utils.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvomxilclient.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 cp system/lib/libnvmm_video.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -176,6 +182,12 @@ cp system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 cp system/bin/mdm_panicd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/rild ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/pppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/secclkd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/testpppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/pppd-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+cp system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull bt files
 cp system/etc/BCM4329B1_002.002.023.0757.0780.hcd ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
@@ -205,6 +217,7 @@ cp system/etc/touchpad/20/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprieta
 cp system/etc/touchpad/21/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 cp system/etc/touchpad/22/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 cp system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
+cp system/etc/ppp/peers/pppd-ril.options ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 
 # Pull Opencore libs
 cp system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib

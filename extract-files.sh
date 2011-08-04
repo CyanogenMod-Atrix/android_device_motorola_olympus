@@ -24,6 +24,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
@@ -61,6 +62,9 @@ adb pull /system/lib/libopencore_rtspreg.so ../../../vendor/$VENDOR/$DEVICE/prop
 adb pull /system/lib/libOpenSLES.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libhwmediarecorder.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libpppd_plugin-ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libpppd_plugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+
 
 # video
 adb pull /system/lib/libnvomx.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -75,12 +79,15 @@ adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/pro
 # Pull needed NV libs
 adb pull /system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/librds_util.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libril_rds.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libtpa.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libtpa_core.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libnvddk_aes_user.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvddk_2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvodm_dtvtuner.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvsm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libnvddk_2d_v2.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_utils.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvomxilclient.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_video.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -178,6 +185,12 @@ adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/mdm_panicd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/rild ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/pppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/testpppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/secclkd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/pppd-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 
 # Pull bt files
@@ -208,6 +221,7 @@ adb pull /system/etc/touchpad/20/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/pr
 adb pull /system/etc/touchpad/21/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 adb pull /system/etc/touchpad/22/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
 adb pull /system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
+adb pull /system/etc/ppp/peers/pppd-ril.options ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 
 # Pull Opencore libs
 adb pull /system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
