@@ -191,6 +191,7 @@ adb pull /system/bin/testpppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/secclkd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/pppd-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/usbd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 
 # Pull bt files
@@ -237,5 +238,10 @@ adb pull /system/lib/libopencore_rtsp.so ../../../vendor/$VENDOR/$DEVICE/proprie
 
 # Pull Stage Fright
 adb pull /system/lib/libstagefrighthw.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+
+#wgetable proprietaries
+BASEURL="http://atrix-dev-team.github.com/android_vendor_motorola_olympus/"
+#example for later
+#wget "${BASEURL}Usb.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/Usb.apk
 
 ./setup-makefiles.sh

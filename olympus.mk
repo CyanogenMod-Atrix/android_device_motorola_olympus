@@ -62,6 +62,8 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
+PRODUCT_PACKAGES += Usb
+
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
 # Board-specific init
