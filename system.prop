@@ -35,3 +35,10 @@ ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minio
 ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
 
 ro.telephony.ril_class=tmp_atrix_ugly_hack
+
+# Default network type.
+# 3 -> GSM/WCDMA (auto mode, according to PRL)
+ro.telephony.default_network=3
+
+# use 1% battery steps
+ro.product.use_charge_counter=1
