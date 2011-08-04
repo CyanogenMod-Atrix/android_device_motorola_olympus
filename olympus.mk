@@ -70,8 +70,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/gps.conf:system/etc/gps.conf \
     device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml \
-    device/motorola/olympus/egl.cfg:system/lib/egl/egl.cfg
+    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml
 
 #keyboard files
 PRODUCT_COPY_FILES += \

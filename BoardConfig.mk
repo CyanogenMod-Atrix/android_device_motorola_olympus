@@ -121,3 +121,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 #Camera
 TARGET_USE_MOTO_CUSTOM_PARAMETERS := true
+
+#EGL
+BOARD_EGL_CFG := device/motorola/olympus/egl.cfg
