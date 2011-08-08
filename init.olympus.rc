@@ -477,7 +477,6 @@ service map /system/bin/sdptool add --channel=20 MAP
     oneshot
 
 service hciattach /system/bin/bt_init /system/etc/bt_init.config
-    user bluetooth
     group bluetooth net_bt_admin
     disabled
 
