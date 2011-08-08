@@ -98,6 +98,8 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_core.axf:system/bin/nvddk_audiofx_core.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/tund:system/bin/tund \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bluetoothd:system/bin/bluetoothd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_init:system/bin/bt_init \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_downloader:system/bin/bt_downloader \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/sdptool:system/bin/sdptool \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/Hostapd:system/bin/Hostapd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
@@ -127,6 +129,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/20/touchpad.cfg:system/etc/touchpad/20/touchpad.cfg \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/21/touchpad.cfg:system/etc/touchpad/21/touchpad.cfg \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/22/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/bt_init.config:system/etc/bt_init.config \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/ppp/peers/pppd-ril.options:system/etc/ppp/peers/pppd-ril.options
 
 # system libs

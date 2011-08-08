@@ -476,8 +476,7 @@ service map /system/bin/sdptool add --channel=20 MAP
     disabled
     oneshot
 
-service hciattach /system/bin/brcm_patchram_plus --enable_hci \
-    --baudrate 3500000 --patchram /system/etc/BCM4329B1_002.002.023.0757.0780.hcd /dev/ttyHS2
+service hciattach /system/bin/bt_init /system/etc/bt_init.config
     user bluetooth
     group bluetooth net_bt_admin
     disabled
