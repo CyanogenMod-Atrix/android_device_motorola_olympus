@@ -108,6 +108,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/mdm_panicd:system/bin/mdm_panicd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/rild:system/bin/rild \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd:system/bin/pppd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/akmd2:system/bin/akmd2 \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/secclkd:system/bin/secclkd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/testpppd:system/bin/testpppd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd-ril:system/bin/pppd-ril \\
