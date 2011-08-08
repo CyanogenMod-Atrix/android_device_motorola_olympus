@@ -17,7 +17,7 @@
 VENDOR=motorola
 DEVICE=olympus
 
-rm -rf ../../../vendor/$VENDOR/$DEVICE
+rm -rf ../../../vendor/$VENDOR/$DEVICE/* #dont delete the git folder
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/app
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
