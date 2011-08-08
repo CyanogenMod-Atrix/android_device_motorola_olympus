@@ -97,7 +97,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_transport.axf:system/bin/nvddk_audiofx_transport.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvddk_audiofx_core.axf:system/bin/nvddk_audiofx_core.axf \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/tund:system/bin/tund \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/bluetoothd:system/bin/bluetoothd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_init:system/bin/bt_init \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_downloader:system/bin/bt_downloader \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/sdptool:system/bin/sdptool \\
@@ -178,7 +177,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmoto_ril.so:system/lib/libmoto_ril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/librds_util.so:system/lib/librds_util.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liba2dp.so:system/lib/liba2dp.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbluetoothd.so:system/lib/libbluetoothd.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnmea.so:system/lib/libnmea.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbattd.so:system/lib/libbattd.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_channel.so:system/lib/libnvrm_channel.so
