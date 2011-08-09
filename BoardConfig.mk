@@ -125,3 +125,9 @@ TARGET_SPECIFIC_HEADER_PATH := device/motorola/olympus/include
 
 #EGL
 BOARD_EGL_CFG := device/motorola/olympus/egl.cfg
+
+#FM Radio
+BOARD_HAVE_FM_RADIO := true
+TARGET_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+TARGET_GLOBAL_CPPFLAGS += -DHAVE_FM_RADIO
+BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
