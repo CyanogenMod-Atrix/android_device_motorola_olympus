@@ -124,7 +124,6 @@ adb pull /system/lib/libnvmm_videorenderer.so ../../../vendor/$VENDOR/$DEVICE/pr
 adb pull /system/lib/libnvidia_display_jni.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_audio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvec.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libbluetoothd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libbattd.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_manager.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libmoto_ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -178,7 +177,6 @@ adb pull /system/bin/nvrm_avp.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bi
 adb pull /system/bin/tegrastats ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/bluetoothd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
@@ -192,9 +190,12 @@ adb pull /system/bin/secclkd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/pppd-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/usbd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/akmd2 ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
-
-# Pull bt files
+# Pull BT files
+adb pull /system/bin/bt_init ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/bt_downloader ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/etc/bt_init.config ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 adb pull /system/etc/BCM4329B1_002.002.023.0757.0780.hcd ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 
 # Pull Wifi userland firmware
