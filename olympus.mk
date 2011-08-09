@@ -71,7 +71,6 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 # Board-specific init
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/vold.fstab:system/etc/vold.fstab \
-    device/motorola/olympus/gps.conf:system/etc/gps.conf \
     device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml
