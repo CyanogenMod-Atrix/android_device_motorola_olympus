@@ -390,12 +390,10 @@ service nvrm_daemon /system/bin/logwrapper /system/bin/nvrm_daemon
     user root
     onrestart restart servicemanager
 
-service bt_start /system/bin/bt_init /system/etc/bt_init.config
+service bt_start /system/bin/bt_init_wrapper.sh
     user bluetooth
     group bluetooth net_bt_admin net_raw net_admin misc
-    disabled
     oneshot
-
 
 service bt_stop /system/bin/bt_init -stop
     user bluetooth
@@ -483,8 +481,10 @@ service map /system/bin/sdptool add --channel=20 MAP
     disabled
     oneshot
 
-service hciattach /system/bin/bt_init /system/etc/bt_init.config
+service hciattach /system/bin/hciattach_wrapper.sh
+    user bluetooth
     group bluetooth net_bt_admin
+    oneshot
     disabled
 
 # The following services are added by moto

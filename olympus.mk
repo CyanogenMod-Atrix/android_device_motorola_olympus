@@ -33,7 +33,9 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola pds permission fix script
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    device/motorola/olympus/bt_init_wrapper.sh:system/bin/bt_init_wrapper.sh \
+    device/motorola/olympus/hciattach_wrapper.sh:system/bin/hciattach_wrapper.sh
 
 ## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
 
@@ -62,7 +64,8 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_PACKAGES += Usb
+PRODUCT_PACKAGES += Usb \
+			FM
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
