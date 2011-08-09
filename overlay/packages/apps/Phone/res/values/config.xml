@@ -21,7 +21,7 @@
          EVENT_SIM_NETWORK_LOCKED events from the Sim.  If true, this will
          prevent the IccNetworkDepersonalizationPanel from being shown,
          and effectively disable the "Sim network lock" feature. -->
-    <bool name="ignore_sim_network_locked_events">true</bool>
+    <bool name="ignore_sim_network_locked_events">false</bool>
 
     <!-- Enable the onscreen touch UI for all states of the in-call UI. -->
     <bool name="allow_incoming_call_touch_ui">true</bool>
