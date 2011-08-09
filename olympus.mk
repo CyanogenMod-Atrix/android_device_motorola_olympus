@@ -73,7 +73,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml
+    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml \
+    device/motorola/olympus/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 #keyboard files
 PRODUCT_COPY_FILES += \
