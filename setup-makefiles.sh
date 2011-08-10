@@ -72,6 +72,7 @@ PRODUCT_COPY_FILES += \\
 # Bin
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/mot_boot_mode:system/bin/mot_boot_mode \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/charge_only_mode:system/bin/charge_only_mode \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/ap_gain.bin:system/bin/ap_gain.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_daemon:system/bin/nvrm_daemon \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_avp.axf:system/bin/nvrm_avp.axf \\
@@ -120,9 +121,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin:system/etc/wl/sdio-ag-cdc-11n-mfgtest-roml-seqcmds.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin:system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin:system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/BCM4329B1_002.002.023.0757.0780.hcd:system/etc/BCM4329B1_002.002.023.0757.0780.hcd \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/BCM4329B1_002.002.023.0757.0780.hcd:system/etc/BCM4329B1_002.002.023.0757.0780.hcd
 
 # subsystem configurations
 PRODUCT_COPY_FILES += \\

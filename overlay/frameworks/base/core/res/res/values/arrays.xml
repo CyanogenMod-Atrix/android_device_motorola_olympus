@@ -20,6 +20,7 @@
     <array name="shutdown_reboot_options">
         <item>Reboot</item>
         <item>Recovery</item>
+        <item>Fastboot</item>
     </array>
 
     <!-- Do not translate. Defines the shutdown actions passed to the kernel.
@@ -27,6 +28,7 @@
     <string-array name="shutdown_reboot_actions">
         <item></item>
         <item>recovery</item>
+	<item>fastboot</item>
     </string-array>
 
 </resources>

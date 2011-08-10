@@ -33,7 +33,9 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola pds permission fix script
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    device/motorola/olympus/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    device/motorola/olympus/bt_init_wrapper.sh:system/bin/bt_init_wrapper.sh \
+    device/motorola/olympus/hciattach_wrapper.sh:system/bin/hciattach_wrapper.sh
 
 ## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
 
@@ -62,17 +64,18 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_PACKAGES += Usb
+PRODUCT_PACKAGES += Usb \
+			Torch
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/vold.fstab:system/etc/vold.fstab \
-    device/motorola/olympus/gps.conf:system/etc/gps.conf \
     device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml
+    device/motorola/olympus/media_profiles.xml:system/etc/media_profiles.xml \
+    device/motorola/olympus/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 #keyboard files
 PRODUCT_COPY_FILES += \
