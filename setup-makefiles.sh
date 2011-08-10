@@ -72,6 +72,7 @@ PRODUCT_COPY_FILES += \\
 # Bin
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/mot_boot_mode:system/bin/mot_boot_mode \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/charge_only_mode:system/bin/charge_only_mode \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/ap_gain.bin:system/bin/ap_gain.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_daemon:system/bin/nvrm_daemon \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/nvrm_avp.axf:system/bin/nvrm_avp.axf \\
