@@ -613,6 +613,18 @@ on property:ro.webtop.boot=1
 on property:sys.SystemMode=RM_SM_DOCKED
     exec /osh/etc/init.d/startX.sh
 
+on property:sys.usb.tethered=1
+    stop usbd
+    exec /system/xbin/killall usbd
+    write /dev/usb_device_mode rndis_adb
+    start usbd
+
+on property:sys.usb.tethered=0
+    stop usbd
+    exec /system/xbin/killall usbd
+    write /dev/usb_device_mode msc_adb
+    start usbd
+
 # ppp daemon used by DUN.
 service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
     class post-zygote_services
