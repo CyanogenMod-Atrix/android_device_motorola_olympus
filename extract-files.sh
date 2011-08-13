@@ -242,7 +242,6 @@ adb pull /system/lib/libstagefrighthw.so ../../../vendor/$VENDOR/$DEVICE/proprie
 
 #wgetable proprietaries
 BASEURL="http://atrix-dev-team.github.com/android_vendor_motorola_olympus/"
-#example for later
-#wget "${BASEURL}Usb.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/Usb.apk
+wget "${BASEURL}touchpad.cfg" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22/touchpad.cfg
 
 ./setup-makefiles.sh
