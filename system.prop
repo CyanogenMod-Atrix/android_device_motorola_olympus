@@ -17,6 +17,11 @@ persist.ril.mux.sleep=2
 ro.kernel.android.ril=yes
 persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
+ro.telephony.ril_class=tmp_atrix_ugly_hack
+
+# Default network type.
+# 3 -> GSM/WCDMA (auto mode, according to PRL)
+ro.telephony.default_network=3
 
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
@@ -26,6 +31,9 @@ ro.usb.use_custom_service=1
 
 # disable Windows Media Sync Usb.apk mode
 ro.mtp_available=0
+
+# Default to charge only
+ro.default_usb_mode=4
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
@@ -37,14 +45,14 @@ ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minio
 
 ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
 
-ro.telephony.ril_class=tmp_atrix_ugly_hack
-
-# Default network type.
-# 3 -> GSM/WCDMA (auto mode, according to PRL)
-ro.telephony.default_network=3
-
 # use 1% battery steps
 ro.product.use_charge_counter=1
 
 #OpenGL ES version
 ro.opengles.version = 131072
+
+# Forbid format of these partitions in mount menu :
+ro.cwm.forbid_format=/misc,/radio,/pds,/bootloader,/recovery,/efs
+
+# Battery light while charging, enabled by default
+ro.battery_light=true
