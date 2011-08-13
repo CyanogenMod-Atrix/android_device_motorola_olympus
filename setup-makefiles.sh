@@ -129,6 +129,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/21/touchpad.cfg:system/etc/touchpad/21/touchpad.cfg \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/touchpad/22/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/bt_init.config:system/etc/bt_init.config \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/app/FastDormancy.apk:system/app/FastDormancy.apk \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/ppp/peers/pppd-ril.options:system/etc/ppp/peers/pppd-ril.options
 
 # system libs

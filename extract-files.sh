@@ -243,5 +243,6 @@ adb pull /system/lib/libstagefrighthw.so ../../../vendor/$VENDOR/$DEVICE/proprie
 #wgetable proprietaries
 BASEURL="http://atrix-dev-team.github.com/android_vendor_motorola_olympus/"
 wget "${BASEURL}touchpad.cfg" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22/touchpad.cfg
+wget "${BASEURL}FastDormancy.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/FastDormancy.apk
 
 ./setup-makefiles.sh
