@@ -606,9 +606,6 @@ service fbcp /etc/init.d/start_fbcp.sh
 on property:dev.bootcomplete=1
     setprop ro.webtop.boot 1
     start loadpreinstalls
-    #Toggle USB to enable notifications on boot
-    setprop sys.usb.tethered 1
-    setprop sys.usb.tethered 0
 
 on property:ro.webtop.boot=1
     exec /system/bin/logwrapper /ubuntu.sh
