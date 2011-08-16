@@ -544,7 +544,7 @@ on boot
 	chgrp system /data/am2data.db.meta
 
 # Enable ADB
-    write /dev/usb_device_mode msc_adb
+    write /dev/usb_device_mode charge_adb
 
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
@@ -622,7 +622,7 @@ on property:sys.usb.tethered=1
 on property:sys.usb.tethered=0
     stop usbd
     exec /system/xbin/killall usbd
-    write /dev/usb_device_mode msc_adb
+    write /dev/usb_device_mode charge_adb
     start usbd
 
 # ppp daemon used by DUN.

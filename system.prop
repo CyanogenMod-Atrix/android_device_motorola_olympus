@@ -32,7 +32,7 @@ ro.usb.use_custom_service=1
 ro.mtp_available=0
 
 # Default to charge only
-ro.default_usb_mode=4
+ro.default_usb_mode=5
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
