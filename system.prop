@@ -17,7 +17,6 @@ persist.ril.mux.sleep=2
 ro.kernel.android.ril=yes
 persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
-ro.telephony.ril_class=tmp_atrix_ugly_hack
 
 # Default network type.
 # 3 -> GSM/WCDMA (auto mode, according to PRL)
