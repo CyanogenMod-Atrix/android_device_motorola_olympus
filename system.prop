@@ -27,9 +27,14 @@ ro.additionalmounts=/mnt/emmc
 
 #special moto usb handling
 ro.usb.use_custom_service=1
-
 # disable Windows Media Sync Usb.apk mode
 ro.mtp_available=0
+# disable modem mode
+ro.modem_available=0
+# disable ngp
+ro.ngp_available=0
+# disable usb net
+ro.rndis_available=0
 
 # Default to charge only
 ro.default_usb_mode=5
