@@ -15,7 +15,7 @@
 #
 
 #
-# This is the product configuration for a generic GSM passion,
+# This is the product configuration for a generic GSM olympus,
 # not specialized for any geography.
 #
 
@@ -28,7 +28,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/init.olympus.rc:root/init.olympus.rc \
     device/motorola/olympus/ueventd.olympus.rc:root/ueventd.olympus.rc
 
-## (2) Also get non-open-source CDMA-specific aspects if available
+## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola pds permission fix script
@@ -41,12 +41,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/sysctl.conf:system/etc/sysctl.conf
 
-## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
+## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# droid2 uses high-density artwork where available
+# olympus uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
