@@ -159,6 +159,9 @@ on boot
     chown root system /sys/devices/platform/reg-virt-vcsi_2/enabled
     chown root system /sys/devices/platform/reg-virt-sw5/enabled
 
+    # sdcard tweaks
+    write /sys/block/mmcblk1/bdi/read_ahead_kb 4096
+
     # create the necessary dirs for tpapi with proper permission
     mkdir /data/tpapi
     mkdir /data/tpapi/etc
