@@ -547,7 +547,7 @@ on boot
 	chgrp system /data/am2data.db.meta
 
 # Enable ADB
-    write /dev/usb_device_mode charge_adb
+    write /dev/usb_device_mode msc_adb
 
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
@@ -608,6 +608,7 @@ service fbcp /etc/init.d/start_fbcp.sh
 
 on property:dev.bootcomplete=1
     setprop ro.webtop.boot 1
+    setprop sys.usb.tethered 0
     start loadpreinstalls
 
 on property:ro.webtop.boot=1
