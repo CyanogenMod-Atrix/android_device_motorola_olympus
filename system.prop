@@ -49,3 +49,6 @@ ro.cwm.forbid_format=/misc,/radio,/pds,/bootloader,/recovery,/efs
 
 # Battery light while charging, enabled by default
 ro.battery_light=true
+
+# Allow people to exchange sdcard and emmc mountpoints from CMParts
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
