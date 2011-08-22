@@ -351,7 +351,11 @@
     <!-- Enables SIP on WIFI only -->
     <bool name="config_sip_wifi_only">false</bool>
 
-    <!-- Fix RIL -->
+    <!-- Fix RIL on Atrix. This drops an extra int field that the
+         Atrix RIL sends, between the CDMA subscription app index
+         and the number of applications on CardStatus. We need to
+         discard it to get a correct number of applications to
+         prevent RIL breakage later on. -->
     <bool name="config_rilHasExtraField">true</bool>
 
 </resources>
