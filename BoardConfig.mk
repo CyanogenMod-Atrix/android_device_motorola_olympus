@@ -94,7 +94,6 @@ BOARD_HIJACK_RECOVERY_UPDATE_ZIP := /preinstall/update-recovery.zip
 BOARD_PREINSTALL_DEVICE := /dev/block/mmcblk0p17
 BOARD_PREINSTALL_FILESYSTEM := ext3
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_HAS_LARGE_FILESYSTEM := true
 
 BOARD_USES_HW_MEDIARECORDER := true
 BOARD_USES_HW_MEDIASCANNER := false
@@ -128,3 +127,4 @@ BOARD_EGL_CFG := device/motorola/olympus/egl.cfg
 
 #USB Tethering
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/olympus/UsbController.cpp
+BOARD_HAS_LARGE_FILESYSTEM := true
