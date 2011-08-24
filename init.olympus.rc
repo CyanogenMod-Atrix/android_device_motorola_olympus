@@ -147,6 +147,9 @@ on boot
     setprop wifi.interface eth0
     setprop softap.interface wl0.1
 
+    # usbd permissions
+    mkdir /data/usbd 0777 system system
+
     # multimedia power regulators
     chown root system /sys/devices/platform/reg-virt-vcam/enabled
     chown root system /sys/devices/platform/reg-virt-vcsi/enabled
@@ -541,7 +544,7 @@ on boot
 	chgrp system /data/am2data.db.meta
 
 # Enable ADB
-    write /dev/usb_device_mode msc_adb
+#   write /dev/usb_device_mode charge_adb
 
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
@@ -602,7 +605,6 @@ service fbcp /etc/init.d/start_fbcp.sh
 
 on property:dev.bootcomplete=1
     setprop ro.webtop.boot 1
-    setprop sys.usb.tethered 0
     start loadpreinstalls
 
 on property:ro.webtop.boot=1
@@ -610,18 +612,6 @@ on property:ro.webtop.boot=1
 
 on property:sys.SystemMode=RM_SM_DOCKED
     exec /osh/etc/init.d/startX.sh
-
-on property:sys.usb.tethered=1
-    stop usbd
-    exec /system/xbin/killall usbd
-    write /dev/usb_device_mode rndis_adb
-    start usbd
-
-on property:sys.usb.tethered=0
-    stop usbd
-    exec /system/xbin/killall usbd
-    write /dev/usb_device_mode charge_adb
-    start usbd
 
 # ppp daemon used by DUN.
 service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
