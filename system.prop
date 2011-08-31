@@ -27,17 +27,6 @@ ro.additionalmounts=/mnt/emmc
 
 #special moto usb handling
 ro.usb.use_custom_service=1
-# disable Windows Media Sync Usb.apk mode
-ro.mtp_available=0
-# disable modem mode
-ro.modem_available=0
-# disable ngp
-ro.ngp_available=0
-# disable usb net
-ro.rndis_available=0
-
-# Default to charge only
-ro.default_usb_mode=5
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
@@ -60,3 +49,6 @@ ro.cwm.forbid_format=/misc,/radio,/pds,/bootloader,/recovery,/efs
 
 # Battery light while charging, enabled by default
 ro.battery_light=true
+
+# Allow people to exchange sdcard and emmc mountpoints from CMParts
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
