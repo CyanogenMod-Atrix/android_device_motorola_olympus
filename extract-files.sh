@@ -190,6 +190,7 @@ adb pull /system/bin/testpppd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/secclkd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/pppd-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/ftmipcd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/usbd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/akmd2 ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 

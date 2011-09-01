@@ -113,6 +113,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/testpppd:system/bin/testpppd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd-ril:system/bin/pppd-ril \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/chat-ril:system/bin/chat-ril \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/ftmipcd:system/bin/ftmipcd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/touchpad:system/bin/touchpad
 
 # Wifi/bt firmware
