@@ -605,7 +605,6 @@ service fbcp /etc/init.d/start_fbcp.sh
 
 on property:dev.bootcomplete=1
     setprop ro.webtop.boot 1
-    start loadpreinstalls
 
 on property:ro.webtop.boot=1
     exec /system/bin/logwrapper /ubuntu.sh
@@ -633,10 +632,6 @@ service am2server /system/bin/am2server
 	user system
 	group system inet input
     class pre-zygote_services
-
-service loadpreinstalls /system/bin/logwrapper /system/bin/load_pia.sh
-    disabled
-    oneshot
 
 on device-added-/dev/ttyUSB0
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/autosuspend 2
