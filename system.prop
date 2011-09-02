@@ -19,8 +19,8 @@ persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
 
 # Default network type.
-# 3 -> GSM/WCDMA (auto mode, according to PRL)
-ro.telephony.default_network=3
+# 0 -> WCDMA preferred
+ro.telephony.default_network=0
 
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
