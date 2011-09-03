@@ -19,6 +19,7 @@ DEVICE=olympus
 
 rm -rf ../../../vendor/$VENDOR/$DEVICE/* #dont delete the git folder
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/app
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/framework
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
@@ -28,6 +29,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietaty/etc/permissions
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
@@ -226,6 +228,10 @@ adb pull /system/etc/touchpad/22/touchpad.cfg ../../../vendor/$VENDOR/$DEVICE/pr
 adb pull /system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 adb pull /system/etc/ppp/peers/pppd-ril.options ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 
+# Pull permissions
+adb pull /system/etc/permissions/com.motorola.android.imirrorservice.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/permissions
+adb pull /system/etc/permissions/com.motorola.android.iextdispservice.xml ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/permissions
+
 # Pull Opencore libs
 adb pull /system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libopencore_common.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -247,5 +253,10 @@ wget "${BASEURL}touchpad.cfg" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 wget "${BASEURL}FastDormancy.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/FastDormancy.apk
 wget "${BASEURL}battd" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/battd
 wget "${BASEURL}libbattd.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbattd.so
+wget "${BASEURL}com.motorola.android.iextdispservice.jar" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/framework/com.motorola.android.iextdispservice.jar
+wget "${BASEURL}com.motorola.android.imirrorservice.jar" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/framework/com.motorola.android.imirrorservice.jar
+wget "${BASEURL}libmirrorjni.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libmirrorjni.so
+wget "${BASEURL}MirrorService.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/MirrorService.apk
+wget "${BASEURL}libnvdispmgr_d.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libnvdispmgr_d.so
 
 ./setup-makefiles.sh
