@@ -55,3 +55,7 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
 # Enable HDMI mirroring
 ro.hdmi.mirror.enable=true
+
+# Enable GPS debug
+gps.debug.sv_status_csv=1
+gps.debug.nmea=1
