@@ -29,7 +29,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/ppp/peers
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/20
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/21
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/touchpad/22
-mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietaty/etc/permissions
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/permissions
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
