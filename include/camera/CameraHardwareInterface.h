@@ -84,19 +84,19 @@ typedef void (*data_callback_timestamp)(nsecs_t timestamp,
  */
 class CameraHardwareInterface : public virtual RefBase {
 public:
-    virtual ~CameraHardwareInterface() { }
+    virtual ~CameraHardwareInterface() { } // 0x04
 
     /** Return the IMemoryHeap for the preview image heap */
-    virtual sp<IMemoryHeap>         getPreviewHeap() const = 0;
+    virtual sp<IMemoryHeap>         getPreviewHeap() const = 0; // 0x08
 
     /** Return the IMemoryHeap for the raw image heap */
-    virtual sp<IMemoryHeap>         getRawHeap() const = 0;
+    virtual sp<IMemoryHeap>         getRawHeap() const = 0; // 0x10
 
     /** Set the notification and data callbacks */
     virtual void setCallbacks(notify_callback notify_cb,
                               data_callback data_cb,
                               data_callback_timestamp data_cb_timestamp,
-                              void* user) = 0;
+                              void* user) = 0; // 0x1C
 
     /**
      * The following three functions all take a msgtype,
@@ -107,73 +107,69 @@ public:
     /**
      * Enable a message, or set of messages.
      */
-    virtual void        enableMsgType(int32_t msgType) = 0;
+    virtual void        enableMsgType(int32_t msgType) = 0; // 0x14
 
     /**
      * Disable a message, or a set of messages.
      */
-    virtual void        disableMsgType(int32_t msgType) = 0;
+    virtual void        disableMsgType(int32_t msgType) = 0; // 0x18
 
     /**
      * Query whether a message, or a set of messages, is enabled.
      * Note that this is operates as an AND, if any of the messages
      * queried are off, this will return false.
      */
-    virtual bool        msgTypeEnabled(int32_t msgType) = 0;
+    virtual bool        msgTypeEnabled(int32_t msgType) = 0; // 0x1C
 
     /**
      * Start preview mode.
      */
-    virtual status_t    startPreview() = 0;
+    virtual status_t    startPreview() = 0; // 0x20
 
     /**
      * Only used if overlays are used for camera preview.
      */
-    virtual bool         useOverlay() {return false;}
-    virtual status_t     setOverlay(const sp<Overlay> &overlay) {return BAD_VALUE;}
+    virtual bool         useOverlay() {return false;} // 0x24
+    virtual status_t     setOverlay(const sp<Overlay> &overlay) {return BAD_VALUE;} // 0x28
 
     /**
      * Stop a previously started preview.
      */
-    virtual void        stopPreview() = 0;
+    virtual void        stopPreview() = 0; // 0x2C
 
     /**
      * Returns true if preview is enabled.
      */
-    virtual bool        previewEnabled() = 0;
-
-    /* NVidia extensions, needed for the star's libcamera */
-    virtual status_t    storeMetaDataInBuffers(bool enable) { return enable? INVALID_OPERATION: OK; }
-    virtual status_t    isMetaDataStoredInVideoBuffers() { return false; }
+    virtual bool        previewEnabled() = 0; // 0x30
 
     /**
      * Start record mode. When a record image is available a CAMERA_MSG_VIDEO_FRAME
      * message is sent with the corresponding frame. Every record frame must be released
      * by calling releaseRecordingFrame().
      */
-    virtual status_t    startRecording() = 0;
+    virtual status_t    startRecording() = 0; // 0x34
 
     /**
      * Stop a previously started recording.
      */
-    virtual void        stopRecording() = 0;
+    virtual void        stopRecording() = 0; // 0x38
 
     /**
      * Returns true if recording is enabled.
      */
-    virtual bool        recordingEnabled() = 0;
+    virtual bool        recordingEnabled() = 0; // 0x3C
 
     /**
      * Release a record frame previously returned by CAMERA_MSG_VIDEO_FRAME.
      */
-    virtual void        releaseRecordingFrame(const sp<IMemory>& mem) = 0;
+    virtual void        releaseRecordingFrame(const sp<IMemory>& mem) = 0; // 0x40
 
     /**
      * Start auto focus, the notification callback routine is called
      * with CAMERA_MSG_FOCUS once when focusing is complete. autoFocus()
      * will be called again if another auto focus is needed.
      */
-    virtual status_t    autoFocus() = 0;
+    virtual status_t    autoFocus() = 0; // 0x44
 
     /**
      * Cancels auto-focus function. If the auto-focus is still in progress,
@@ -181,42 +177,48 @@ public:
      * or not, this function will return the focus position to the default.
      * If the camera does not support auto-focus, this is a no-op.
      */
-    virtual status_t    cancelAutoFocus() = 0;
+    virtual status_t    cancelAutoFocus() = 0; // 0x48
 
     /**
      * Take a picture.
      */
-    virtual status_t    takePicture() = 0;
+    virtual status_t    takePicture() = 0; // 0x4C
 
     /**
      * Cancel a picture that was started with takePicture.  Calling this
      * method when no picture is being taken is a no-op.
      */
-    virtual status_t    cancelPicture() = 0;
+    virtual status_t    cancelPicture() = 0; // 0x50
 
     /**
      * Set the camera parameters. This returns BAD_VALUE if any parameter is
      * invalid or not supported. */
-    virtual status_t    setParameters(const CameraParameters& params) = 0;
+    virtual status_t    setParameters(const CameraParameters& params) = 0; // 0x54
 
     /** Return the camera parameters. */
-    virtual CameraParameters  getParameters() const = 0;
+    virtual CameraParameters  getParameters() const = 0; // 0x58
+
+    /**
+     * Stubs for unknown functions
+     */
+    virtual void unknown1(); // 0x5C
+    virtual void unknown2(); // 0x60
 
     /**
      * Send command to camera driver.
      */
-    virtual status_t sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) = 0;
+    virtual status_t sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) = 0; // 0x64
 
     /**
      * Release the hardware resources owned by this object.  Note that this is
      * *not* done in the destructor.
      */
-    virtual void release() = 0;
+    virtual void release() = 0; // 0x68
 
     /**
      * Dump state of the camera hardware
      */
-    virtual status_t dump(int fd, const Vector<String16>& args) const = 0;
+    virtual status_t dump(int fd, const Vector<String16>& args) const = 0; // 0x6C
 
 };
 
