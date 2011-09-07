@@ -105,6 +105,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/usbd:system/bin/usbd \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/whisperd:system/bin/whisperd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/mdm_panicd:system/bin/mdm_panicd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/rild:system/bin/rild \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pppd:system/bin/pppd \\

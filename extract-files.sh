@@ -196,6 +196,7 @@ adb pull /system/bin/chat-ril ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/ftmipcd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/usbd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/akmd2 ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/whisperd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # Pull BT files
 adb pull /system/bin/bt_init ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
