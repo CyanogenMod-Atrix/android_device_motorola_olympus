@@ -459,8 +459,7 @@ service touch /system/bin/logwrapper /system/bin/touchpad -a
 
 service whisperd /system/bin/whisperd /dev/ttyHS0
     class post-zygote_services
-    user system
-    group system
+    user root
     oneshot
 
 #start Authentec VPN service
