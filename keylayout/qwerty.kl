@@ -13,7 +13,7 @@ key 1     BACK              WAKE_DROPPED
 key 158   BACK              WAKE_DROPPED
 key 230   SOFT_RIGHT        WAKE
 key 60    SOFT_RIGHT        WAKE
-key 107   POWER             WAKE_DROPPED
+key 107   POWER             WAKE
 key 62    ENDCALL           WAKE_DROPPED
 key 126   MENU              WAKE_DROPPED
 key 229   MENU              WAKE_DROPPED
