@@ -199,10 +199,10 @@ public:
     virtual CameraParameters  getParameters() const = 0; // 0x58
 
     /**
-     * Stubs for unknown functions
+     * Set/return custom camera parameters
      */
-    virtual void unknown1(); // 0x5C
-    virtual void unknown2(); // 0x60
+    virtual status_t    setCustomParameters(const CameraParameters& params) = 0; // 0x5C
+    virtual CameraParameters  getCustomParameters() const = 0; // 0x60
 
     /**
      * Send command to camera driver.
