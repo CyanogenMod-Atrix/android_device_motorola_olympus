@@ -123,7 +123,7 @@ TARGET_USE_MOTO_CUSTOM_CAMERA_PARAMETERS := true
 TARGET_SPECIFIC_HEADER_PATH := device/motorola/olympus/include
 
 #EGL
-BOARD_EGL_CFG := device/motorola/olympus/egl.cfg
+BOARD_EGL_CFG := device/motorola/olympus/config/egl.cfg
 
 #USB Tethering
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/olympus/UsbController.cpp
