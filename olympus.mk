@@ -91,7 +91,9 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/keylayout/evfwd.kl:system/usr/keylayout/evfwd.kl \
     device/motorola/olympus/keychars/evfwd.kcm.bin:system/usr/keychars/evfwd.kcm.bin \
     device/motorola/olympus/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl \
-    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/usb_keyboard_102_en_us.kcm.bin
+    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/usb_keyboard_102_en_us.kcm.bin \
+    device/motorola/olympus/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/Motorola_Bluetooth_Wireless_Keyboard.kl \
+    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/Motorola_Bluetooth_Wireless_Keyboard.kcm.bin
 
 # Permission files
 PRODUCT_COPY_FILES += \
