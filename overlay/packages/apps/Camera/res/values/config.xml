@@ -18,6 +18,10 @@
 -->
 
 <resources>
+	<!-- Touch to focus parameters -->
+	<string name="touchFocusParameter">mot-areas-to-focus</string>
+	<bool name="touchFocusNeedsRect">true</bool>
+
 	<!-- High Framerate 1080p for Nvidia Cameras -->
 	<bool name="supportsNvHighBitrateFullHD">true</bool>
 </resources>
