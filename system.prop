@@ -5,6 +5,7 @@ ro.sf.lcd_density=240
 dalvik.vm.heapsize=42m
 
 #RIL
+ro.telephony.ril_class=mototegra
 rild.libpath=/system/lib/libmoto_ril.so
 persist.ril.mux.noofchannels=9
 persist.ril.mux.ttydevice=/dev/ttyHS3
