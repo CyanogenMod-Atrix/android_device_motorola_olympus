@@ -80,6 +80,7 @@ BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 #BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p18
 BOARD_VOLD_MAX_PARTITIONS := 18
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun0/file
