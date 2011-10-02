@@ -68,6 +68,7 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_PACKAGES += Usb \
+			DockAudio \
 			Torch
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
