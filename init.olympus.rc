@@ -368,25 +368,6 @@ on property:sys.chargeonly.mode=1
     stop zygote
     exec /system/bin/charge_only_mode
 
-# Moto safe power down
-on property:sys.reboot=1
-    stop ssmgrd
-    exec /system/bin/sleep 10
-    exec /system/bin/reboot
-
-on property:sys.shutdown=1
-    stop ssmgrd
-    exec /system/bin/sleep 10
-    exec /system/bin/reboot -p
-    setprop Drmdll.asfdrm libnvdrm.so
-
-# NvLogger settings for NvMM
-    setprop persist.tegra.nvlog.level 4
-#   setprop persist.tegra.nvlog.14.level 5
-
-#Setting required to load DRm lib
-   setprop persist.tegra.drmlib.asfdrm  libnvdrm.so
-
 service nvrm_daemon /system/bin/logwrapper /system/bin/nvrm_daemon
     class pre-zygote_services
     user root
@@ -488,37 +469,6 @@ service hciattach /system/bin/hciattach_wrapper.sh
     oneshot
     disabled
 
-# The following services are added by moto
-
-# Set property strings for ATVC logging
-# This conditionally sets :
-# ro.sys.atvc_allow_bp_log
-# ro.sys.atvc_allow_gki_log
-# ro.sys.atvc_allow_ap_mot_log
-# ro.sys.atvc_allow_all_core
-# ro.sys.atvc_allow_res_core
-# ro.sys.atvc_allow_res_panic
-# ro.sys.atvc_allow_efem
-# ro.sys.atvc_allow_netmon_usb
-# ro.sys.atvc_allow_netmon_ih
-# ro.sys.atvc_allow_all_adb
-service atvc /system/bin/dbvc_atvc_property_set
-       class pre-zygote_services
-       user system
-       group system
-       oneshot
-
-service dlnasrv /system/bin/dlnasrv
-    class post-zygote_services
-    user system
-    group system net_admin sdcard_rw new_raw inet mount misc
-    oneshot
-    disabled
-
-#Check available storage space to execute device encryption or decryprion
-on property:sys.mot.encrypt.test=1
-    exec /system/bin/encryption_test
-    exec /system/bin/setprop sys.mot.encrypt.test ""
 # This is product specific init script which will be appended to init.rc
 # after init.nv_common.rc. 
 
@@ -548,17 +498,6 @@ on boot
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
 
-# OSH properties
-    setprop sys.SystemMode RM_SM_MOBILE
-    setprop sys.FbOwner 3
-    setprop sys.DispOwnerLcd 3
-    setprop sys.DispOwnerHdmi 1
-    setprop sys.AiwFocus 3
-    setprop sys.AMActiveTask 2
-
-# Mount OSH
-    exec /system/bin/mountosh -d /dev/block/mmcblk0p13
-
 # USB IPC Power Management Settings
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/autosuspend 2
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/level auto
@@ -584,46 +523,11 @@ on boot
       setprop net.tcp.buffersize.gprs    4096,8192,12288,4096,8192,12288
 
 
-#OSH Startup
-service slrestart /usr/local/bin/start_syslog.sh
-	class pre-zygote_services
-	oneshot
-	disabled
-
-on property:ro.build.type=userdebug
-	start slrestart
-
-on property:ro.build.type=eng
-	start slrestart
-
-service fbcp /etc/init.d/start_fbcp.sh
-    class pre-zygote_services
-    user system
-    group system
-    oneshot
-
-on property:dev.bootcomplete=1
-    setprop ro.webtop.boot 1
-
-on property:ro.webtop.boot=1
-    exec /system/bin/logwrapper /ubuntu.sh
-
-on property:sys.SystemMode=RM_SM_DOCKED
-    exec /osh/etc/init.d/startX.sh
-
 # ppp daemon used by DUN.
 service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
     class post-zygote_services
     user root
     disabled
-    oneshot
-
-# FIX ME before ship
-# This is utility that we can throw logging script on demand.
-# Useful to get a logs from very start up.
-service logging /system/bin/sh /data/logging.sh
-    user root
-    class pre-zygote_services
     oneshot
 
 # Fingerprint sensor daemon
@@ -641,6 +545,3 @@ service mdm_panicd /system/bin/mdm_panicd
     class post-zygote_services
     oneshot
 
-# internal sdcard
-on boot
-    exec /system/bin/sh /system/bin/check_sdc.sh

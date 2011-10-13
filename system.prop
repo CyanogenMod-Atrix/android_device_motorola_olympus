@@ -63,3 +63,11 @@ ro.battery_light=true
 
 # Allow people to exchange sdcard and emmc mountpoints from CMParts
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
+# Tegra debugging
+persist.tegra.nvlog.level=4
+#persist.tegra.nvlog.14.level=5
+
+# DRM
+persist.tegra.drmlib.asfdrm=libnvdrm.so
+Drmdll.asfdrm=libnvdrm.so
