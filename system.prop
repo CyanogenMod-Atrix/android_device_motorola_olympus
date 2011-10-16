@@ -19,6 +19,7 @@ persist.ril.mux.sleep=2
 ro.kernel.android.ril=yes
 persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
+ro.ril.ntmodeglobal=true
 
 #Define TCP buffer sizes for various networks
 #ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
