@@ -77,7 +77,6 @@ adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEV
 adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # Pull needed NV libs
-adb pull /system/lib/liba2dp.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/librds_util.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libril_rds.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
@@ -156,7 +155,6 @@ adb pull /system/bin/nvmm_service.axf ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/bin/nvmm_adtsdec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_wavdec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_reference.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/nv_hciattach ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_sorensondec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_mp3dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvddk_audiofx_core.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
@@ -167,21 +165,14 @@ adb pull /system/bin/nvmm_jpegenc.axf ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/bin/nvddk_audiofx_transport.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_mp2dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/ap_gain.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/memtest_mode ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_mpeg4dec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_wmadec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_audiomixer.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_manager.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvmm_jpegdec.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/nvrm_avp.axf ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/tegrastats ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/omx_tests ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/tund ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/sdptool ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/Hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/battd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/bin/remountpds ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/touchpad ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/mdm_panicd ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/rild ../../../vendor/$VENDOR/$DEVICE/proprietary/bin

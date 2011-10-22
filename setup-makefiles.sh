@@ -100,9 +100,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/tund:system/bin/tund \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_init:system/bin/bt_init \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/bt_downloader:system/bin/bt_downloader \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/sdptool:system/bin/sdptool \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/Hostapd:system/bin/Hostapd \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/remountpds:system/bin/remountpds \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/battd:system/bin/battd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/usbd:system/bin/usbd \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/whisperd:system/bin/whisperd \\
@@ -178,7 +175,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril_rds.so:system/lib/libril_rds.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmoto_ril.so:system/lib/libmoto_ril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/librds_util.so:system/lib/librds_util.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liba2dp.so:system/lib/liba2dp.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnmea.so:system/lib/libnmea.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbattd.so:system/lib/libbattd.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm_channel.so:system/lib/libnvrm_channel.so
