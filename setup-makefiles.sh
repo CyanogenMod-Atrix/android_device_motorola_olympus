@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.tegra.so:system/lib/hw/overlay.tegra.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.olympus.so:system/lib/hw/sensors.olympus.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.olympus.so:system/lib/hw/gps.olympus.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.tegra.so:system/lib/liblights.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.tegra.so:system/lib/hw/lights.tegra.so
 
 # EGL
 PRODUCT_COPY_FILES += \\
