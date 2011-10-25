@@ -239,6 +239,7 @@ wget "${BASEURL}touchpad.cfg" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/etc
 wget "${BASEURL}FastDormancy.apk" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/app/FastDormancy.apk
 wget "${BASEURL}battd" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/battd
 wget "${BASEURL}libbattd.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbattd.so
+wget "${BASEURL}libnmea.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libnmea.so
 wget "${BASEURL}gps.olympus.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/gps.olympus.so
 
 ./setup-makefiles.sh
