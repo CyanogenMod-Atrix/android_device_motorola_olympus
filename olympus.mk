@@ -45,6 +45,9 @@ PRODUCT_COPY_FILES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Set en_US as default locale
+PRODUCT_LOCALES := en_US
+
 # olympus uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
