@@ -2,7 +2,7 @@
 # system.prop for olympus
 #
 ro.sf.lcd_density=240
-dalvik.vm.heapsize=42m
+dalvik.vm.heapsize=64m
 
 #RIL
 ro.telephony.ril_class=mototegra
