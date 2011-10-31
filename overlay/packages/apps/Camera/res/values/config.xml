@@ -26,7 +26,4 @@
 	<bool name="ffc_canFocus">false</bool>
 	<bool name="ffc_canZoom">false</bool>
 	<string name="ffc_supportedEffects">none</string>
-
-	<!-- High Framerate 1080p for Nvidia Cameras -->
-	<bool name="supportsNvHighBitrateFullHD">true</bool>
 </resources>
