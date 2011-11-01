@@ -129,3 +129,6 @@ BOARD_EGL_CFG := device/motorola/olympus/config/egl.cfg
 #USB Tethering
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/olympus/UsbController.cpp
 BOARD_HAS_LARGE_FILESYSTEM := true
+
+# Dock Audio
+BOARD_USE_MOTO_DOCK_HACK := true
