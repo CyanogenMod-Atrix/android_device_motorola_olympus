@@ -241,5 +241,6 @@ wget "${BASEURL}battd" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/battd
 wget "${BASEURL}libbattd.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbattd.so
 wget "${BASEURL}libnmea.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libnmea.so
 wget "${BASEURL}gps.olympus.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/gps.olympus.so
+wget "${BASEURL}libmoto_ril.so" -O ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libmoto_ril.so
 
 ./setup-makefiles.sh
