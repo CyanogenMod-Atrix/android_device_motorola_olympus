@@ -135,6 +135,8 @@ PRODUCT_COPY_FILES += \\
 # system libs
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmirror.so:system/lib/libmirror.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libextdisp.so:system/lib/libextdisp.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libhdmi.so:system/lib/libhdmi.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvwsi.so:system/lib/libnvwsi.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \\
@@ -190,5 +192,15 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
+
+# HDMI
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/framework/com.motorola.android.iextdispservice.jar:system/framework/com.motorola.android.iextdispservice.jar \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/framework/com.motorola.android.imirrorservice.jar:system/framework/com.motorola.android.imirrorservice.jar \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmirrorjni.so:system/lib/libmirrorjni.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/permissions/com.motorola.android.iextdispservice.xml:system/etc/permissions/com.motorola.android.iextdispservice.xml \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/permissions/com.motorola.android.imirrorservice.xml:system/etc/permissions/com.motorola.android.imirrorservice.xml \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/app/ExtDispService.apk:system/app/ExtDispService.apk \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/app/MirrorService.apk:system/app/MirrorService.apk
 
 EOF
