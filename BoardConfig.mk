@@ -53,7 +53,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8355840
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 4194304
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 167772160
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 197772160
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_JANKY_BACKBUFFER := true
@@ -79,7 +79,7 @@ TARGET_NO_RECOVERY := false
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 #BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p18
-BOARD_VOLD_MAX_PARTITIONS := 18
+BOARD_VOLD_MAX_PARTITIONS := 19
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
@@ -104,13 +104,15 @@ TARGET_ELECTRONBEAM_FRAMES := 20
 
 # WiFi
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 BOARD_WLAN_DEVICE           := bcm4329
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin"
+WIFI_DRIVER_FW_PATH_STA     := "/system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin"
+WIFI_DRIVER_FW_PATH_AP      := "/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wl/sdio-ag-cdc-full11n-minioctl-roml-pno-wme-aoe-pktfilter-keepalive.bin nvram_path=/system/etc/wl/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
+WIFI_DRIVER_SOCKET_IFACE    := eth0
 
 #Fix _sync functions for RIL
 TARGET_MOTO_SYNC_FUNCTIONS := true
@@ -132,3 +134,9 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Dock Audio
 BOARD_USE_MOTO_DOCK_HACK := true
+
+#USE_OPENGL_RENDERER := true
+
+BOARD_USES_AUDIO_LEGACY := true
+
+BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"

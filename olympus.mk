@@ -65,11 +65,13 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+$(call inherit-product, build/target/product/full_base_telephony.mk)
 
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
-			Torch
+			Torch \
+			audio.primary.olympus \
+			audio.a2dp.default
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
@@ -78,8 +80,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml \
-    device/motorola/olympus/config/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/motorola/olympus/prebuilts/liba2dp.so:system/lib/liba2dp.so \
+    #device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml \
 
 #keyboard files
 PRODUCT_COPY_FILES += \
@@ -87,6 +89,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/keychars/tegra-kbc.kcm.bin:system/usr/keychars/tegra-kbc.kcm.bin \
     device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/motorola/olympus/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/motorola/olympus/keylayout/qtouch-obp-ts.kl:system/usr/keylayout/qtouch-obp-ts.kl \
+    device/motorola/olympus/config/qtouch-obp-ts.idc:system/usr/idc/qtouch-obp-ts.idc \
     device/motorola/olympus/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl:system/usr/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl \
     device/motorola/olympus/keylayout/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
     device/motorola/olympus/keylayout/evfwd.kl:system/usr/keylayout/evfwd.kl \
