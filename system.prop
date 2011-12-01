@@ -20,6 +20,7 @@ ro.kernel.android.ril=yes
 persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
 ro.ril.ntmodeglobal=true
+ro.telephony.ril.v3=datacall,signalstrength,icccarddstatus,skipbrokendatacall
 
 #Define TCP buffer sizes for various networks
 #ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
