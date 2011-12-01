@@ -1,7 +1,10 @@
 on init
+    export EXTERNAL_STORAGE /mnt/sdcard
     export PHONE_STORAGE /mnt/emmc
-    # create mountpoints for internal "SD"
+    # create mountpoints for storage
+    mkdir /mnt/sdcard 0000 system system
     mkdir /mnt/emmc 0000 system system
+    symlink /mnt/sdcard /sdcard
     # battery driver permissions
     mkdir /pds 0755 root root
     mkdir /osh 0000 root root
@@ -76,13 +79,23 @@ on post-fs
     chown root system /proc/sysrq-trigger
     chmod 0220 /proc/sysrq-trigger
 
+    # wlan permissions
+    mkdir /data/misc/wifi 0771 wifi wifi
+    mkdir /data/misc/wifi/sockets 0771 wifi wifi
+    mkdir /data/misc/dhcp 0771 dhcp dhcp
+    setprop wifi.interface eth0
+    setprop softap.interface wl0.1
+
+    # usbd permissions
+    mkdir /data/usbd 0777 system system
+
 on boot
     # nvrm permissions
     chmod 666 /dev/nvrm
 
     # knvrm permissions
     chmod 660 /dev/knvrm
-    chown root system /dev/knvrm
+    chown system audio /dev/knvrm
 
     # nvrpc permissions
     chmod 666 /dev/nvrpc
@@ -92,7 +105,7 @@ on boot
 
     # nvos/knvos permissions
     chmod 660 /dev/knvos
-    chown root system /dev/knvos
+    chown system audio /dev/knvos
     chmod 666 /dev/nvos
 
     # nvhost permissions
@@ -134,21 +147,6 @@ on boot
     chmod 0664 /proc/bt_stat
     chmod 0664 /proc/bt_status
     chmod 0664 /proc/bluetooth/sleep/proto
-
-    # wlan permissions
-    mkdir /data/misc/wifi 0771 wifi wifi  
-    mkdir /data/misc/wifi/sockets 0771 system wifi 
-    chown system wifi /data/misc/wifi/sockets 
-    chmod 0771 /data/misc/wifi
-    mkdir /data/misc/dhcp 0771 dhcp dhcp 
-    chown dhcp dhcp /data/misc/dhcp
-    mkdir /data/misc/dhcpcd 0771 dhcp dhcp 
-    chown dhcp dhcp /data/misc/dhcpcd
-    setprop wifi.interface eth0
-    setprop softap.interface wl0.1
-
-    # usbd permissions
-    mkdir /data/usbd 0777 system system
 
     # multimedia power regulators
     chown root system /sys/devices/platform/reg-virt-vcam/enabled
@@ -365,6 +363,7 @@ on property:tcmd.ctrl_adb=0
 on property:sys.chargeonly.mode=1
     class_start pre-zygote_services
     class_stop post-zygote_services
+    class_stop main
     stop zygote
     exec /system/bin/charge_only_mode
 
@@ -374,6 +373,7 @@ service nvrm_daemon /system/bin/logwrapper /system/bin/nvrm_daemon
     onrestart restart servicemanager
 
 service bt_start /system/bin/bt_init_wrapper.sh
+    class pre-zygote_services
     user bluetooth
     group bluetooth net_bt_admin net_raw net_admin misc
     oneshot
@@ -384,16 +384,16 @@ service bt_stop /system/bin/bt_init -stop
     disabled
     oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant -D wext -i eth0 -c /data/misc/wifi/wpa_supplicant.conf
+service wpa_supplicant /system/bin/wpa_supplicant -D wext -i eth0 -c /data/misc/wifi/wpa_supplicant.conf -e /data/misc/wifi/entropy.bin
     class WLAN
     socket wpa_eth0 dgram 0660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL -d eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
     class WLAN
     #user system  #- this makes socket() calls fail with permission denied
-    group dhcp
+    #group dhcp
     disabled
     oneshot
 
@@ -493,7 +493,7 @@ on boot
 	chgrp system /data/am2data.db.meta
 
 # Enable ADB
-#   write /dev/usb_device_mode charge_adb
+   write /dev/usb_device_mode charge_adb
 
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
