@@ -83,3 +83,5 @@ dalvik.vm.dexopt-flags=m=y,u=n
 
 # Enable HDMI mirroring
 ro.hdmi.mirror.enable=true
+
+persist.sys.usb.config=mass_storage,adb

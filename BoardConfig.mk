@@ -134,6 +134,9 @@ COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/olympus/UsbController.cpp
 BOARD_HAS_LARGE_FILESYSTEM := true
 
+#UMS
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/usb_mass_storage/lun%d/file"
+
 # Dock Audio
 BOARD_USE_MOTO_DOCK_HACK := true
 

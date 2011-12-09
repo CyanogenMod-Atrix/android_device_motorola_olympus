@@ -394,4 +394,7 @@
     <!-- Default network policy warning threshold, in megabytes. -->
     <integer name="config_networkPolicyDefaultWarning">500</integer>
 
+    <!-- Use legacy USB device manager. -->
+    <bool name="config_usesLegacyUsbDeviceManager">true</bool>
+
 </resources>
