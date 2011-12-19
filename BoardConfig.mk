@@ -129,6 +129,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/motorola/olympus/include
 BOARD_EGL_CFG := device/motorola/olympus/config/egl.cfg
 COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS
 #USE_OPENGL_RENDERER := true
+BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
 
 #USB Tethering
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/olympus/UsbController.cpp
