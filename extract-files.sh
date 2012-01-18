@@ -17,6 +17,8 @@
 VENDOR=motorola
 DEVICE=olympus
 
+alias adb='adb.sh'
+
 rm -rf ../../../vendor/$VENDOR/$DEVICE/* #dont delete the git folder
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/app
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/framework
