@@ -2,7 +2,6 @@
 # system.prop for olympus
 #
 ro.sf.lcd_density=240
-dalvik.vm.heapsize=64m
 
 #RIL
 rild.libpath=/system/lib/libmoto_ril.so
