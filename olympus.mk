@@ -82,7 +82,6 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 # Board-specific init
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
-    device/motorola/olympus/init.vsnet:system/bin/init.vsnet \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     device/motorola/olympus/prebuilts/liba2dp.so:system/lib/liba2dp.so \
     #device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml \
