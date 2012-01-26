@@ -81,6 +81,7 @@ on post-fs
     chown root system /proc/sysrq-trigger
     chmod 0220 /proc/sysrq-trigger
 
+on post-fs-data
     # wlan permissions
     mkdir /data/misc/wifi 0771 wifi wifi
     mkdir /data/misc/wifi/sockets 0771 wifi wifi
