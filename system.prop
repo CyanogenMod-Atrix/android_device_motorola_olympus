@@ -69,3 +69,9 @@ ro.hdmi.mirror.enable=true
 
 # Default USB Mode
 persist.sys.usb.config=mass_storage
+
+
+# Fingerprint
+ro.authentec.fingerprint.jar=/system/framework/am2app.jar
+ro.authentec.fingerprint.so=/system/lib/libam2app.so
+
