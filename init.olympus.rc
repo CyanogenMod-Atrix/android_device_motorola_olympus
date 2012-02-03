@@ -7,6 +7,14 @@ on init
     mkdir /mnt/sdcard 0000 system system
     mkdir /mnt/emmc 0000 system system
     symlink /mnt/sdcard /sdcard
+    mkdir /mnt/usbdisk_1.0 0000 system system
+    mkdir /mnt/usbdisk_1.1 0000 system system
+    mkdir /mnt/usbdisk_1.2 0000 system system
+    mkdir /mnt/usbdisk_1.3 0000 system system
+    mkdir /mnt/usbdisk_1.4 0000 system system
+    mkdir /mnt/usbdisk_1.5 0000 system system
+    mkdir /mnt/usbdisk_1.6 0000 system system
+    mkdir /mnt/usbdisk_1.7 0000 system system
     # battery driver permissions
     mkdir /pds 0755 root root
     mkdir /osh 0000 root root
@@ -22,16 +30,7 @@ on fs
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
 
 on post-fs
-    symlink /system/lib /vendor/lib
     # once everything is setup, no need to modify /
-    mkdir /mnt/usbdisk_1.0 0000 system system
-    mkdir /mnt/usbdisk_1.1 0000 system system
-    mkdir /mnt/usbdisk_1.2 0000 system system
-    mkdir /mnt/usbdisk_1.3 0000 system system
-    mkdir /mnt/usbdisk_1.4 0000 system system
-    mkdir /mnt/usbdisk_1.5 0000 system system
-    mkdir /mnt/usbdisk_1.6 0000 system system
-    mkdir /mnt/usbdisk_1.7 0000 system system
     mount rootfs rootfs / ro remount
 
     # We chown/chmod /data again so because mount is run as root + defaults
@@ -158,7 +157,7 @@ on boot
     chown root system /sys/devices/platform/reg-virt-sw5/enabled
 
     # sdcard tweaks
-    write /sys/block/mmcblk1/bdi/read_ahead_kb 4096
+    write /sys/block/mmcblk1/bdi/read_ahead_kb 1024
 
     # create the necessary dirs for tpapi with proper permission
     mkdir /data/tpapi
@@ -291,9 +290,18 @@ on boot
 # Start services
     exec /system/bin/mot_boot_mode
 
+# triggered by holding down volume down, volume up and power
+service reboot_key /system/bin/reboot
+    user system
+    oneshot
+    keycodes 114 115 107
+    disabled
+
 service tcmd /system/bin/tcmd
     class post-zygote_services
-    group system radio input system log camera graphics sdcard_rw audio inet bluetooth wifi compass cache system mount net_bt_admin net_raw net_admin
+    # group option accepts at most 12 suppl. groups
+    group system radio input system camera graphics sdcard_rw audio inet bluetooth wifi net_admin
+    #group log compass cache mount net_bt_admin net_raw
     socket local_tcmd stream 0660 system system
     socket batch_socket stream 0600 system system
 
