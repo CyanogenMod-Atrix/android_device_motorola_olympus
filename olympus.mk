@@ -74,6 +74,7 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
+			camera.olympus \
 			audio.primary.olympus \
 			audio.a2dp.default
 
@@ -84,7 +85,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     device/motorola/olympus/prebuilts/liba2dp.so:system/lib/liba2dp.so \
-    #device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml \
+    device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml
 
 #keyboard files
 PRODUCT_COPY_FILES += \
