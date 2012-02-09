@@ -34,9 +34,8 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 # motorola helper scripts
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
-    device/motorola/olympus/scripts/usb_switch.sh:system/bin/usb_switch.sh \
     device/motorola/olympus/scripts/bt_init_wrapper.sh:system/bin/bt_init_wrapper.sh \
-    device/motorola/olympus/scripts/hciattach_wrapper.sh:system/bin/hciattach_wrapper.sh
+    device/motorola/olympus/scripts/usb_switch.sh:system/bin/usb_switch.sh
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
@@ -75,6 +74,8 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
+			hciconfig \
+			hcitool \
 			camera.olympus \
 			audio.primary.olympus \
 			audio.a2dp.default
