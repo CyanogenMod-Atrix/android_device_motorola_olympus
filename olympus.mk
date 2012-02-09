@@ -34,6 +34,7 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 # motorola helper scripts
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    device/motorola/olympus/scripts/usb_switch.sh:system/bin/usb_switch.sh \
     device/motorola/olympus/scripts/bt_init_wrapper.sh:system/bin/bt_init_wrapper.sh \
     device/motorola/olympus/scripts/hciattach_wrapper.sh:system/bin/hciattach_wrapper.sh
 
