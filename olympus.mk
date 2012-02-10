@@ -74,6 +74,7 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
+			OlympusParts \
 			hciconfig \
 			hcitool \
 			camera.olympus \
