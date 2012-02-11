@@ -95,6 +95,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/keylayout/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \
     device/motorola/olympus/keychars/tegra-kbc.kcm.bin:system/usr/keychars/tegra-kbc.kcm.bin \
     device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/BTC_USB_Cordless_Mouse.kl \
     device/motorola/olympus/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/motorola/olympus/keylayout/qtouch-obp-ts.kl:system/usr/keylayout/qtouch-obp-ts.kl \
     device/motorola/olympus/config/qtouch-obp-ts.idc:system/usr/idc/qtouch-obp-ts.idc \
