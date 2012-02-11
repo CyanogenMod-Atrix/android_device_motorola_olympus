@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += Usb \
 			OlympusParts \
 			hciconfig \
 			hcitool \
+			rilwrap \
 			camera.olympus \
 			audio.primary.olympus \
 			audio.a2dp.default
