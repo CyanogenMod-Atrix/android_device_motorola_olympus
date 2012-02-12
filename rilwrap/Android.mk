@@ -1,3 +1,6 @@
+# Build only on olympus
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),olympus)
+
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -14,3 +17,4 @@ LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)
 
+endif
