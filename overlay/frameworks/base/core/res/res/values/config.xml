@@ -242,9 +242,6 @@
     -->
     <integer name="config_longPressOnHomeBehavior">2</integer>
 
-    <!-- If this is true, the screen will fade off. -->
-    <bool name="config_animateScreenLights">false</bool>
-
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">5</integer>
 
