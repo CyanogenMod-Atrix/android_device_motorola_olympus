@@ -78,3 +78,5 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.authentec.fingerprint.jar=/system/framework/am2app.jar
 ro.authentec.fingerprint.so=/system/lib/libam2app.so
 
+# CRT animation speed
+debug.sf.electron_frames=42
