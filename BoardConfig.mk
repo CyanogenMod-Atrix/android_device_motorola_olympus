@@ -45,6 +45,19 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/motorola/olympus/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/olympus/recovery/recovery_ui.c
 BOARD_HAS_SDCARD_INTERNAL := true
 
+# Kernel configuration for inline building
+TARGET_KERNEL_CONFIG := tegra_olympus_cm9_defconfig
+TARGET_PREBUILT_KERNEL := device/motorola/olympus/kernel
+
+OLYMPUS_WIFI_MODULE:
+	make -C kernel/motorola/olympus/wifi-module/open-src/src/dhd/linux/ \
+	ARCH="arm" CROSS_COMPILE="arm-eabi-" LINUXSRCDIR=kernel/olympus/ \
+	LINUXBUILDDIR=$(KERNEL_OUT) \
+	LINUXVER=$(shell strings "$(KERNEL_OUT)/vmlinux"|grep '2.6.*MB860'|tail -n1) \
+	BCM_INSTALLDIR="$(ANDROID_BUILD_TOP)/$(KERNEL_MODULES_OUT)"
+
+TARGET_KERNEL_MODULES := OLYMPUS_WIFI_MODULE
+
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
