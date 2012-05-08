@@ -3,6 +3,7 @@
     <string name="app_name">Atrix Settings</string>
     <string name="main_title">Motorola Atrix Settings</string>
     <string name="navigation_configuration">Fingerprint sensor navigation</string>
+    <string name="database_administration">Manage fingerprints</string>
     <string name="hdmi_audio_title">HDMI Audio</string>
     <string name="hdmi_audio_summary">Enable or disable audio over HDMI</string>
 </resources>

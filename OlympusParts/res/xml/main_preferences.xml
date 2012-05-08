@@ -6,6 +6,11 @@
 			android:targetPackage="com.authentec.TrueSuiteMobile"
 			android:targetClass="com.authentec.TrueSuiteMobile.NavigationConfiguration" />
 	</PreferenceScreen>
+	<PreferenceScreen android:title="@string/database_administration">
+		<intent android:action="android.intent.action.MAIN"
+			android:targetPackage="com.authentec.TrueSuiteMobile"
+			android:targetClass="com.authentec.TrueSuiteMobile.DatabaseAdministration" />
+	</PreferenceScreen>
 
 
 	<CheckBoxPreference
