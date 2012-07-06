@@ -69,6 +69,7 @@ PRODUCT_PACKAGES += Usb \
 			hciconfig \
 			hcitool \
 			rilwrap \
+			lights.olympus \
 			camera.olympus \
 			hwcomposer.default \
 			audio.primary.olympus \
