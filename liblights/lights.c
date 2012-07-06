@@ -18,7 +18,7 @@
 
 
 #define LOG_TAG "lights"
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #include <cutils/log.h>
 
@@ -45,7 +45,6 @@ char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness"; /*
 char const*const LED_RED = "/sys/class/leds/red/brightness";
 char const*const LED_GREEN = "/sys/class/leds/green/brightness";
 char const*const LED_BLUE = "/sys/class/leds/blue/brightness";
-char const*const LED_WHITE = "/sys/class/leds/white/brightness";
 char const*const LED_BLINK = "/sys/class/leds/red/blink";
 
 #define MAX_WRITE_CMD 25
@@ -54,8 +53,7 @@ struct led_config {
     int red;
     int green;
     int blue;
-    int white;
-    char blink[MAX_WRITE_CMD];
+    int blink;
 };
 
 void init_g_lock(void)
@@ -82,31 +80,6 @@ static int write_int(char const *path, int value)
     } else {
         if (already_warned == 0) {
             LOGE("write_int failed to open %s\n", path);
-            already_warned = 1;
-        }
-        return -errno;
-    }
-}
-
-static int write_str(char const *path, const char* value)
-{
-    int fd;
-    static int already_warned;
-
-    already_warned = 0;
-
-    LOGV("write_str: path %s, value %s", path, value);
-    fd = open(path, O_RDWR);
-
-    if (fd >= 0) {
-        char buffer[MAX_WRITE_CMD];
-        int bytes = sprintf(buffer, "%s\n", value);
-        int amt = write(fd, buffer, bytes);
-        close(fd);
-        return amt == -1 ? -errno : 0;
-    } else {
-        if (already_warned == 0) {
-            LOGE("write_str failed to open %s\n", path);
             already_warned = 1;
         }
         return -errno;
@@ -162,17 +135,10 @@ static int write_leds(struct led_config led)
     int err = 0;
 
     pthread_mutex_lock(&g_lock);
-    /* Using the white entry clears the other leds
-     * probably the 'white' is just the 3 others on */
-    if (led.white)
-    {
-        err = write_int(LED_WHITE, led.white);
-    } else {
-        err = write_int(LED_RED, led.red);
-        err = write_int(LED_GREEN, led.green);
-        err = write_int(LED_BLUE, led.blue);
-        err = write_str(LED_BLINK, led.blink);
-    }
+    err = write_int(LED_RED, led.red);
+    err = write_int(LED_GREEN, led.green);
+    err = write_int(LED_BLUE, led.blue);
+    err = write_int(LED_BLINK, led.blink);
     pthread_mutex_unlock(&g_lock);
 
     return err;
@@ -190,20 +156,22 @@ static int set_light_leds(struct light_state_t const *state, int type)
             led.red = 0;
             led.green = 0;
             led.blue = 0;
-            led.white = 0;
-            snprintf(led.blink, MAX_WRITE_CMD, "0");
+            led.blink = 0;
         break;
     case LIGHT_FLASH_TIMED:
     case LIGHT_FLASH_HARDWARE:
             led.red = (colorRGB >> 16) & 0xFF;
             led.green = (colorRGB >> 8) & 0xFF;
             led.blue = colorRGB & 0xFF;
-            led.white = (((colorRGB & 0xFFFFFF) >> 16) == 0xFF ? 0xFF : 0);
-            snprintf(led.blink, MAX_WRITE_CMD, "%d", state->flashOnMS);
+            led.blink = !!state->flashOnMS;
         break;
     default:
         return -EINVAL;
     }
+
+    LOGE("Mode is %d, rgb 0x%x, on %d, off %d\n",
+        state->flashMode, state->color,
+        state->flashOnMS,state->flashOffMS);
 
     return write_leds(led);
 }
@@ -227,14 +195,12 @@ static int set_light_battery(struct light_device_t *dev,
         led.red = 0;
         led.green = 0;
         led.blue = 0;
-        led.white = 0;
-        snprintf(led.blink, MAX_WRITE_CMD, "0");
+        led.blink = 0;
     } else {
         led.red = (colorRGB >> 16) & 0xFF;
         led.green = (colorRGB >> 8) & 0xFF;
         led.blue = colorRGB & 0xFF;
-        led.white = (((colorRGB & 0xFFFFFF) >> 16) == 0xFF ? 0xFF : 0);
-        snprintf(led.blink, MAX_WRITE_CMD, "%d", state->flashOnMS);
+        led.blink = !!state->flashOnMS;
     }
 
     return write_leds(led);
