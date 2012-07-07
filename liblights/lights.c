@@ -164,6 +164,9 @@ static int set_light_leds(struct light_state_t const *state, int type)
             led.green = (colorRGB >> 8) & 0xFF;
             led.blue = colorRGB & 0xFF;
             led.blink = !!state->flashOnMS;
+            /* Support non-blinking leds using the notification API */
+            if (state->flashOnMS > 100000)
+                led.blink = 0;
         break;
     default:
         return -EINVAL;
