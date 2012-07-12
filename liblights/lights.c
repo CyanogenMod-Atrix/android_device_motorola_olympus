@@ -68,7 +68,7 @@ static int write_int(char const *path, int value)
 
     already_warned = 0;
 
-    LOGV("write_int: path %s, value %d", path, value);
+    ALOGV("write_int: path %s, value %d", path, value);
     fd = open(path, O_RDWR);
 
     if (fd >= 0) {
@@ -79,7 +79,7 @@ static int write_int(char const *path, int value)
         return amt == -1 ? -errno : 0;
     } else {
         if (already_warned == 0) {
-            LOGE("write_int failed to open %s\n", path);
+            ALOGE("write_int failed to open %s\n", path);
             already_warned = 1;
         }
         return -errno;
@@ -122,7 +122,7 @@ static int set_light_buttons(struct light_device_t *dev,
 
 static int close_lights(struct light_device_t *dev)
 {
-    LOGV("close_light is called");
+    ALOGV("close_light is called");
     if (dev)
         free(dev);
 
@@ -172,7 +172,7 @@ static int set_light_leds(struct light_state_t const *state, int type)
         return -EINVAL;
     }
 
-    LOGE("Mode is %d, rgb 0x%x, on %d, off %d\n",
+    ALOGE("Mode is %d, rgb 0x%x, on %d, off %d\n",
         state->flashMode, state->color,
         state->flashOnMS,state->flashOffMS);
 
