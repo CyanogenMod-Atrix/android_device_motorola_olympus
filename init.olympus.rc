@@ -546,10 +546,10 @@ service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plu
     oneshot
 
 # Fingerprint sensor daemon
-service am2server /system/bin/am2server
-	user system
-	group system inet input
-    class pre-zygote_services
+#service am2server /system/bin/am2server
+#	user system
+#	group system inet input
+#    class pre-zygote_services
 
 on device-added-/dev/ttyUSB0
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/autosuspend 2

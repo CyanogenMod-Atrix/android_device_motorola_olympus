@@ -64,13 +64,11 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
-			Torch \
 			OlympusParts \
 			hciconfig \
 			hcitool \
 			rilwrap \
 			lights.olympus \
-			camera.olympus \
 			hwcomposer.default \
 			audio.primary.olympus \
 			audio.a2dp.default
