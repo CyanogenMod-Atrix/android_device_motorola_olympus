@@ -68,7 +68,6 @@ PRODUCT_PACKAGES += Usb \
 			hciconfig \
 			hcitool \
 			rilwrap \
-			lights.olympus \
 			hwcomposer.default \
 			audio.primary.olympus \
 			audio.a2dp.default
