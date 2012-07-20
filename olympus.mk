@@ -64,6 +64,9 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 
+PRODUCT_PACKAGES += make_ext4fs \
+ 			setup_fs
+
 PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
@@ -73,6 +76,7 @@ PRODUCT_PACKAGES += Usb \
 			hcitool \
 			rilwrap \
 			hwcomposer.default \
+			lights.olympus \
 			camera.olympus \
 			audio.primary.olympus \
 			audio.a2dp.default
