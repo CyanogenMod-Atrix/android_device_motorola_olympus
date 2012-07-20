@@ -45,6 +45,9 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/motorola/olympus/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/olympus/recovery/recovery_ui.c
 BOARD_HAS_SDCARD_INTERNAL := true
 
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+
 # Kernel configuration for inline building
 TARGET_KERNEL_CONFIG := tegra_olympus_cm9_defconfig
 TARGET_PREBUILT_KERNEL := device/motorola/olympus/kernel
