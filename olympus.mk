@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
 			OlympusParts \
+			LegacyCamera \
 			hciconfig \
 			hcitool \
 			rilwrap \
