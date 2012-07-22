@@ -72,7 +72,7 @@ ro.hdmi.mirror.enable=true
 persist.sys.usb.config=mass_storage
 
 # Vold switchability
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
 
 # Fingerprint
 ro.authentec.fingerprint.jar=/system/framework/am2app.jar
