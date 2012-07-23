@@ -80,3 +80,6 @@ ro.authentec.fingerprint.so=/system/lib/libam2app.so
 
 # CRT animation speed
 debug.sf.electron_frames=26
+
+#hwui blacklist
+hwui.use.blacklist=true

@@ -96,6 +96,9 @@ on post-fs-data
     # usbd permissions
     mkdir /data/usbd 0777 system system
 
+    #directory to hwui blacklist
+    mkdir /data/local/hwui.deny 0775 system system
+
 on boot
     # nvrm permissions
     chmod 666 /dev/nvrm

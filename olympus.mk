@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += Usb \
 			DockAudio \
 			Torch \
 			OlympusParts \
+			HwaSettings \
 			LegacyCamera \
 			hciconfig \
 			hcitool \
