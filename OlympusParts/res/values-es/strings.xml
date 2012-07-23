@@ -4,5 +4,6 @@
     <string name="main_title">Ajustes para Motorola Atrix</string>
     <string name="navigation_configuration">Navegación con sensor de huellas digitales</string>
     <string name="hdmi_audio_title">Audio sobre HDMI</string>
-    <string name="hdmi_audio_summary">Habilitar o deshabilitar audio sobre HDMI</string>
+    <string name="hdmi_audio_summary_on">Habilitar o deshabilitar audio sobre HDMI</string>
+    <string name="hdmi_audio_summary_off">Habilitar o deshabilitar audio sobre HDMI</string>
 </resources>

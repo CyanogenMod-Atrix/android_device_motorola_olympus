@@ -4,5 +4,6 @@
     <string name="main_title">Paramètres Motorola Atrix</string>
     <string name="navigation_configuration">Lecteur d\'empreinte digitale</string>
     <string name="hdmi_audio_title">Audio HDMI</string>
-    <string name="hdmi_audio_summary">Activer la sortie audio sur la prise HDMI</string>
+    <string name="hdmi_audio_summary_on">Activer la sortie audio sur la prise HDMI</string>
+    <string name="hdmi_audio_summary_off">Activer la sortie audio sur la prise HDMI</string>
 </resources>
