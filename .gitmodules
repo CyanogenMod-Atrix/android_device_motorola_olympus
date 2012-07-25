@@ -1,0 +1,3 @@
+[submodule "HwaSettings"]
+	path = HwaSettings
+	url = git://github.com/epinter/HwaSettings.git
