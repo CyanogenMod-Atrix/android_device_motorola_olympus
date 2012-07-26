@@ -72,7 +72,6 @@ PRODUCT_PACKAGES += Usb \
 			Torch \
 			OlympusParts \
 			HwaSettings \
-			LegacyCamera \
 			hciconfig \
 			hcitool \
 			rilwrap \
