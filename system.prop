@@ -42,6 +42,7 @@ wifi.supplicant_scan_interval=30
 # To set wifi (AP) driver's firmware path
 ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin
 
+
 ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
 
 #OpenGL ES version
@@ -72,7 +73,7 @@ ro.hdmi.mirror.enable=true
 persist.sys.usb.config=mass_storage
 
 # Vold switchability
-ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+ro.vold.switchablepair=/storage/sdcard1,/storage/sdcard0
 
 # Fingerprint
 ro.authentec.fingerprint.jar=/system/framework/am2app.jar

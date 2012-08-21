@@ -8,8 +8,8 @@
     <string name="hdmi_audio_summary_on">Usando HDMI como saída de audio</string>
     <string name="hdmi_audio_summary_off">Usando alto-falante como saída de audio</string>
     <string name="storage_switch_title">Usar armazenamento interno</string>
-    <string name="storage_switch_summary_on">Usando armazenamento interno expandido para apps e mídia</string>
-    <string name="storage_switch_summary_off">Usando SD-Card para apps e mídia</string>
+    <string name="storage_switch_summary_off">Usando armazenamento interno expandido para apps e mídia</string>
+    <string name="storage_switch_summary_on">Usando SD-Card para apps e mídia</string>
     <string name="storage_switch_unavailable">Não disponível</string>
     <string name="category_fingerprint">Impressão digital</string>
     <string name="category_storage">Armazenamento</string>
