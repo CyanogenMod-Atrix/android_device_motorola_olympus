@@ -492,9 +492,6 @@ service hciattach /system/bin/bt_init_wrapper.sh
 on property:init.svc.hciattach=stopping
     exec /system/bin/bt_init -stop
 
-# This is product specific init script which will be appended to init.rc
-# after init.nv_common.rc. 
-
 on early-boot
         setprop ro.FOREGROUND_APP_MEM 3072
         setprop ro.VISIBLE_APP_MEM 4608
