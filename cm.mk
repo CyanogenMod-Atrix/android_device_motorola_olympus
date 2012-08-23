@@ -5,7 +5,7 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 PRODUCT_RELEASE_NAME := Atrix
 
 ## Boot animation
-TARGET_BOOTANIMATION_NAME := vertical-540x960
+TARGET_BOOTANIMATION_NAME := vertical-540
  
 ## Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
