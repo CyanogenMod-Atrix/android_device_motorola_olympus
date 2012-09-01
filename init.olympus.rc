@@ -532,16 +532,15 @@ on boot
     write /data/tmp/bluedroid_ref 0
     chown system system /data/tmp/bluedroid_ref
 
-# Adjust Max Read buffer to have initial TCP Recv Win set to 64K
-# This will be overriding one defined in init.rc
-# IKOLYMP-12325- TCP Window Size values, for ATT-CAT10.
-# IKOLYMP-12429- Optimize TCP stack for HSUPA CAT6 throughput
-      setprop net.tcp.buffersize.default 131072,262144,524288,4096,16384,147456
-      setprop net.tcp.buffersize.wifi    131072,262144,524288,4096,16384,147456
-      setprop net.tcp.buffersize.umts    131072,262144,524288,4096,16384,147456
-      setprop net.tcp.buffersize.edge    16384,32768,65536,4096,16384,32768
-      setprop net.tcp.buffersize.gprs    4096,8192,12288,4096,8192,12288
-
+#Define TCP buffer sizes for various networks
+#ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 131072,262144,524288,4096,16384,147456
+    setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.umts    131072,262144,524288,4096,16384,147456
+    setprop net.tcp.buffersize.hspa    131072,262144,1048576,4096,16384,262144
+    setprop net.tcp.buffersize.edge    16384,32768,65536,4096,16384,32768
+    setprop net.tcp.buffersize.gprs    4096,8192,12288,4096,8192,12288
 
 # ppp daemon used by DUN.
 service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
