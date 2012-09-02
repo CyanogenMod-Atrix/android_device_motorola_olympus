@@ -12,14 +12,14 @@ on init
     mkdir /storage/sdcard1 0000 system system
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
-    mkdir /mnt/usbdisk_1.0 0000 system system
-    mkdir /mnt/usbdisk_1.1 0000 system system
-    mkdir /mnt/usbdisk_1.2 0000 system system
-    mkdir /mnt/usbdisk_1.3 0000 system system
-    mkdir /mnt/usbdisk_1.4 0000 system system
-    mkdir /mnt/usbdisk_1.5 0000 system system
-    mkdir /mnt/usbdisk_1.6 0000 system system
-    mkdir /mnt/usbdisk_1.7 0000 system system
+    mkdir /storage/usbdisk0 0000 system system
+    mkdir /storage/usbdisk1 0000 system system
+    mkdir /storage/usbdisk2 0000 system system
+    mkdir /storage/usbdisk3 0000 system system
+    mkdir /storage/usbdisk4 0000 system system
+    mkdir /storage/usbdisk5 0000 system system
+    mkdir /storage/usbdisk6 0000 system system
+    mkdir /storage/usbdisk7 0000 system system
     # battery driver permissions
     mkdir /pds 0755 root root
     mkdir /osh 0000 root root

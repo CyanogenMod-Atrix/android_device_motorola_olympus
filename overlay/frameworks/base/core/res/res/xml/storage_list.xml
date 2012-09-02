@@ -23,22 +23,54 @@
      Each storage should have both a mountPoint and storageDescription attribute.
      The following attributes are optional:
 
-        primary:    (boolean) this storage is the primary external storage
-        removable:  (boolean) this is removable storage (for example, a real SD card)
-        emulated:   (boolean) the storage is emulated via the FUSE sdcard daemon
+        primary:    this storage is the primary external storage
+        removable:  this is removable storage (for example, a real SD card)
+        emulated:   the storage is emulated via the FUSE sdcard daemon
         mtpReserve: (integer) number of megabytes of storage MTP should reserve for free storage
                      (used for emulated storage that is shared with system's data partition)
+        allowMassStorage: (boolean) true if this volume can be shared via USB mass storage
+        maxFileSize: (integer) maximum file size in megabytes
 
       A storage should not have both emulated and removable set to true
+
 -->
 
 <StorageList xmlns:android="http://schemas.android.com/apk/res/android">
-    <storage android:mountPoint="/storage/sdcard1"
-                 android:storageDescription="@string/storage_sd_card"
-                 android:removable="true"
-                 android:allowMassStorage="true" />
+    <!-- internal storage -->
     <storage android:mountPoint="/storage/sdcard0"
-                 android:storageDescription="@string/storage_internal"
-                 android:primary="true"
-                 android:allowMassStorage="true" />
+        android:storageDescription="@string/storage_internal"
+        android:primary="true"
+        android:allowMassStorage="true" />
+
+    <!-- external SD card -->
+    <storage android:mountPoint="/storage/sdcard1"
+        android:storageDescription="@string/storage_sd_card"
+        android:removable="true"
+        android:allowMassStorage="true" />
+
+    <!-- external USB drive -->
+    <storage android:mountPoint="/storage/usbdisk0"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk1"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk2"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk3"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk4"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk5"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk6"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
+    <storage android:mountPoint="/storage/usbdisk7"
+        android:storageDescription="@string/storage_usb"
+        android:removable="true" />
 </StorageList>
