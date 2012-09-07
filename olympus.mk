@@ -65,22 +65,33 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 
+#fs tools
 PRODUCT_PACKAGES += make_ext4fs \
+			e2fsck \
  			setup_fs
 
-PRODUCT_PACKAGES += Usb \
-			DockAudio \
-			Torch \
+#bluetooth
+PRODUCT_PACKAGES += l2ping \
+			hciconfig \
+			hcitool
+
+#Audio
+PRODUCT_PACKAGES += DockAudio \
+			audio.primary.olympus \
+			audio.usb.default \
+			audio.a2dp.default
+
+#Camera and lights
+PRODUCT_PACKAGES += Torch \
+			lights.olympus \
+			camera.olympus
+
+PRODUCT_PACKAGES += rilwrap \
+			Usb \
+			com.android.future.usb.accessory \
 			OlympusParts \
 			HwaSettings \
-			hciconfig \
-			hcitool \
-			rilwrap \
-			hwcomposer.default \
-			lights.olympus \
-			camera.olympus \
-			audio.primary.olympus \
-			audio.a2dp.default
+			hwcomposer.default
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
