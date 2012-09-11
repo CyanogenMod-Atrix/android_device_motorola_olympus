@@ -37,28 +37,6 @@ on post-fs
     chown system system /data
     chmod 0771 /data
 
-    # Create dump dir and collect dumps.
-    # Do this before we mount cache so eventually we can use cache for
-    # storing dumps on platforms which do not have a dedicated dump partition.
-   
-    mkdir /data/dontpanic
-    chown root log /data/dontpanic
-    chmod 0750 /data/dontpanic
-
-    # Collect apanic data, free resources and re-arm trigger
-
-    write /proc/apanic /dev/block/mmcblk0p9
-
-    copy /proc/apanic_console /data/dontpanic/apanic_console
-    chown root log /data/dontpanic/apanic_console
-    chmod 0640 /data/dontpanic/apanic_console
-
-    copy /proc/apanic_threads /data/dontpanic/apanic_threads
-    chown root log /data/dontpanic/apanic_threads
-    chmod 0640 /data/dontpanic/apanic_threads
-
-    write /proc/apanic_console 1
-
     # Same reason as /data above
     chown system cache /cache
     chmod 0771 /cache
@@ -91,8 +69,90 @@ on post-fs-data
     # usbd permissions
     mkdir /data/usbd 0777 system system
 
+    #fingerprint db permissions
+	chown system /data/am2data.db
+	chown system /data/am2data.db.meta
+	chgrp system /data/am2data.db
+	chgrp system /data/am2data.db.meta
+
     #directory to hwui blacklist
     mkdir /data/local/hwui.deny 0775 system system
+
+    # create the necessary dirs for tpapi with proper permission
+    mkdir /data/tpapi
+    mkdir /data/tpapi/etc
+    mkdir /data/tpapi/etc/tpa
+    mkdir /data/tpapi/etc/tpa/persistent
+    chmod 2770 /data/tpapi
+    chmod 2770 /data/tpapi/etc
+    chmod 2770 /data/tpapi/etc/tpa
+    chmod 2770 /data/tpapi/etc/tpa/persistent
+    chown system system /data/tpapi
+    chown system system /data/tpapi/etc
+    chown system system /data/tpapi/etc/tpa
+    chown system system /data/tpapi/etc/tpa/persistent
+
+    chmod 0660 /dev/nvaes
+    chown system system /dev/nvaes
+
+    # for feature 33302 device encryption
+    mkdir /data/emt
+    chmod 0700 /data/emt
+    exec /system/bin/enc_mgt_tool
+
+    # Create dump dir and collect dumps.
+    # Do this before we mount cache so eventually we can use cache for
+    # storing dumps on platforms which do not have a dedicated dump partition.
+
+    mkdir /data/dontpanic
+    chown root log /data/dontpanic
+    chmod 0750 /data/dontpanic
+
+    # Collect apanic data, free resources and re-arm trigger
+
+    write /proc/apanic /dev/block/mmcblk0p9
+
+    copy /proc/apanic_console /data/dontpanic/apanic_console
+    chown root log /data/dontpanic/apanic_console
+    chmod 0640 /data/dontpanic/apanic_console
+
+    copy /proc/apanic_threads /data/dontpanic/apanic_threads
+    chown root log /data/dontpanic/apanic_threads
+    chmod 0640 /data/dontpanic/apanic_threads
+
+    write /proc/apanic_console 1
+
+    #create folder for bp panic logs
+    mkdir /data/panicreports
+    chown root radio /data/panicreports
+    chmod 0777 /data/panicreports
+
+#===================================================================
+# TCMD
+#===================================================================
+
+    mkdir /data/local 0771 system shell
+    mkdir /data/local/12m 0771 system shell
+    mkdir /data/local/12m/batch 0771 system shell
+    mkdir /data/local/tmp 0771 system shell
+
+    chown system shell /data/local
+    chown system shell /data/local/12m
+    chown system shell /data/local/12m/batch
+    chown system shell /data/local/tmp
+
+    mkdir /data/tombstones
+    chmod 2775 /data/tombstones
+    chown system system  /data/tombstones
+
+    mkdir /data/anr
+    chmod 0777 /data/anr
+    chown system system /data/anr
+
+    mkdir /data/atvc 0775 system shell
+    chown system shell /data/atvc
+
+    setprop vold.post_fs_data_done 1
 
 on boot
     # nvrm permissions
@@ -165,32 +225,6 @@ on boot
     # network JIT
     write /proc/sys/net/core/bpf_jit_enable 1
 
-    # create the necessary dirs for tpapi with proper permission
-    mkdir /data/tpapi
-    mkdir /data/tpapi/etc
-    mkdir /data/tpapi/etc/tpa
-    mkdir /data/tpapi/etc/tpa/persistent
-    chmod 2770 /data/tpapi
-    chmod 2770 /data/tpapi/etc
-    chmod 2770 /data/tpapi/etc/tpa
-    chmod 2770 /data/tpapi/etc/tpa/persistent
-    chown system system /data/tpapi
-    chown system system /data/tpapi/etc
-    chown system system /data/tpapi/etc/tpa
-    chown system system /data/tpapi/etc/tpa/persistent
-
-    chmod 0660 /dev/nvaes
-    chown system system /dev/nvaes
-
-    # for feature 33302 device encryption
-    mkdir /data/emt
-    chmod 0700 /data/emt
-    exec /system/bin/enc_mgt_tool
-
-    #create folder for bp panic logs
-    mkdir /data/panicreports
-    chown root radio /data/panicreports
-    chmod 0777 /data/panicreports
 
 #===================================================================
 # Backlight needs 0664 for TCMD
@@ -220,28 +254,6 @@ on boot
     chown system system /sys/class/leds/lcd-backlight/suspend
     chown system system /sys/class/leds/white/brightness
     chmod 0664 /sys/class/leds/white/brightness
-
-#===================================================================
-# TCMD 
-#===================================================================
-
-    mkdir /data/local 0771 system shell
-    mkdir /data/local/12m 0771 system shell
-    mkdir /data/local/12m/batch 0771 system shell
-    mkdir /data/local/tmp 0771 system shell
-
-    chown system shell /data/local
-    chown system shell /data/local/12m
-    chown system shell /data/local/12m/batch
-    chown system shell /data/local/tmp
-
-    mkdir /data/tombstones
-    chmod 2775 /data/tombstones
-    chown system system  /data/tombstones
-
-    mkdir /data/anr
-    chmod 0777 /data/anr
-    chown system system /data/anr
 
     # Required for copying 12M/Batch files to Olympus
     mkdir /system/local 0771 system shell
@@ -283,8 +295,6 @@ on boot
        setprop ro.sys.atvc_allow_bp_log 0
        setprop ro.sys.atvc_allow_ap_mot_log 0
        setprop ro.sys.atvc_allow_gki_log 0
-       mkdir /data/atvc 0775 system shell
-       chown system shell /data/atvc
 
 # touchpad stuff
     chmod 660 /sys/class/misc/touchpad
@@ -502,10 +512,6 @@ on boot
 	chown system /dev/aes1750
 	chgrp system /dev/aes1750
 	chmod 0600 /dev/aes1750
-	chown system /data/am2data.db
-	chown system /data/am2data.db.meta
-	chgrp system /data/am2data.db
-	chgrp system /data/am2data.db.meta
 
 # Enable ADB
    write /dev/usb_device_mode charge_adb
