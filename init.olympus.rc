@@ -70,10 +70,8 @@ on post-fs-data
     mkdir /data/usbd 0777 system system
 
     #fingerprint db permissions
-	chown system /data/am2data.db
-	chown system /data/am2data.db.meta
-	chgrp system /data/am2data.db
-	chgrp system /data/am2data.db.meta
+	chown system system /data/am2data.db
+	chown system system /data/am2data.db.meta
 
     #directory to hwui blacklist
     mkdir /data/local/hwui.deny 0775 system system
