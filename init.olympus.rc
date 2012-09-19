@@ -409,8 +409,7 @@ on early-boot
 
 ####
 on boot
-	chown system /dev/aes1750
-	chgrp system /dev/aes1750
+	chown system system /dev/aes1750
 	chmod 0600 /dev/aes1750
 
     # Enable ADB
