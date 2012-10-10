@@ -1,0 +1,107 @@
+#Audio
+lib/hw/alsa.tegra.so
+lib/hw/audio_policy.tegra.so
+lib/hw/audio.primary.tegra.so
+usr/share/alsa/alsa.conf
+usr/share/alsa/pcm/default.conf
+usr/share/alsa/pcm/dmix.conf
+usr/share/alsa/pcm/dsnoop.conf
+usr/share/alsa/cards/aliases.conf
+bin/ap_gain_mmul.bin
+bin/ap_gain.bin
+
+#Graphics camera HALs
+lib/hw/gralloc.tegra.so
+lib/hw/hwcomposer.tegra.so
+lib/hw/camera.tegra.so
+etc/nvcamera.conf
+
+#Sensors HAL
+lib/hw/sensors.olympus.so
+
+#GPS HAL
+lib/hw/gps.tegra.so
+
+#Accelerometer
+bin/akmd8975
+
+#Tegra firmware
+etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd
+etc/firmware/nvmm_aacdec.axf
+etc/firmware/nvmm_adtsdec.axf
+etc/firmware/nvmm_h264dec.axf
+etc/firmware/nvmm_jpegdec.axf
+etc/firmware/nvmm_jpegenc.axf
+etc/firmware/nvmm_manager.axf
+etc/firmware/nvmm_mp3dec.axf
+etc/firmware/nvmm_mpeg4dec.axf
+etc/firmware/nvmm_reference.axf
+etc/firmware/nvmm_service.axf
+etc/firmware/nvmm_wavdec.axf
+etc/firmware/nvrm_avp.bin
+etc/nvram.txt
+
+#GL
+lib/egl/libEGL_perfhud.so
+lib/egl/libEGL_tegra.so
+lib/egl/libGLES_android.so
+lib/egl/libGLESv1_CM_perfhud.so
+lib/egl/libGLESv1_CM_tegra.so
+lib/egl/libGLESv2_perfhud.so
+lib/egl/libGLESv2_tegra.so
+
+#Other NVidia stuff pulled as dependency
+lib/libardrv_dynamic.so
+lib/libaudio_ext.so #(?)
+lib/libcgdrv.so #(?)
+lib/libnmea.so #(?)
+lib/libnvddk_2d.so
+lib/libnvddk_2d_v2.so
+lib/libnvdispmgr_d.so
+lib/libnvmm.so
+lib/libnvmm_utils.so
+lib/libnvmm_service.so
+lib/libnvmm_manager.so
+lib/libnvmm_contentpipe.so
+lib/libnvmm_camera.so
+lib/libnvodm_imager.so
+lib/libnvodm_query.so
+lib/libnvavp.so
+lib/libnvos.so
+lib/libnvrm_graphics.so
+lib/libnvrm.so
+lib/libnvwsi.so
+lib/libnvwinsys.so
+lib/libnvsm.so
+lib/libnvtvmr.so
+lib/libasound.so
+lib/libhdmi.so
+
+#OMX
+lib/libstagefrighthw.so
+lib/libnvomx.so
+lib/libnvomxilclient.so
+lib/libnvmm_audio.so
+lib/libnvmm_video.so
+lib/libnvmmlite.so
+lib/libnvmmlite_audio.so
+lib/libnvmmlite_video.so
+lib/libnvmmlite_utils.so
+
+#Battery
+bin/battd
+lib/libbattd.so
+
+#RIL
+lib/libmoto_ril.so
+lib/libmoto_mdmctrl.so
+lib/libpppd_plugin-ril.so
+lib/librds_util.so #(?)
+lib/libril_rds.so
+bin/pppd-ril
+bin/mdm_panicd
+etc/ppp/peers/pppd-ril.options
+
+#Touch
+bin/touchpad
+etc/touchpad/22/touchpad.cfg

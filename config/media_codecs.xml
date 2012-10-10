@@ -81,13 +81,21 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Nvidia.h263.decode" type="video/3gpp" />
         <MediaCodec name="OMX.Nvidia.h264.decode" type="video/avc" />
         <MediaCodec name="OMX.Nvidia.mpeg2v.decode" type="video/mpeg2" />
-        <MediaCodec name="OMX.Nvidia.mp2.decoder" type="audio/mpeg-L2" />
-
-        <MediaCodec name="OMX.google.mp4.decode" type="video/mp4v-es" />
-        <MediaCodec name="OMX.google.h263.decode" type="video/3gpp" />
-        <MediaCodec name="OMX.google.h264.decode" type="video/avc" />
-        <MediaCodec name="OMX.google.mpeg2v.decode" type="video/mpeg2" />
-        <MediaCodec name="OMX.google.mp2.decoder" type="audio/mpeg-L2" />
+        <MediaCodec name="OMX.Nvidia.aac.decoder" type="audio/mp4a-latm" />
+        <MediaCodec name="OMX.Nvidia.adts.decoder" type="audio/aac-adts" />
+        <MediaCodec name="OMX.Nvidia.amr.decoder" type="audio/amr" />
+        <MediaCodec name="OMX.Nvidia.amrwb.decoder" type="audio/amr-wb" />
+        <!--<MediaCodec name="OMX.Nvidia.bsac.decoder" type="??" />-->
+        <!--<MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/??" />-->
+        <MediaCodec name="OMX.Nvidia.jpeg.decoder" type="image/jpeg" />
+        <!--<MediaCodec name="OMX.Nvidia.theora.decoder" type="audio/??" />
+        <MediaCodec name="OMX.Nvidia.vc1.decode" type="audio/??" />-->
+        <MediaCodec name="OMX.Nvidia.vorbis.decoder" type="audio/vorbis" />
+        <!-- <MediaCodec name="OMX.Nvidia.vp6.decode" type="audio/??" /> -->
+        <MediaCodec name="OMX.Nvidia.wav.decoder" type="audio/x-wav" />
+        <MediaCodec name="OMX.Nvidia.wma.decoder" type="audio/x-ms-wma" />
+        <!--<MediaCodec name="OMX.Nvidia.wmalossless.decoder" type="audio/??" />
+        <MediaCodec name="OMX.Nvidia.wmapro.decoder" type="audio/??" /> -->
 
         <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
@@ -107,10 +115,10 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Nvidia.mp4.encoder" type="video/mp4v-es" />
         <MediaCodec name="OMX.Nvidia.h263.encoder" type="video/3gpp" />
         <MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" />
-
-        <MediaCodec name="OMX.google.mp4.encoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
-        <MediaCodec name="OMX.google.h264.encoder" type="video/avc" />
+        <MediaCodec name="OMX.Nvidia.aac.encoder" type="audio/mp4a-latm" />
+        <MediaCodec name="OMX.Nvidia.amr.encoder" type="audio/amr" />
+        <MediaCodec name="OMX.Nvidia.amrwb.encoder" type="audio/amr-wb" />
+        <MediaCodec name="OMX.Nvidia.jpeg.encoder" type="image/jpeg" />
 
         <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />

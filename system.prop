@@ -3,23 +3,23 @@
 #
 ro.sf.lcd_density=240
 
-#RIL
-rild.libpath=/system/lib/rilwrap.so
+rild.libpath=/system/lib/libmoto_ril.so
 rild.wraplib=/system/lib/libmoto_ril.so
+rild.libargs=-d /dev/pts/1
 persist.ril.mux.noofchannels=9
 persist.ril.mux.ttydevice=/dev/ttyHS3
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=500
 persist.ril.modem.ttydevice=/dev/ttySPI0
 persist.ril.modem.mode=2
-persist.ril.features=0x24
+persist.ril.features=0x2020
 persist.ril.mux.retries=500
 persist.ril.mux.sleep=2
 ro.kernel.android.ril=yes
 persist.ril.pppd.start.fail.max=16
 mobiledata.interfaces=ppp0
 ro.ril.ntmodeglobal=true
-ro.telephony.ril.v3=datacall,signalstrength,icccarddstatus,skipbrokendatacall
+ro.telephony.ril.v3=signalstrength,skipbrokendatacall,skipnullaid
 
 # Default network type.
 # 0 -> WCDMA preferred
@@ -31,8 +31,7 @@ ro.telephony.default_network=3
 # but none are in range.
 wifi.supplicant_scan_interval=30
 
-# To set wifi (AP) driver's firmware path
-ro.wifi-ap.fw-path=/system/etc/wl/sdio-g-cdc-roml-reclaim-wme-apsta-idauth-minioctl.bin
+wifi.interface=eth0
 
 #bluetooth
 ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
@@ -58,9 +57,6 @@ ro.product.locale.region=US
 # Enable detailed GC data and SMP dexopt
 dalvik.vm.dexopt-flags=m=y,u=n
 
-# Enable HDMI mirroring
-ro.hdmi.mirror.enable=true
-
 # Default USB Mode
 persist.sys.usb.config=mass_storage
 
@@ -71,5 +67,6 @@ ro.vold.switchablepair=/storage/sdcard1,/storage/sdcard0
 ro.authentec.fingerprint.jar=/system/framework/am2app.jar
 ro.authentec.fingerprint.so=/system/lib/libam2app.so
 
-#hwui blacklist
-hwui.use.blacklist=true
+ro.hdmi.mirror.enable=false
+ro.hdmi.default.app=
+hw.overlay.path.config=

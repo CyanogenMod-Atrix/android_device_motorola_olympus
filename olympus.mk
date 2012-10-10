@@ -35,9 +35,7 @@ $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola helper scripts
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
-    device/motorola/olympus/scripts/bt_init_wrapper.sh:system/bin/bt_init_wrapper.sh \
-    device/motorola/olympus/scripts/usb_switch.sh:system/bin/usb_switch.sh
+    device/motorola/olympus/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
@@ -77,21 +75,16 @@ PRODUCT_PACKAGES += l2ping \
 
 #Audio
 PRODUCT_PACKAGES += DockAudio \
-			audio.primary.olympus \
 			audio.usb.default \
 			audio.a2dp.default
 
 #Camera and lights
 PRODUCT_PACKAGES += Torch \
-			lights.olympus \
-			camera.olympus
+			lights.olympus
 
-PRODUCT_PACKAGES += rilwrap \
-			Usb \
-			com.android.future.usb.accessory \
+PRODUCT_PACKAGES += com.android.future.usb.accessory \
 			OlympusParts \
-			HwaSettings \
-			hwcomposer.default
+			HwaSettings
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 
@@ -99,7 +92,6 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/prebuilts/liba2dp.so:system/lib/liba2dp.so \
     device/motorola/olympus/config/media_codecs.xml:system/etc/media_codecs.xml \
     device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml
 
