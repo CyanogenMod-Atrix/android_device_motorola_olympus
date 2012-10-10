@@ -1,10 +1,8 @@
 import init.olympus.usb.rc
 
-####
 on early-init
     mount debugfs debugfs /sys/kernel/debug
 
-####
 on init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
@@ -27,13 +25,11 @@ on init
     mkdir /pds 0755 root root
     mkdir /osh 0000 root root
 
-####
 on fs
-    # mount mtd partitions
+# mount mtd partitions
     mount_all /fstab.olympus
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
 
-####
 on post-fs
     # once everything is setup, no need to modify /
     mount rootfs rootfs / ro remount
@@ -63,7 +59,6 @@ on post-fs
     chown root system /proc/sysrq-trigger
     chmod 0220 /proc/sysrq-trigger
 
-####
 on post-fs-data
     # wlan permissions
     mkdir /data/misc/wifi 0771 wifi wifi
@@ -131,7 +126,9 @@ on post-fs-data
     chown root radio /data/panicreports
     chmod 0777 /data/panicreports
 
-    # TCMD #
+#===================================================================
+# TCMD
+#===================================================================
 
     mkdir /data/local 0771 system shell
     mkdir /data/local/12m 0771 system shell
@@ -156,7 +153,6 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-####
 on boot
     # nvrm permissions
     chmod 666 /dev/nvrm
@@ -229,7 +225,9 @@ on boot
     write /proc/sys/net/core/bpf_jit_enable 1
 
 
-    # Backlight needs 0664 for TCMD
+#===================================================================
+# Backlight needs 0664 for TCMD
+#===================================================================
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chmod 0664 /sys/class/leds/lcd-backlight-tcmd/brightness
     chmod 0664 /sys/class/leds/lcd-backlight-webtop/brightness
@@ -284,94 +282,136 @@ on boot
     chmod 660 /dev/akm8975_dev
     chown compass compass /dev/akm8975_aot
     chmod 660 /dev/akm8975_aot
-    # atvc stuff
-    # Define Motorola DBVC ATVC Property defaults (failsafe properties)
-    setprop ro.sys.atvc_allow_netmon_usb 0
-    setprop ro.sys.atvc_allow_netmon_ih 0
-    setprop ro.sys.atvc_allow_res_core 0
-    setprop ro.sys.atvc_allow_res_panic 0
-    setprop ro.sys.atvc_allow_all_adb 0
-    setprop ro.sys.atvc_allow_all_core 0
-    setprop ro.sys.atvc_allow_efem 0
-    setprop ro.sys.atvc_allow_bp_log 0
-    setprop ro.sys.atvc_allow_ap_mot_log 0
-    setprop ro.sys.atvc_allow_gki_log 0
+# atvc stuff
+# Define Motorola DBVC ATVC Property defaults (failsafe properties)
+       setprop ro.sys.atvc_allow_netmon_usb 0
+       setprop ro.sys.atvc_allow_netmon_ih 0
+       setprop ro.sys.atvc_allow_res_core 0
+       setprop ro.sys.atvc_allow_res_panic 0
+       setprop ro.sys.atvc_allow_all_adb 0
+       setprop ro.sys.atvc_allow_all_core 0
+       setprop ro.sys.atvc_allow_efem 0
+       setprop ro.sys.atvc_allow_bp_log 0
+       setprop ro.sys.atvc_allow_ap_mot_log 0
+       setprop ro.sys.atvc_allow_gki_log 0
 
-    # touchpad stuff
+# touchpad stuff
     chmod 660 /sys/class/misc/touchpad
     chown compass compass /sys/bus/i2c/drivers/qtouch-obp-ts/0-004a/irqStatus
 
-    # Load Authentec VPN kernel module
+# Load Authentec VPN kernel module
     insmod /system/lib/vpnclient.ko
 
-    # Start services
+# Start services
     exec /system/bin/mot_boot_mode
 
-####execute tcmdhelp
+# triggered by holding down volume down, volume up and power
+service reboot_key /system/bin/reboot
+    user system
+    oneshot
+    keycodes 114 115 107
+    disabled
+
+service tcmd /system/bin/tcmd
+    class post-zygote_services
+    # group option accepts at most 12 suppl. groups
+    group system radio input system camera graphics sdcard_rw audio inet bluetooth wifi net_admin
+    #group log compass cache mount net_bt_admin net_raw
+    socket local_tcmd stream 0660 system system
+    socket batch_socket stream 0600 system system
+
+service tcmdhelp /system/bin/tcmdhelp
+    class post-zygote_services
+    socket tcmdhelp stream 0600 system system
+    oneshot
+    disabled
+
+#execute tcmdhelp
 on property:tcmd.start_tcmdhelp=1
     start tcmdhelp
 
-#### Power up to suspend 
+service ftmipcd /system/bin/ftmipcd
+    class post-zygote_services
+    user radio
+    group radio inet
+    disabled
+
+# Power up to normal
+on property:tcmd.suspend=0
+    class_start pre-zygote_services
+    class_start zygote_services
+    class_start post-zygote_services
+
+# Power up to suspend 
 on property:tcmd.suspend=1
     write /sys/power/nvrm/lp2policy 0
     stop wpa_supplicant
     stop mdm_panicd
+    class_start pre-zygote_services
+    class_start post-zygote_services
 
-####
-on property:sys.chargeonly.mode=1
-    class_stop late_start
-    class_stop main
-    stop zygote
-    exec /system/bin/charge_only_mode
-
-#### Normal to suspend 
+# Normal to suspend 
 on property:tcmd.suspend=2
     write /sys/power/nvrm/lp2policy 0
     stop wpa_supplicant
     stop mdm_panicd
+    class_stop zygote_services
 
-#### Control ftmipcd 
+# Control ftmipcd 
 on property:tcmd.usb_cable="connected"
     start ftmipcd
 
-####
 on property:tcmd.usb_cable="disconnected"
     stop ftmipcd
 
-on property:persist.service.adb.enable=1
-# MOT change to statically link android usb module
-#    insmod /system/lib/hw/g_android.ko
-    start adbd
-
-####
 on property:tcmd.ctrl_adb=1
     setprop persist.service.adb.enable 1
     setprop persist.factory.allow_adb  1
     stop usbd
     start usbd
 
-####
 on property:tcmd.ctrl_adb=0
     setprop persist.service.adb.enable 0
     setprop persist.factory.allow_adb  0
     stop usbd
     start usbd
 
+# turn on bluetooth for tcmd
+# on property:tcmd.bt_mod=1
+#    insmod /system/lib/modules/wl127x-test.ko
+
+
+#turn off bluetooth for tcmd
+# on property:tcmd.bt_mod=0
+#    exec /system/bin/rmmod wl127x_test
+#===================================================================
+
+on property:sys.chargeonly.mode=1
+    class_start pre-zygote_services
+    class_stop post-zygote_services
+    class_stop main
+    stop zygote
+    exec /system/bin/charge_only_mode
+
+service nvrm_daemon /system/bin/logwrapper /system/bin/nvrm_daemon
+    class pre-zygote_services
+    user root
+    onrestart restart servicemanager
+
 service wpa_supplicant /system/bin/wpa_supplicant -D wext -i eth0 -c /data/misc/wifi/wpa_supplicant.conf -e /data/misc/wifi/entropy.bin
-    class main
+    class WLAN
     socket wpa_eth0 dgram 0660 wifi wifi
     disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
-    class main
+    class WLAN
     #user system  #- this makes socket() calls fail with permission denied
     #group dhcp
     disabled
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
-    class main
     group dhcp
     disabled
     oneshot
@@ -386,8 +426,68 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
+# Ecompass daemon
+service akmd2 /system/bin/akmd2
+    class post-zygote_services
+    user compass
+    group compass misc input
+
+service secclkd /system/bin/secclkd
+    class post-zygote_services
+    socket secclk_socket stream 660 system system
+    user system
+    group system radio system
+    oneshot
+
+on property:persist.service.adb.enable=1
+# MOT change to statically link android usb module
+#    insmod /system/lib/hw/g_android.ko
+    start adbd
+
+# Battery Daemon
+service battd /system/bin/battd
+    class pre-zygote_services
+    socket battdsock stream 0660 system system
+    user root
+    group system system
+    oneshot
+
+service usbd /system/bin/usbd
+    class pre-zygote_services
+    group system
+
+service touch /system/bin/logwrapper /system/bin/touchpad -a
+    user system
+    group system
+    class pre-zygote_services
+    oneshot
+
+service whisperd /system/bin/whisperd /dev/ttyHS0
+    class post-zygote_services
+    user root
+    oneshot
+
+#start Authentec VPN service
+service vpnclientpm /system/bin/vpnclientpm
+    class post-zygote_services
+    oneshot
+    user root
+
+# ppp daemon used by the ATCMD to support DUN function
+service pppd /system/bin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
+    class post-zygote_services
+    user root
+    disabled
+    oneshot
+
+service map /system/bin/sdptool add --channel=20 MAP
+    class post-zygote_services
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
 service hciattach /system/bin/bt_init_wrapper.sh
-    class late_start
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -396,45 +496,43 @@ service hciattach /system/bin/bt_init_wrapper.sh
 on property:init.svc.hciattach=stopping
     exec /system/bin/bt_init -stop
 
-####
 on early-boot
-    setprop ro.FOREGROUND_APP_MEM 3072
-    setprop ro.VISIBLE_APP_MEM 4608
-    setprop ro.PERCEPTIBLE_APP_MEM 7200
-    setprop ro.HEAVY_WEIGHT_APP_MEM 7200
-    setprop ro.SECONDARY_SERVER_MEM 11776
-    setprop ro.BACKUP_APP_MEM 11776
-    setprop ro.HOME_APP_MEM 11776
-    setprop ro.HIDDEN_APP_MEM 17408
-    setprop ro.EMPTY_APP_MEM 21000
+        setprop ro.FOREGROUND_APP_MEM 3072
+        setprop ro.VISIBLE_APP_MEM 4608
+        setprop ro.PERCEPTIBLE_APP_MEM 7200
+        setprop ro.HEAVY_WEIGHT_APP_MEM 7200
+        setprop ro.SECONDARY_SERVER_MEM 11776
+        setprop ro.BACKUP_APP_MEM 11776
+        setprop ro.HOME_APP_MEM 11776
+        setprop ro.HIDDEN_APP_MEM 17408
+        setprop ro.EMPTY_APP_MEM 21000
 
-####
 on boot
 	chown system system /dev/aes1750
 	chmod 0600 /dev/aes1750
 
-    # Enable ADB
-    write /dev/usb_device_mode charge_adb
+# Enable ADB
+   write /dev/usb_device_mode charge_adb
 
-    # Adjust Android LMK
+# Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
 
-    # USB IPC Power Management Settings
+# USB IPC Power Management Settings
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/autosuspend 2
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/level auto
 
-    # USB1 Host Power Management Settings
+# USB1 Host Power Management Settings
     write /sys/devices/platform/tegra-ehci.0/usb1/power/autosuspend -1
 
-    # copy /system/etc/motorola/tcmd/cid_template.dat
+# copy /system/etc/motorola/tcmd/cid_template.dat
     exec /system/bin/cp /system/etc/motorola/tcmd/cid_template.dat /data/local
 
-    # Set the default value for bluedroid_ref
+# Set the default value for bluedroid_ref
     write /data/tmp/bluedroid_ref 0
     chown system system /data/tmp/bluedroid_ref
 
-    #Define TCP buffer sizes for various networks
-    #ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+#Define TCP buffer sizes for various networks
+#ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 131072,262144,524288,4096,16384,147456
     setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
     setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
@@ -443,81 +541,25 @@ on boot
     setprop net.tcp.buffersize.edge    16384,32768,65536,4096,16384,32768
     setprop net.tcp.buffersize.gprs    4096,8192,12288,4096,8192,12288
 
-####
+# ppp daemon used by DUN.
+service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
+    class post-zygote_services
+    user root
+    disabled
+    oneshot
+
+# Fingerprint sensor daemon
+#service am2server /system/bin/am2server
+#	user system
+#	group system inet input
+#    class pre-zygote_services
+
 on device-added-/dev/ttyUSB0
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/autosuspend 2
     write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/level auto
 
-#### Fingerprint sensor daemon
-#service am2server /system/bin/am2server
-#   class core
-#   user system
-#   group system inet input
-
-service nvrm_daemon /system/bin/logwrapper /system/bin/nvrm_daemon
-    class core
-    user root
-    onrestart restart servicemanager
-
-# Battery Daemon
-service battd /system/bin/battd
-    class core
-    socket battdsock stream 0660 system system
-    user root
-    group system system
-    oneshot
-
-service usbd /system/bin/usbd
-    class core
-    group system
-
-service touch /system/bin/logwrapper /system/bin/touchpad -a
-    class core
-    user system
-    group system
-    oneshot
-
 # Modem panic daemon
 service mdm_panicd /system/bin/mdm_panicd
-    class late_start
-    oneshot
-
-service ftmipcd /system/bin/ftmipcd
-    class late_start
-    user radio
-    group radio inet
-    disabled
-
-# Ecompass daemon
-service akmd2 /system/bin/akmd2
-    class late_start
-    user compass
-    group compass misc input
-
-service secclkd /system/bin/secclkd
-    class late_start
-    socket secclk_socket stream 660 system system
-    user system
-    group system radio system
-    oneshot
-
-service whisperd /system/bin/whisperd /dev/ttyHS0
-    class late_start
-    user root
-    oneshot
-
-# ppp daemon used by the ATCMD to support DUN function
-service map /system/bin/sdptool add --channel=20 MAP
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-# ppp daemon used by DUN.
-service pppd /system/xbin/pppd silent ipparam dun plugin /system/lib/libpppd_plugin.so
-    class late_start
-    user root
-    disabled
+    class post-zygote_services
     oneshot
 
