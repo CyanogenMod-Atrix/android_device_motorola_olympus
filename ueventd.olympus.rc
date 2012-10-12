@@ -1,3 +1,4 @@
+/dev/aes1750	0600	system	system
 /dev/nvos	0666	system	system
 /dev/nvrm	0666	system	system
 /dev/knvmap	0660	system	system

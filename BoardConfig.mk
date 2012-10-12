@@ -42,6 +42,7 @@ TARGET_CPU_SMP := true
 
 BOARD_CUSTOM_GRAPHICS := ../../../device/motorola/olympus/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/olympus/recovery/recovery_ui.c
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_HAS_SDCARD_INTERNAL := true
 
 TARGET_BOOTANIMATION_PRELOAD := true

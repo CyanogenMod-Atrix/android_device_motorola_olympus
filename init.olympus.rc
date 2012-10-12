@@ -49,6 +49,7 @@ on post-fs-data
     chown dhcp dhcp /data/misc/dhcp
     #directory to hwui blacklist
     mkdir /data/local/hwui.deny 0775 system system
+
     chown system /data/am2data.db
     chown system /data/am2data.db.meta
     chgrp system /data/am2data.db
@@ -57,11 +58,13 @@ on post-fs-data
     write /data/tmp/bluedroid_ref 0
     chown system system /data/tmp/bluedroid_ref
 
+    setprop vold.post_fs_data_done 1
 
 on boot
     chown system /dev/aes1750
     chgrp system /dev/aes1750
     chmod 0600 /dev/aes1750
+
 # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
 
@@ -137,11 +140,11 @@ on boot
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpufreq/interactive/go_maxspeed_load 80
 
-service fbcp /etc/init.d/start_fbcp.sh
-    class pre_zygote_services
-    user mot_osh
-    group mot_osh
-    oneshot
+#service fbcp /etc/init.d/start_fbcp.sh
+#    class pre_zygote_services
+#    user mot_osh
+#    group mot_osh
+#    oneshot
 
 on property:dev.bootcomplete=1
     setprop ro.webtop.boot 1
@@ -159,7 +162,7 @@ on device-added-/dev/ttyUSB0
 
 # Modem panic daemon
 service mdm_panicd /system/bin/mdm_panicd
-    class post_zygote_services
+    class main
     oneshot
 
 on device-added-/dev/touchpad
@@ -188,10 +191,12 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 #   user wifi
 #   group wifi inet keystore
     socket wpa_eth0 dgram 660 wifi wifi
+    class main
     disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+    class main
     disabled
     oneshot
 
@@ -203,6 +208,7 @@ service bugreport /system/bin/dumpstate -d -v -o /data/storage/bugreports/bugrep
 #BCM
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     --use_baudrate_for_download --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd /dev/ttyHS2
+    class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -282,9 +288,4 @@ service btdhcpd /system/bin/dnsmasq -C /system/etc/btpan.conf
     class post-zygote_services
     user root
     disabled
-    oneshot
-
-# Modem panic daemon
-service mdm_panicd /system/bin/mdm_panicd
-    class post-zygote_services
     oneshot
