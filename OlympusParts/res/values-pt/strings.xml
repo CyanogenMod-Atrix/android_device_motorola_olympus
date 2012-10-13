@@ -13,5 +13,4 @@
     <string name="storage_switch_unavailable">Não disponível</string>
     <string name="category_fingerprint">Impressão digital</string>
     <string name="category_storage">Armazenamento</string>
-    <string name="hwa_settings">Aceleração por hardware</string>
 </resources>

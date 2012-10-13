@@ -83,8 +83,7 @@ PRODUCT_PACKAGES += Torch \
 			lights.olympus
 
 PRODUCT_PACKAGES += com.android.future.usb.accessory \
-			OlympusParts \
-			HwaSettings
+			OlympusParts
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 

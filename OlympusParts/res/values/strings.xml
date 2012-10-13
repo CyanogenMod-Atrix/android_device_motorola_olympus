@@ -14,5 +14,4 @@
     <string name="category_audiovideo">Audio &amp; Video</string>
     <string name="category_fingerprint">Fingerprint</string>
     <string name="category_storage">Storage</string>
-    <string name="hwa_settings">Hardware Acceleration</string>
 </resources>
