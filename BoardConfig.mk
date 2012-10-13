@@ -123,9 +123,6 @@ WIFI_DRIVER_SOCKET_IFACE    := eth0
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-#Camera
-TARGET_SPECIFIC_HEADER_PATH := device/motorola/olympus/include
-
 #EGL
 BOARD_EGL_CFG := device/motorola/olympus/config/egl.cfg
 USE_OPENGL_RENDERER := true
