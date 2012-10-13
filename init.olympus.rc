@@ -76,6 +76,11 @@ on boot
     setprop sys.AiwFocus 3
     setprop sys.AMActiveTask 2
 
+# External Display
+    chown system system /sys/devices/tegradc.1/hpd
+    chown system system /sys/devices/tegradc.1/connected
+    chown system system /sys/class/switch/hdmi/state
+
 # Power up/down interface
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
