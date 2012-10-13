@@ -76,6 +76,7 @@ lib/libnvsm.so
 lib/libnvtvmr.so
 lib/libasound.so
 lib/libhdmi.so
+lib/libextdispjni.so
 
 #OMX
 lib/libstagefrighthw.so
