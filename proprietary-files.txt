@@ -107,3 +107,13 @@ etc/ppp/peers/pppd-ril.options
 #Touch
 bin/touchpad
 etc/touchpad/22/touchpad.cfg
+
+#misc
+bin/aplogd
+app/com.motorola.android.settings.aplogd.apk
+
+#app
+app/DeepSleepService.apk
+app/ExtDispService.apk
+app/FastDormancy.apk
+app/BatteryReport.apk
