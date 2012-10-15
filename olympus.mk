@@ -25,6 +25,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/root/init.olympus.rc:root/init.olympus.rc \
+    device/motorola/olympus/root/init.trace.rc:root/init.trace.rc \
     device/motorola/olympus/root/init.olympus.usb.rc:root/init.olympus.usb.rc \
     device/motorola/olympus/root/ueventd.olympus.rc:root/ueventd.olympus.rc \
     device/motorola/olympus/root/fstab.olympus:root/fstab.olympus
