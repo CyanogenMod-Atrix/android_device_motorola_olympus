@@ -4,7 +4,9 @@ VENDOR=motorola
 DEVICE=olympus
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
+
 rm -rf $BASE/*
+rm -rf $BASE/../packages
 
 for FILE in `cat proprietary-files.txt | grep -v ^# | cut -f1 -d '#' | grep -v ^$`; do
     DIR=`dirname $FILE`
