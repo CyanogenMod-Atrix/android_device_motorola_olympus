@@ -16,6 +16,11 @@ for FILE in `cat proprietary-files.txt | grep -v ^# | cut -f1 -d '#' | grep -v ^
     else
         cp -p "$COPY_FROM/$FILE" $BASE/$FILE
     fi
+    if [ "X$DIR" == "Xapp" ]; then
+        mkdir -p ${BASE}/../packages
+        mv $BASE/$FILE ${BASE}/../packages/
+    fi
 done
+rmdir ${BASE}/app
 
 ./setup-makefiles.sh
