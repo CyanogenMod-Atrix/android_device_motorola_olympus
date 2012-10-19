@@ -108,6 +108,9 @@ etc/ppp/peers/pppd-ril.options
 bin/touchpad
 etc/touchpad/22/touchpad.cfg
 
+#Dock
+bin/whisperd
+
 #misc
 bin/aplogd
 

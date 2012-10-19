@@ -294,3 +294,8 @@ service btdhcpd /system/bin/dnsmasq -C /system/etc/btpan.conf
     user root
     disabled
     oneshot
+
+service whisperd /system/bin/whisperd /dev/ttyHS0
+    class core
+    user root
+    oneshot
