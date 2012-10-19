@@ -44,7 +44,6 @@ etc/nvram.txt
 #GL
 lib/egl/libEGL_perfhud.so
 lib/egl/libEGL_tegra.so
-#lib/egl/libGLES_android.so
 lib/egl/libGLESv1_CM_perfhud.so
 lib/egl/libGLESv1_CM_tegra.so
 lib/egl/libGLESv2_perfhud.so
@@ -103,6 +102,10 @@ bin/pppd-ril
 bin/chat-ril
 bin/mdm_panicd
 etc/ppp/peers/pppd-ril.options
+
+#bluetooth
+bin/brcm_patchram_plus
+etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd
 
 #Touch
 bin/touchpad
