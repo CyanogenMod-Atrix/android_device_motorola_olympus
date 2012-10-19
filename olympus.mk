@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     device/motorola/olympus/config/media_codecs.xml:system/etc/media_codecs.xml \
+    device/motorola/olympus/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
     device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml
 
 #keyboard files

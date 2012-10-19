@@ -109,7 +109,6 @@ etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd
 
 #Touch
 bin/touchpad
-etc/touchpad/22/touchpad.cfg
 
 #Dock
 bin/whisperd
