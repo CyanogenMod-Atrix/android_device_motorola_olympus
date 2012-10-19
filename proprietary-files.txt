@@ -116,3 +116,4 @@ bin/aplogd
 
 #app
 app/DeepSleepService.apk
+app/FastDormancy.apk
