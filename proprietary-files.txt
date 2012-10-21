@@ -26,7 +26,6 @@ lib/hw/gps.tegra.so
 bin/akmd8975
 
 #Tegra firmware
-etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd
 etc/firmware/nvmm_aacdec.axf
 etc/firmware/nvmm_adtsdec.axf
 etc/firmware/nvmm_h264dec.axf
@@ -91,6 +90,7 @@ lib/libnvmmlite_utils.so
 #Battery
 bin/battd
 lib/libbattd.so
+bin/charge_only_mode
 
 #RIL
 lib/libmoto_ril.so
