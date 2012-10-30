@@ -38,7 +38,11 @@ on early-boot
     setprop ro.EMPTY_APP_MEM 21000
 
 on fs
-    mount_all /fstab.olympus
+    mount ext4 /dev/block/mmcblk0p12 /system noatime nodiratime wait ro barrier=1
+    mount ext4 /dev/block/mmcblk0p16 /data nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p15 /cache nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p13 /osh nodev noatime nodiratime wait barrier=1 noauto_da_alloc
+
     write /proc/apanic /dev/block/mmcblk0p9
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
 
