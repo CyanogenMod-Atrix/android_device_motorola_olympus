@@ -437,17 +437,6 @@
     <!-- Enables built-in SIP phone capability -->
     <bool name="config_built_in_sip_phone">true</bool>
 
-    <!-- Possible names from /devices/virtual/switch/dock for a dock device.
-         Some kernels use names like CAR and DESK. -->
-    <string-array translatable="false" name="config_accessoryDockNames">
-        <item>"CAR"</item>
-        <item>"DESK"</item>
-    </string-array>
-
-    <!-- Boolean indicating whether the start command should be called on the wireless interface
-         when starting the SoftAp -->
-    <bool name="config_wifiApStartInterface">true</bool>
-
     <!-- File to use when sharing mass storage over USB -->
     <string name="config_legacyUmsLunFile">/sys/class/android_usb/f_mass_storage/lun/file</string>
 </resources>
