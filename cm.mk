@@ -7,6 +7,9 @@ PRODUCT_RELEASE_NAME := Atrix
 #use low quality videos
 $(call inherit-product, frameworks/base/data/videos/VideoPackage1.mk)
 
+## Boot animation
+TARGET_BOOTANIMATION_NAME := vertical-540
+
 ## Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
  
