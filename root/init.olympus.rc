@@ -7,7 +7,7 @@ on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
     # create mountpoints for storage
-    mkdir /storage 0050 system sdcard_r
+    mkdir /storage 0755 system system
     mkdir /storage/sdcard0 0000 system system
     mkdir /storage/sdcard1 0000 system system
     symlink /storage/sdcard0 /sdcard
