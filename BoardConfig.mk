@@ -30,6 +30,7 @@ BOARD_USES_GENERIC_AUDIO := false
 # inherit from the proprietary version
 -include vendor/motorola/olympus/BoardConfigVendor.mk
 
+TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := olympus
 TARGET_BOARD_PLATFORM := tegra
