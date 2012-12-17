@@ -13,6 +13,7 @@ on early-init
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
     symlink /storage/sdcard1 /external_sd
+    symlink /storage/sdcard1 /extSdCard
     mkdir /storage/usbdisk0 0000 system system
     mkdir /storage/usbdisk1 0000 system system
     mkdir /storage/usbdisk2 0000 system system
