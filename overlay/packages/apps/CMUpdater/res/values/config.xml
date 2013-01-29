@@ -15,6 +15,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="conf_update_server_url_def">http://www.linuxmobile.org/builds</string>
+    <string name="conf_update_server_url_def">http://www.linuxmobile.org/builds_olympus_10-1</string>
     <bool name="alternateIsInternal">true</bool>
 </resources>
