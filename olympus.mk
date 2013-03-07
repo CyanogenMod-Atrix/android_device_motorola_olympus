@@ -130,6 +130,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+#debug
+PRODUCT_PROPERTY_OVERRIDES +=persist.sys.root_access=3 \
+               ro.debuggable=1 \
+               ro.secure=0 \
+               ro.allow.mock.location=1 \
+               persist.service.adb.enable=1
+
 PRODUCT_NAME := generic_olympus
 PRODUCT_DEVICE := olympus
 PRODUCT_MODEL := MB860

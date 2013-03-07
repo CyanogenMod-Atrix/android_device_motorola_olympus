@@ -41,6 +41,7 @@ on fs
     mount_all /fstab.olympus
     write /proc/apanic /dev/block/mmcblk0p9
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
+    start adbd
 
 on post-fs
     chown mot_accy mot_accy /pds/public/battd/batt_offset_data
