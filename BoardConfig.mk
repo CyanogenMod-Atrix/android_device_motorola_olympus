@@ -51,16 +51,6 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Kernel configuration for inline building
 TARGET_KERNEL_CONFIG := tegra_olympus_cm10_defconfig
-TARGET_PREBUILT_KERNEL := vendor/motorola/olympus/kernel
-
-OLYMPUS_WIFI_MODULE:
-	make -C kernel/motorola/olympus/wifi-module/open-src/src/dhd/linux/ \
-	ARCH="arm" CROSS_COMPILE="arm-eabi-" LINUXSRCDIR=kernel/olympus/ \
-	LINUXBUILDDIR=$(KERNEL_OUT) \
-	LINUXVER=$(shell strings "$(KERNEL_OUT)/vmlinux"|grep '2.6.*MB860'|tail -n1) \
-	BCM_INSTALLDIR="$(KERNEL_MODULES_OUT)"
-
-TARGET_KERNEL_MODULES := OLYMPUS_WIFI_MODULE
 
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
