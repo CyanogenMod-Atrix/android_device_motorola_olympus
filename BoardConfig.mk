@@ -50,7 +50,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Kernel configuration for inline building
-TARGET_KERNEL_CONFIG := tegra_olympus_cm10_defconfig
+TARGET_KERNEL_CONFIG := tegra_olympus_cm9_defconfig
 
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
