@@ -9,7 +9,6 @@ rild.libargs=-d /dev/pts/1
 persist.ril.mux.noofchannels=9
 persist.ril.mux.ttydevice=/dev/ttyHS3
 ro.telephony.call_ring.multiple=false
-ro.telephony.call_ring.delay=500
 persist.ril.modem.ttydevice=/dev/ttySPI0
 persist.ril.modem.mode=2
 persist.ril.features=0x2020
@@ -49,7 +48,7 @@ ro.product.locale.region=US
 dalvik.vm.dexopt-flags=m=y,u=n
 
 # Default USB Mode
-persist.sys.usb.config=mass_storage
+persist.sys.usb.config=mass_storage,adb
 
 # Vold switchability
 ro.vold.switchablepair=/storage/sdcard1,/storage/sdcard0
@@ -65,3 +64,121 @@ ro.tegra.debug=0
 
 # 1% battery
 persist.sys.one_percent_batt=1
+
+persist.service.adb.enable=1
+persist.sys.root_access=3
+
+# MROM Added Properties
+#
+# Power Save tweaks
+ro.ril.disable.power.collapse=1
+pm.sleep_mode=1
+
+# Increase Performance
+debug.performance.tuning=1
+
+# Video Acceleration Enabled
+video.accelerate.hw=1
+
+# Signal Tweaks
+ro.ril.hep=1
+ro.ril.enable.dtm=1
+ro.ril.hsdpa.category=10
+ro.ril.enable.a53=1
+ro.ril.enable.3g.prefix=1
+ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.htcmaskw1=14449
+ro.ril.hsupa.category=5
+ro.ril.hsxpa=3 
+ro.ril.gprsclass=12  
+
+# NetSpeed Tweaks
+#Define TCP buffer sizes for various networks
+#ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+net.tcp.buffersize.default=6144,87380,110208,6144,16384,110208
+net.tcp.buffersize.wifi=262144,524288,1048576,262144,524288,1048576
+net.tcp.buffersize.lte=262144,524288,1048576,262144,524288,1048576
+net.tcp.buffersize.hsdpa=6144,262144,1048576,6144,262144,1048576
+net.tcp.buffersize.evdo_b=6144,262144,1048576,6144,262144,1048576
+net.tcp.buffersize.umts=6144,87380,110208,6144,16384,110208
+net.tcp.buffersize.hspa=6144,87380,262144,6144,16384,262144
+net.tcp.buffersize.gprs=6144,8760,11680,6144,8760,11680
+net.tcp.buffersize.edge=6144,26280,35040,6144,16384,35040
+
+# Google DNS Tweak
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
+
+# Photo And Video Quality
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.enc.jpeg.quality=100
+
+# Scrolling Responsiveness
+#windowsmgr.max_events_per_sec=500
+windowsmgr.max_events_per_sec=150
+#ro.max.fling_velocity=12000 
+#ro.min.fling_velocity=8000
+
+# Frees up more ram when needed
+#persist.sys.purgeable_assets=1
+
+# Disable Sending Usage Data
+ro.config.nocheckin=1
+
+# Increase VM Heap Size
+dalvik.vm.heapsize=96m
+# Enable detailed GC data and SMP dexopt
+# Force return function copy
+# dalvik.vm.jniopts=forcecopy
+# Check jni before executing
+# dalvik.vm.checkjni=false
+# Verify the bytecode before executing
+# dalvik.vm.verify-bytecode=false
+# Force JIT execution
+# dalvik.vm.execution-mode=int:jit
+# dalvik.vm.dexopt-flags=v=n,o=a,u=n,m=y
+
+#dalvik.vm.dexopt-data-only=1
+#dalvik.vm.heapstartsize=5m
+#dalvik.vm.lockprof.threshold=500
+dalvik.vm.dexopt-flags=m=y,u=n
+#dalvik.vm.dexopt-flags=m=v,o=y
+#dalvik.vm.dexopt-flags=m=y,u=n,o=y
+#dalvik.vm.stack-trace-file=/data/anr/traces.txt
+
+# Debug SurfaceFlinger Hardware
+debug.sf.hw=1
+
+# Disable kernel jni check
+ro.kernel.android.checkjni=0
+
+# Improve Performance in video playback and streaming
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-scan=true
+media.stagefright.enable-http=true
+media.stagefright.enable-rtsp=true
+media.stagefright.enable-record=true
+
+# Switch to internal storage
+persist.sys.vold.switchexternal=1
+
+# Force rendering on GPU
+debug.composition.type=gpu
+
+# debug.egl.profiler=1
+# debug.egl.hw=1
+# persist.sys.ui=1
+
+# Disable blackscreen issue after a call
+# Sensor FDP
+ro.lge.proximity.delay=25
+mot.proximity.delay=0
+mot.proximity.distance=25
+
+#Disable black incoming call screen
+ro.telephony.call_ring.delay=200
+ro.mot.eri.losalret.delay=0

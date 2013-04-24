@@ -45,7 +45,7 @@
 /dev/mtp_usb              0660   root       mtp
 
 
-o# CDMA radio interface MUX
+# CDMA radio interface MUX
 /dev/ts0710mux*           0660   radio      radio
 /dev/ttyHS4/*             0640   radio      radio
 /dev/hsi0                 0660   radio      radio

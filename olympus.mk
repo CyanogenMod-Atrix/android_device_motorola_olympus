@@ -39,7 +39,8 @@ PRODUCT_COPY_FILES += \
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/config/sysctl.conf:system/etc/sysctl.conf
+    device/motorola/olympus/config/sysctl.conf:system/etc/sysctl.conf \
+    device/motorola/olympus/config/audio_policy.conf:system/etc/audio_policy.conf
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 
@@ -51,12 +52,6 @@ PRODUCT_LOCALES += hdpi
 
 # not exactly xhdpi, but we have enough RAM, why not use it?
 $(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
-
-# copy all kernel modules under the "modules" directory to system/lib/modules
-PRODUCT_COPY_FILES += $(shell \
-    find vendor/motorola/olympus/modules -name '*.ko' \
-    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
-    | tr '\n' ' ')
 
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
@@ -91,6 +86,7 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
 PRODUCT_COPY_FILES += \
     device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
     device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    device/motorola/olympus/config/media_codecs.xml:system/etc/media_codecs.xml \
     device/motorola/olympus/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
     device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml
 

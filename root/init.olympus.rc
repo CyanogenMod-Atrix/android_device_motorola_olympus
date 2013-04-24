@@ -22,7 +22,6 @@ on early-init
     mkdir /storage/usbdisk6 0000 system system
     mkdir /storage/usbdisk7 0000 system system
 
-
 on init
     mkdir /pds 0755 root root
 
@@ -38,6 +37,7 @@ on early-boot
     setprop ro.EMPTY_APP_MEM 21000
 
 on fs
+
     mount ext4 /dev/block/mmcblk0p12 /system noatime nodiratime wait ro barrier=1
     mount ext4 /dev/block/mmcblk0p16 /data nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p15 /cache nosuid nodev noatime nodiratime wait barrier=1 noauto_da_alloc
@@ -47,6 +47,11 @@ on fs
     exec /system/bin/logwrapper /system/bin/pds_perm_fix.sh
 
 on post-fs
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+
     chown mot_accy mot_accy /pds/public/battd/batt_offset_data
     chmod 0660 /pds/public/battd/batt_offset_data
     chown mot_accy mot_accy /pds/public/battd/batt_phasing_data
