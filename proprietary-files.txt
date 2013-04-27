@@ -119,3 +119,12 @@ bin/aplogd
 #app
 app/DeepSleepService.apk
 app/FastDormancy.apk
+
+#fingerprint
+bin/am2server
+etc/am2server.pubkey
+lib/libAuthUDMDrv_1750A100.so
+lib/libam2app.so
+lib/libam2server.so
+app/GfxEngine.apk
+app/FingerprintSensor.apk
