@@ -18,29 +18,30 @@
 # This is the product configuration for a generic GSM olympus,
 # not specialized for any geography.
 #
+LOCAL_PATH := device/motorola/olympus
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/root/init.olympus.rc:root/init.olympus.rc \
-    device/motorola/olympus/root/init.trace.rc:root/init.trace.rc \
-    device/motorola/olympus/root/init.olympus.usb.rc:root/init.olympus.usb.rc \
-    device/motorola/olympus/root/ueventd.olympus.rc:root/ueventd.olympus.rc \
-    device/motorola/olympus/root/fstab.olympus:root/fstab.olympus
+    $(LOCAL_PATH)/root/init.olympus.rc:root/init.olympus.rc \
+    $(LOCAL_PATH)/root/init.trace.rc:root/init.trace.rc \
+    $(LOCAL_PATH)/root/init.olympus.usb.rc:root/init.olympus.usb.rc \
+    $(LOCAL_PATH)/root/ueventd.olympus.rc:root/ueventd.olympus.rc \
+    $(LOCAL_PATH)/root/fstab.olympus:root/fstab.olympus
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola helper scripts
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    $(LOCAL_PATH)/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/config/sysctl.conf:system/etc/sysctl.conf \
-    device/motorola/olympus/config/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/config/sysctl.conf:system/etc/sysctl.conf \
+    $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 
@@ -80,33 +81,33 @@ PRODUCT_PACKAGES += com.android.future.usb.accessory \
 			mot_boot_mode \
 			OlympusParts
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/olympus/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/config/vold.fstab:system/etc/vold.fstab \
-    device/motorola/olympus/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    device/motorola/olympus/config/media_codecs.xml:system/etc/media_codecs.xml \
-    device/motorola/olympus/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
-    device/motorola/olympus/config/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
+    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
 
 #keyboard files
 PRODUCT_COPY_FILES += \
-    device/motorola/olympus/keylayout/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \
-    device/motorola/olympus/keychars/tegra-kbc.kcm.bin:system/usr/keychars/tegra-kbc.kcm.bin \
-    device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/motorola/olympus/keylayout/qwerty.kl:system/usr/keylayout/BTC_USB_Cordless_Mouse.kl \
-    device/motorola/olympus/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/motorola/olympus/keylayout/qtouch-obp-ts.kl:system/usr/keylayout/qtouch-obp-ts.kl \
-    device/motorola/olympus/config/qtouch-obp-ts.idc:system/usr/idc/qtouch-obp-ts.idc \
-    device/motorola/olympus/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl:system/usr/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl \
-    device/motorola/olympus/keylayout/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
-    device/motorola/olympus/keylayout/evfwd.kl:system/usr/keylayout/evfwd.kl \
-    device/motorola/olympus/keychars/evfwd.kcm.bin:system/usr/keychars/evfwd.kcm.bin \
-    device/motorola/olympus/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl \
-    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/usb_keyboard_102_en_us.kcm.bin \
-    device/motorola/olympus/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/Motorola_Bluetooth_Wireless_Keyboard.kl \
-    device/motorola/olympus/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/Motorola_Bluetooth_Wireless_Keyboard.kcm.bin
+    $(LOCAL_PATH)/keylayout/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \
+    $(LOCAL_PATH)/keychars/tegra-kbc.kcm.bin:system/usr/keychars/tegra-kbc.kcm.bin \
+    $(LOCAL_PATH)/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    $(LOCAL_PATH)/keylayout/qwerty.kl:system/usr/keylayout/BTC_USB_Cordless_Mouse.kl \
+    $(LOCAL_PATH)/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    $(LOCAL_PATH)/keylayout/qtouch-obp-ts.kl:system/usr/keylayout/qtouch-obp-ts.kl \
+    $(LOCAL_PATH)/config/qtouch-obp-ts.idc:system/usr/idc/qtouch-obp-ts.idc \
+    $(LOCAL_PATH)/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl:system/usr/keylayout/Motorola_Mobility_Motorola_HD_Dock.kl \
+    $(LOCAL_PATH)/keylayout/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
+    $(LOCAL_PATH)/keylayout/evfwd.kl:system/usr/keylayout/evfwd.kl \
+    $(LOCAL_PATH)/keychars/evfwd.kcm.bin:system/usr/keychars/evfwd.kcm.bin \
+    $(LOCAL_PATH)/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl \
+    $(LOCAL_PATH)/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/usb_keyboard_102_en_us.kcm.bin \
+    $(LOCAL_PATH)/keylayout/usb_keyboard_102_en_us.kl:system/usr/keylayout/Motorola_Bluetooth_Wireless_Keyboard.kl \
+    $(LOCAL_PATH)/keychars/usb_keyboard_102_en_us.kcm.bin:system/usr/keychars/Motorola_Bluetooth_Wireless_Keyboard.kcm.bin
 
 # Permission files
 PRODUCT_COPY_FILES += \
