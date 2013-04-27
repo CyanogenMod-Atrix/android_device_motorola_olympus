@@ -50,7 +50,23 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Kernel configuration for inline building
-TARGET_KERNEL_CONFIG := tegra_olympus_cm9_defconfig
+TARGET_KERNEL_CONFIG := mrom_defconfig
+#TARGET_PREBUILT_KERNEL := vendor/motorola/olympus/kernel
+
+#OLYMPUS_WIFI_MODULE:
+	#make -C kernel/motorola/olympus/wifi-module/open-src/src/dhd/linux/ \
+	#ARCH="arm" CROSS_COMPILE="arm-eabi-" LINUXSRCDIR=kernel/olympus/ \
+	#LINUXBUILDDIR=$(KERNEL_OUT) \
+	#LINUXVER=$(shell strings "$(KERNEL_OUT)/vmlinux"|grep '2.6.*MB860'|tail -n1) \
+	#BCM_INSTALLDIR="$(KERNEL_MODULES_OUT)"
+
+#TARGET_KERNEL_MODULES := OLYMPUS_WIFI_MODULE
+
+# Kernel command line for d00 tegra
+#BOARD_KERNEL_CMDLINE := mem=384M@0M nvmem=128M@384M mem=512M@512M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=mbr:d00:100:800,kpanic:2100:400:800 security=tomoyo mot_prod=1
+
+# Kernel command line for 1100 tegra
+#BOARD_KERNEL_CMDLINE := mem=384M@0M nvmem=128M@384M mem=512M@512M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=mbr:1100:100:800,kpanic:2500:400:800 security=tomoyo mot_prod=1
 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
