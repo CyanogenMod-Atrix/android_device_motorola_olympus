@@ -51,7 +51,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Kernel configuration for inline building
-TARGET_KERNEL_CONFIG := tegra_olympus_cm10_defconfig
+TARGET_KERNEL_CONFIG := tegra_olympus_cm10.1_defconfig
 TARGET_PREBUILT_KERNEL := vendor/motorola/olympus/kernel
 
 #OLYMPUS_WIFI_MODULE:
