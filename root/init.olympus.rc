@@ -249,14 +249,6 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-#BCM
-service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
-    --use_baudrate_for_download --baudrate 3000000 --patchram /etc/firmware/BCM4329B1_002.002.023.0757.0780.hcd /dev/ttyHS2
-    class main
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-
 service battd /system/bin/battd
     class core
     socket battdsock stream 0660 mot_accy mot_accy

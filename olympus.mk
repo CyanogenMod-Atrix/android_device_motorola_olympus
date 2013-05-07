@@ -73,7 +73,8 @@ PRODUCT_PACKAGES += make_ext4fs \
 #bluetooth
 PRODUCT_PACKAGES += l2ping \
 			hciconfig \
-			hcitool
+			hcitool \
+			libnetcmdiface
 
 #Audio
 PRODUCT_PACKAGES += DockAudio \
@@ -96,7 +97,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
-    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 #keyboard files
 PRODUCT_COPY_FILES += \
