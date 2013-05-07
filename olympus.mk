@@ -89,6 +89,11 @@ PRODUCT_PACKAGES += com.android.future.usb.accessory \
 			mot_boot_mode \
 			OlympusParts
 
+#wlan firmware
+PRODUCT_PACKAGES += \
+	fw_bcm4329.bin \
+	fw_bcm4329_apsta.bin
+
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Board-specific init
