@@ -64,4 +64,4 @@ ro.tegra.gpumode=quality
 ro.tegra.debug=0
 
 # 1% battery
-persist.sys.one_percent_batt=1
+ro.product.use_charge_counter=1
