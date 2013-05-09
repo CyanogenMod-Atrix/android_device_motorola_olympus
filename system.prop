@@ -51,17 +51,9 @@ dalvik.vm.dexopt-flags=m=y,u=n
 # Default USB Mode
 persist.sys.usb.config=mass_storage
 
-# Vold switchability
-ro.vold.switchablepair=/storage/sdcard1,/storage/sdcard0
-
 # Fingerprint
 ro.authentec.fingerprint.jar=/system/framework/am2app.jar
 ro.authentec.fingerprint.so=/system/lib/libam2app.so
-
-# Performance
-ro.tegra.mode=performance
-ro.tegra.gpumode=quality
-ro.tegra.debug=0
 
 # 1% battery
 ro.product.use_charge_counter=1

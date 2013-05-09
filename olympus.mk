@@ -1,30 +1,8 @@
-#
-# Copyright (C) 2009 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-#
-# This is the product configuration for a generic GSM olympus,
-# not specialized for any geography.
-#
-
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 LOCAL_PATH := device/motorola/olympus
 
-## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/root/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/root/init.trace.rc:root/init.trace.rc \
@@ -32,8 +10,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/root/ueventd.olympus.rc:root/ueventd.olympus.rc \
     $(LOCAL_PATH)/root/fstab.olympus:root/fstab.olympus
 
-## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
 # motorola helper scripts
 PRODUCT_COPY_FILES += \
@@ -44,8 +20,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/sysctl.conf:system/etc/sysctl.conf \
     $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf
 
-## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
-
 # Set en_US as default locale
 PRODUCT_LOCALES := en_US
 
@@ -54,12 +28,6 @@ PRODUCT_LOCALES += hdpi
 
 # not exactly xhdpi, but we have enough RAM, why not use it?
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-
-# copy all kernel modules under the "modules" directory to system/lib/modules
-PRODUCT_COPY_FILES += $(shell \
-    find vendor/motorola/olympus/modules -name '*.ko' \
-    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
-    | tr '\n' ' ')
 
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
@@ -138,19 +106,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-#debug
-PRODUCT_PROPERTY_OVERRIDES +=persist.sys.root_access=3 \
-		ro.debuggable=1 \
-		ro.secure=0 \
-		ro.allow.mock.location=1 \
-		persist.service.adb.enable=1
-
-#debug
-PRODUCT_PROPERTY_OVERRIDES +=persist.sys.root_access=3 \
-               ro.debuggable=1 \
-               ro.secure=0 \
-               ro.allow.mock.location=1 \
-               persist.service.adb.enable=1
 
 PRODUCT_NAME := generic_olympus
 PRODUCT_DEVICE := olympus
