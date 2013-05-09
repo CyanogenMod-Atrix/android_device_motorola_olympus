@@ -63,10 +63,8 @@ on post-fs-data
     #directory to hwui blacklist
     mkdir /data/local/hwui.deny 0775 system system
 
-    chown system /data/am2data.db
-    chown system /data/am2data.db.meta
-    chgrp system /data/am2data.db
-    chgrp system /data/am2data.db.meta
+    chown system system /data/am2data.db
+    chown system system /data/am2data.db.meta
     # Set the default value for bluedroid_ref
     write /data/tmp/bluedroid_ref 0
     chown system system /data/tmp/bluedroid_ref
@@ -74,8 +72,7 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
-    chown system /dev/aes1750
-    chgrp system /dev/aes1750
+    chown system system /dev/aes1750
     chmod 0600 /dev/aes1750
 
     # Adjust Android LMK
