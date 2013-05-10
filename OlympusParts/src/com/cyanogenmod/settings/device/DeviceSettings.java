@@ -29,11 +29,13 @@ public class DeviceSettings extends PreferenceActivity implements OnPreferenceCh
         mHdmiAudioPref = (CheckBoxPreference) getPreferenceScreen().findPreference(KEY_HDMI_AUDIO);
         mHdmiAudioPref.setOnPreferenceChangeListener(this);
         mSwitchStoragePref = (CheckBoxPreference) getPreferenceScreen().findPreference(KEY_SWITCH_STORAGE);
-        mSwitchStoragePref.setChecked((SystemProperties.getInt("persist.sys.vold.switchexternal", 0) == 1));
-        mSwitchStoragePref.setOnPreferenceChangeListener(this);
-        if (SystemProperties.get("ro.vold.switchablepair","").equals("")) {
-            mSwitchStoragePref.setSummary(R.string.storage_switch_unavailable);
-            mSwitchStoragePref.setEnabled(false);
+        if(mSwitchStoragePref!=null) {
+            mSwitchStoragePref.setChecked((SystemProperties.getInt("persist.sys.vold.switchexternal", 0) == 1));
+            mSwitchStoragePref.setOnPreferenceChangeListener(this);
+            if (SystemProperties.get("ro.vold.switchablepair","").equals("")) {
+                mSwitchStoragePref.setSummary(R.string.storage_switch_unavailable);
+                mSwitchStoragePref.setEnabled(false);
+            }
         }
     }
 
@@ -47,7 +49,7 @@ public class DeviceSettings extends PreferenceActivity implements OnPreferenceCh
             audio.setAction(audioAction);
             sendBroadcast(audio);
         }
-        if(preference == mSwitchStoragePref) {
+        if(mSwitchStoragePref!=null && preference == mSwitchStoragePref) {
             Log.d(TAG,"Setting persist.sys.vold.switchexternal to "+(mSwitchStoragePref.isChecked() ? "1" : "0"));
             SystemProperties.set("persist.sys.vold.switchexternal", ((Boolean) newValue) ? "1" : "0");
         }
