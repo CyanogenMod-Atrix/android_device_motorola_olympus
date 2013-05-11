@@ -30,7 +30,7 @@ ro.telephony.default_network=3
 # but none are in range.
 wifi.supplicant_scan_interval=30
 
-wifi.interface=eth0
+wifi.interface=wlan0
 
 #bluetooth
 ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
