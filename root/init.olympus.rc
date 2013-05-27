@@ -312,6 +312,15 @@ service del_panu /system/bin/sdptool remove PANU
     disabled
     oneshot
 
+# Start GPS daemon
+  on boot
+  write /sys/class/gpio/export 164
+  write /sys/class/gpio/gpio164/value 0
+  write /sys/class/gpio/gpio164/direction out
+  service gps-daemon /system/bin/glgps_nvidiaTegra2android -c /system/etc/gps/gpsconfig.xml
+  user root
+  group root
+
 service btdhcpd /system/bin/dnsmasq -C /system/etc/btpan.conf
     class late_start
     user root
