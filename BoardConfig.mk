@@ -15,8 +15,6 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_ARCH_VARIANT_FPU := vfpv3-d16
 TARGET_CPU_SMP := true
 
-BOARD_CUSTOM_GRAPHICS := ../../../device/motorola/olympus/recovery/graphics.c
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/olympus/recovery/recovery_ui.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -72,9 +70,9 @@ WIFI_DRIVER_FW_PATH_P2P     := "/system/vendor/firmware/fw_bcmdhd_p2p.bin"
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/motorola/olympus/bluetooth/vnd_olympus.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/olympus/bluetooth
-BOARD_BLUETOOTH_LIBBT_VNDCFG := device/motorola/olympus/bluetooth/bt_vendor.conf
+BOARD_BLUEDROID_VENDOR_CONF := device/motorola/olympus/config/bluetooth/vnd_olympus.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/olympus/config/bluetooth
+BOARD_BLUETOOTH_LIBBT_VNDCFG := device/motorola/olympus/config/bluetooth/bt_vendor.conf
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := true
 
 #EGL
