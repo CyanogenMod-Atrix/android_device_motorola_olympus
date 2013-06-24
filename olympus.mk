@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += DockAudio \
 
 #Camera and lights
 PRODUCT_PACKAGES += Torch \
+			camera.tegra \
 			lights.olympus
 
 PRODUCT_PACKAGES += com.android.future.usb.accessory \
