@@ -50,38 +50,21 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Kernel configuration for inline building
-TARGET_KERNEL_CONFIG := mrom_defconfig
-#TARGET_PREBUILT_KERNEL := vendor/motorola/olympus/kernel
-
-#OLYMPUS_WIFI_MODULE:
-	#make -C kernel/motorola/olympus/wifi-module/open-src/src/dhd/linux/ \
-	#ARCH="arm" CROSS_COMPILE="arm-eabi-" LINUXSRCDIR=kernel/olympus/ \
-	#LINUXBUILDDIR=$(KERNEL_OUT) \
-	#LINUXVER=$(shell strings "$(KERNEL_OUT)/vmlinux"|grep '2.6.*MB860'|tail -n1) \
-	#BCM_INSTALLDIR="$(KERNEL_MODULES_OUT)"
-
-#TARGET_KERNEL_MODULES := OLYMPUS_WIFI_MODULE
-
-# Kernel command line for d00 tegra
-#BOARD_KERNEL_CMDLINE := mem=384M@0M nvmem=128M@384M mem=512M@512M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=mbr:d00:100:800,kpanic:2100:400:800 security=tomoyo mot_prod=1
-
-# Kernel command line for 1100 tegra
-#BOARD_KERNEL_CMDLINE := mem=384M@0M nvmem=128M@384M mem=512M@512M vmalloc=256M video=tegrafb console=none usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=mbr:1100:100:800,kpanic:2500:400:800 security=tomoyo mot_prod=1
+TARGET_KERNEL_CONFIG := tegra_olympus_defconfig
 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
 
 BOARD_HAS_NO_MISC_PARTITION := true
-# fix this up by examining /proc/mtd on a running device
+
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8355840
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 4194304
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 407772160
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_JANKY_BACKBUFFER := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
-# Below is a sample of how you can tweak the mount points using the board config.
+
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_RECOVERY_IGNORE_BOOTABLES := true
 BOARD_DATA_DEVICE := /dev/block/mmcblk0p16
@@ -99,7 +82,6 @@ TARGET_NO_RECOVERY := false
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
-#BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p18
 BOARD_VOLD_MAX_PARTITIONS := 19
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
@@ -139,7 +121,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 BOARD_USE_MOTO_DOCK_HACK := true
 
 BOARD_USES_AUDIO_LEGACY := true
-#COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB -DMOTOROLA_UIDS -DICS_CAMERA_BLOB
 COMMON_GLOBAL_CFLAGS += -DMOTOROLA_UIDS
 
 BOARD_MOBILEDATA_INTERFACE_NAME := "ppp0"
