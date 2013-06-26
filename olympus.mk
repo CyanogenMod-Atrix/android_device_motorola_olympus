@@ -50,6 +50,8 @@ PRODUCT_PACKAGES += DockAudio \
 
 #Camera and lights
 PRODUCT_PACKAGES += Torch \
+			camerawrapper \
+			camera.tegra \
 			lights.olympus
 
 PRODUCT_PACKAGES += com.android.future.usb.accessory \
@@ -58,8 +60,9 @@ PRODUCT_PACKAGES += com.android.future.usb.accessory \
 
 #wlan firmware
 PRODUCT_PACKAGES += \
-	fw_bcm4329.bin \
-	fw_bcm4329_apsta.bin
+	fw_bcmdhd.bin \
+	fw_bcmdhd_apsta.bin \
+	fw_bcmdhd_p2p.bin
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -70,7 +73,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
     $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+    $(LOCAL_PATH)/config/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 #keyboard files
 PRODUCT_COPY_FILES += \
@@ -103,6 +106,63 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+
+#display
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=240
+
+#RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+	rild.libpath=/system/lib/libmoto_ril.so \
+	persist.ril.mux.noofchannels=9 \
+	persist.ril.mux.ttydevice=/dev/ttyHS3 \
+	ro.telephony.call_ring.multiple=false \
+	ro.telephony.call_ring.delay=500 \
+	persist.ril.modem.ttydevice=/dev/ttySPI0 \
+	persist.ril.modem.mode=2 \
+	persist.ril.features=0x2020 \
+	persist.ril.mux.retries=500 \
+	persist.ril.mux.sleep=2 \
+	ro.kernel.android.ril=yes \
+	persist.ril.pppd.start.fail.max=16 \
+	mobiledata.interfaces=ppp0 \
+	ro.telephony.ril.v3=signalstrength,skipbrokendatacall,writeaidonly
+
+# Default network type.
+# 0 -> WCDMA preferred
+# 3 -> GSM Auto(PRL)
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.default_network=3
+
+#wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.supplicant_scan_interval=30 \
+	wifi.interface=wlan0
+
+#bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
+
+#OpenGL ES version
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.opengles.version=131072
+
+# Forbid format of these partitions in mount menu :
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.cwm.forbid_format=/misc,/radio,/pds,/bootloader,/recovery,/efs
+
+# Default USB Mode
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=mass_storage
+
+# Fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.authentec.fingerprint.jar=/system/framework/am2app.jar
+	ro.authentec.fingerprint.so=/system/lib/libam2app.so
+
+# 1% battery
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.product.use_charge_counter=1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
