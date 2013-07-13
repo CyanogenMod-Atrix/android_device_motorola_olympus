@@ -50,7 +50,7 @@ BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 # WiFi
-BOARD_WLAN_DEVICE := bcmdhd
+BOARD_WLAN_DEVICE := bcm4329
 ifeq ($(BOARD_WLAN_DEVICE),bcmdhd)
 BOARD_LEGACY_NL80211_STA_EVENTS:=true
 WPA_SUPPLICANT_VERSION := VER_0_8_X

@@ -136,7 +136,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.supplicant_scan_interval=30 \
-	wifi.interface=wlan0
+	wifi.interface=eth0
 
 #bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
