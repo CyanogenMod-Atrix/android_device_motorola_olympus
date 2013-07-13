@@ -581,7 +581,12 @@ int camera_get_number_of_cameras(void)
 int camera_get_camera_info(int camera_id, struct camera_info *info)
 {
     ALOGV("%s", __FUNCTION__);
+    int ret = 0;
     if (check_vendor_module())
         return 0;
-    return gVendorModule->get_camera_info(camera_id, info);
+    ret = gVendorModule->get_camera_info(camera_id, info);
+    if(info->facing == CAMERA_FACING_FRONT)
+        info->orientation = 90;
+
+    return ret;
 }
