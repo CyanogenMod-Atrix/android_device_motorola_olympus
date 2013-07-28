@@ -6,3 +6,5 @@
 /dev/block/mmcblk0p16           /data               ext4      rw,nosuid,nodev,noatime,nodiratime,barrier=1,noauto_da_alloc                     wait,check,encryptable=footer
 /dev/block/mmcblk0p15           /cache              ext4      rw,nosuid,nodev,noatime,nodiratime,barrier=1,noauto_da_alloc                     wait,check
 /dev/block/mmcblk0p13           /osh                ext4      rw,nodev,noatime,nodiratime,barrier=1,noauto_da_alloc                            wait,check
+/devices/platform/sdhci-tegra.3/mmc_host/mmc0    /storage/sdcard0  vfat  defaults   voldmanaged=sdcard:18
+/devices/platform/sdhci-tegra.2/mmc_host/mmc2    /storage/sdcard1  auto  defaults   voldmanaged=sdcard:auto

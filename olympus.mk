@@ -67,7 +67,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/scripts/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/config/touchpad.cfg:system/etc/touchpad/22/touchpad.cfg \
