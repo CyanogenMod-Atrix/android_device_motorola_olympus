@@ -45,7 +45,6 @@ PRODUCT_PACKAGES += l2ping \
 
 #Audio
 PRODUCT_PACKAGES += DockAudio \
-			audio.usb.default \
 			audio.a2dp.default
 
 #Camera and lights
