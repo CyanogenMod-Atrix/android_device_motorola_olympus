@@ -1,0 +1,3 @@
+allow rild device:chr_file { read write open };
+allow rild self:netlink_kobject_uevent_socket { read bind create setopt getopt };
+allow rild system_data_file:sock_file { create unlink setattr };

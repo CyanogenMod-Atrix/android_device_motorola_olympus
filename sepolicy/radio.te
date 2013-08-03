@@ -1,0 +1,2 @@
+allow radio init:binder { transfer call };
+allow radio init_tmpfs:file read;
