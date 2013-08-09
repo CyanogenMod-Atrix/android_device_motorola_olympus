@@ -17,6 +17,8 @@ TARGET_ARCH_VARIANT_FPU := vfpv3-d16
 TARGET_CPU_SMP := true
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+TARGET_RECOVERY_FSTAB := device/motorola/olympus/root/fstab.olympus
+RECOVERY_FSTAB_VERSION := 2
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
