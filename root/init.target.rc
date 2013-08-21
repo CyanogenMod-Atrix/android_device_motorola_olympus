@@ -82,6 +82,9 @@ on boot
 
     chmod 0444 /proc/cmdline
 
+    chown system radio /sys/class/radio/mdm6600/command
+    chmod 0660 /sys/class/radio/mdm6600/command
+
     # OSH properties
     setprop sys.SystemMode RM_SM_MOBILE
     setprop sys.FbOwner 3
