@@ -71,6 +71,8 @@ on boot
     # Adjust Android LMK
     write /sys/module/lowmemorykiller/parameters/minfree 3072,4608,7200,11776,17408,21000
 
+    chmod 0644 /proc/cmdline
+
     # OSH properties
     setprop sys.SystemMode RM_SM_MOBILE
     setprop sys.FbOwner 3
