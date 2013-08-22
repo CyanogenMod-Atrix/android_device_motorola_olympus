@@ -131,6 +131,19 @@ char * camera_fixup_setparams(int id, const char * settings)
             params.set(android::CameraParameters::KEY_ISO_MODE, 800);
     }
 
+    if (params.get("flash-mode"))
+    {
+        const char* flashMode = params.get(android::CameraParameters::KEY_FLASH_MODE);
+        if (strcmp(flashMode, "torch") == 0)
+        {
+            system("echo 1 > /sys/class/leds/torch/brightness");
+        } else
+        if (strcmp(flashMode, "off") == 0)
+        {
+            system("echo 0 > /sys/class/leds/torch/brightness");
+        }
+    }
+
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
 
