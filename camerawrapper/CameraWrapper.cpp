@@ -22,7 +22,7 @@
 */
 
 //#define LOG_NDEBUG 0
-//#define LOG_PARAMETERS
+#define LOG_PARAMETERS
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -90,7 +90,7 @@ static int check_vendor_module()
     return rv;
 }
 
-const static char * iso_values[] = {"auto,ISO50,ISO100,ISO200,ISO400,ISO800", "auto"}; 
+const static char * iso_values[] = {"auto,ISO100,ISO200,ISO400,ISO800", "auto"}; 
 
 static char * camera_fixup_getparams(int id, const char * settings)
 {
@@ -117,20 +117,28 @@ char * camera_fixup_setparams(int id, const char * settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-/*    const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
+    const char* NV_KEY_ISO_VALUES = "nv-picture-iso-values";
+    const char* NV_KEY_ISO_MODE = "nv-picture-iso";
+
+    const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
     if(isoMode) {
-        if(strcmp(isoMode, "ISO50") == 0)
-            params.set(android::CameraParameters::KEY_ISO_MODE, 50);
-        else if(strcmp(isoMode, "ISO100") == 0)
+        if(strcmp(isoMode, "auto") == 0) {
+            params.set(NV_KEY_ISO_MODE, "auto");
+            params.set(android::CameraParameters::KEY_ISO_MODE, "auto");
+        } else if(strcmp(isoMode, "ISO100") == 0) {
+            params.set(NV_KEY_ISO_MODE, 100);
             params.set(android::CameraParameters::KEY_ISO_MODE, 100);
-        else if(strcmp(isoMode, "ISO200") == 0)
+        } else if(strcmp(isoMode, "ISO200") == 0) {
+            params.set(NV_KEY_ISO_MODE, 200);
             params.set(android::CameraParameters::KEY_ISO_MODE, 200);
-        else if(strcmp(isoMode, "ISO400") == 0)
+        } else if(strcmp(isoMode, "ISO400") == 0) {
+            params.set(NV_KEY_ISO_MODE, 400);
             params.set(android::CameraParameters::KEY_ISO_MODE, 400);
-        else if(strcmp(isoMode, "ISO800") == 0)
+        } else if(strcmp(isoMode, "ISO800") == 0) {
+            params.set(NV_KEY_ISO_MODE, 800);
             params.set(android::CameraParameters::KEY_ISO_MODE, 800);
+        }
     }
-    */
 
     if (params.get("flash-mode"))
     {
