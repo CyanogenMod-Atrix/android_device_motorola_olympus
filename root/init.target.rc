@@ -316,7 +316,6 @@ on property:persist.log.aplogd.enable=0
 
 # Fingerprint sensor daemon
 service am2server /system/bin/am2server
-    disabled
     class main
     user root
     group root
