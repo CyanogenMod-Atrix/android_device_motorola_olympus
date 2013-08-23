@@ -107,10 +107,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-#display
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=240
-
 #RIL
 PRODUCT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libmoto_ril.so \
@@ -143,9 +139,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/pds/bt/bt_bdaddr
 
-#OpenGL ES version
+
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=131072
+	ro.opengles.version=131072 \
+	persist.sys.ui.hw=true \
+	ro.sf.lcd_density=240
 
 # Forbid format of these partitions in mount menu :
 PRODUCT_PROPERTY_OVERRIDES += \
