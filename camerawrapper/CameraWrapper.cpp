@@ -100,11 +100,6 @@ static char * camera_fixup_getparams(int id, const char * settings)
     // ISO modes
 //    params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
 
-    // Exposure compensation
-    params.set(android::CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
-    params.set(android::CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, -4);
-    params.set(android::CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, "0.5"); // Must use string form because floats are not supported.
-
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
 
@@ -117,10 +112,18 @@ char * camera_fixup_setparams(int id, const char * settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-    const char* NV_KEY_ISO_VALUES = "nv-picture-iso-values";
     const char* NV_KEY_ISO_MODE = "nv-picture-iso";
+    const char* NV_KEY_CONTRAST = "nv-contrast";
+    const char* NV_KEY_SATURATION = "nv-saturation";
 
     const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
+
+    //set contrast to high
+    params.set(NV_KEY_CONTRAST, "high");
+
+    //set saturation
+    params.set(NV_KEY_SATURATION, "-10");
+
     if(isoMode) {
         if(strcmp(isoMode, "auto") == 0) {
             params.set(NV_KEY_ISO_MODE, "auto");
@@ -128,6 +131,8 @@ char * camera_fixup_setparams(int id, const char * settings)
         } else if(strcmp(isoMode, "ISO100") == 0) {
             params.set(NV_KEY_ISO_MODE, 100);
             params.set(android::CameraParameters::KEY_ISO_MODE, 100);
+            params.set(NV_KEY_CONTRAST, "normal");
+            params.set(NV_KEY_SATURATION, 0);
         } else if(strcmp(isoMode, "ISO200") == 0) {
             params.set(NV_KEY_ISO_MODE, 200);
             params.set(android::CameraParameters::KEY_ISO_MODE, 200);
