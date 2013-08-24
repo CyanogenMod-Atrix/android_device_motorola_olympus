@@ -114,15 +114,22 @@ char * camera_fixup_setparams(int id, const char * settings)
 
     const char* NV_KEY_ISO_MODE = "nv-picture-iso";
     const char* NV_KEY_CONTRAST = "nv-contrast";
+    const char* NV_KEY_CONTRAST_VALUES = "nv-contrast-values";
     const char* NV_KEY_SATURATION = "nv-saturation";
 
     const char* isoMode = params.get(android::CameraParameters::KEY_ISO_MODE);
+    const char* contrast = params.get(NV_KEY_CONTRAST);
+    const char* contrastValues = params.get(NV_KEY_CONTRAST_VALUES);
+    const char* saturation = params.get(NV_KEY_SATURATION);
 
-    //set contrast to high
-    params.set(NV_KEY_CONTRAST, "high");
+    //set contrast to high, if available
+    if(contrast && strstr(contrastValues,"high")!=NULL)
+        params.set(NV_KEY_CONTRAST, "high");
+
 
     //set saturation
-    params.set(NV_KEY_SATURATION, "-10");
+    if(saturation)
+        params.set(NV_KEY_SATURATION, "-10");
 
     if(isoMode) {
         if(strcmp(isoMode, "auto") == 0) {
