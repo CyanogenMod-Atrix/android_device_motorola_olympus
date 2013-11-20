@@ -10,9 +10,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/root/fstab.olympus:root/fstab.olympus
 
 
-# motorola helper scripts
+# helper scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    $(LOCAL_PATH)/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    $(LOCAL_PATH)/scripts/config_olympus_panel.sh:system/bin/config_olympus_panel.sh
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
