@@ -80,6 +80,8 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+    exec /system/bin/logwrapper /system/bin/config_olympus_panel.sh
+
 on boot
     chown system /dev/aes1750
     chgrp system /dev/aes1750

@@ -34,9 +34,10 @@ PRODUCT_COPY_FILES += \
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/olympus/olympus-vendor.mk)
 
-# motorola helper scripts
+# helper scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh
+    $(LOCAL_PATH)/scripts/pds_perm_fix.sh:system/bin/pds_perm_fix.sh \
+    $(LOCAL_PATH)/scripts/config_olympus_panel.sh:system/bin/config_olympus_panel.sh
 
 # sysctl conf
 PRODUCT_COPY_FILES += \
