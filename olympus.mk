@@ -60,9 +60,11 @@ PRODUCT_PACKAGES += com.android.future.usb.accessory \
 
 #wlan firmware
 PRODUCT_PACKAGES += \
-	fw_bcmdhd.bin \
-	fw_bcmdhd_apsta.bin \
-	fw_bcmdhd_p2p.bin
+	olympus_fw_bcm4329.bin \
+	olympus_fw_bcm4329_apsta.bin \
+	olympus_fw_bcmdhd.bin \
+	olympus_fw_bcmdhd_apsta.bin \
+	olympus_fw_bcmdhd_p2p.bin
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
