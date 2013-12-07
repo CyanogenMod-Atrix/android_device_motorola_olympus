@@ -13,7 +13,7 @@ bin/ap_gain.bin
 #Graphics camera HALs
 lib/hw/gralloc.tegra.so
 lib/hw/hwcomposer.tegra.so
-lib/hw/camera.tegra.so
+lib/hw/vendor-camera.tegra.so
 etc/nvcamera.conf
 
 #Sensors HAL
