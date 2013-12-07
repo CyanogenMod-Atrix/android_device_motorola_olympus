@@ -91,37 +91,35 @@ function initializeCfgFile {
     echo "##                The profiles below are just documentation, they are not read" >> "$CFGFILE"
     echo "##                from here." >> "$CFGFILE"
     echo "#########################" >> "$CFGFILE"
-cat <<PROFILES >> "$CFGFILE"
-##profile0 (just documentation)
-##        H_REF_TO_SYNC 4
-##        V_REF_TO_SYNC 1
-##        H_SYNC_WIDTH 16
-##        V_SYNC_WIDTH 1
-##        H_BACK_PORCH 32
-##        V_BACK_PORCH 1
-##        H_FRONT_PORCH 32
-##        V_FRONT_PORCH 2
-#
-##panels 0x8
-##profile1 (just documentation)
-##        H_REF_TO_SYNC 4
-##        V_REF_TO_SYNC 4
-##        H_SYNC_WIDTH 4
-##        V_SYNC_WIDTH 8
-##        H_BACK_PORCH 52
-##        V_BACK_PORCH 12
-##        H_FRONT_PORCH 52
-##        V_FRONT_PORCH 12
-##profile2 (just documentation)
-##        H_REF_TO_SYNC 4
-##        V_REF_TO_SYNC 4
-##        H_SYNC_WIDTH 4
-##        V_SYNC_WIDTH 8
-##        H_BACK_PORCH 32
-##        V_BACK_PORCH 12
-##        H_FRONT_PORCH 32
-##        V_FRONT_PORCH 12
-PROFILES
+    echo "##profile0 (just documentation)" >> "$CFGFILE"
+    echo "##        H_REF_TO_SYNC 4" >> "$CFGFILE"
+    echo "##        V_REF_TO_SYNC 1" >> "$CFGFILE"
+    echo "##        H_SYNC_WIDTH 16" >> "$CFGFILE"
+    echo "##        V_SYNC_WIDTH 1" >> "$CFGFILE"
+    echo "##        H_BACK_PORCH 32" >> "$CFGFILE"
+    echo "##        V_BACK_PORCH 1" >> "$CFGFILE"
+    echo "##        H_FRONT_PORCH 32" >> "$CFGFILE"
+    echo "##        V_FRONT_PORCH 2" >> "$CFGFILE"
+    echo "#" >> "$CFGFILE"
+    echo "##panels 0x8" >> "$CFGFILE"
+    echo "##profile1 (just documentation)" >> "$CFGFILE"
+    echo "##        H_REF_TO_SYNC 4" >> "$CFGFILE"
+    echo "##        V_REF_TO_SYNC 4" >> "$CFGFILE"
+    echo "##        H_SYNC_WIDTH 4" >> "$CFGFILE"
+    echo "##        V_SYNC_WIDTH 8" >> "$CFGFILE"
+    echo "##        H_BACK_PORCH 52" >> "$CFGFILE"
+    echo "##        V_BACK_PORCH 12" >> "$CFGFILE"
+    echo "##        H_FRONT_PORCH 52" >> "$CFGFILE"
+    echo "##        V_FRONT_PORCH 12" >> "$CFGFILE"
+    echo "##profile2 (just documentation)" >> "$CFGFILE"
+    echo "##        H_REF_TO_SYNC 4" >> "$CFGFILE"
+    echo "##        V_REF_TO_SYNC 4" >> "$CFGFILE"
+    echo "##        H_SYNC_WIDTH 4" >> "$CFGFILE"
+    echo "##        V_SYNC_WIDTH 8" >> "$CFGFILE"
+    echo "##        H_BACK_PORCH 32" >> "$CFGFILE"
+    echo "##        V_BACK_PORCH 12" >> "$CFGFILE"
+    echo "##        H_FRONT_PORCH 32" >> "$CFGFILE"
+    echo "##        V_FRONT_PORCH 12" >> "$CFGFILE"
     echo "ENABLED=false" >> "$CFGFILE"
     echo "#PROFILENUMBER=0" >> "$CFGFILE"
     echo "H_REF_TO_SYNC=$H_REF_TO_SYNC" >> "$CFGFILE"
