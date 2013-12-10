@@ -128,9 +128,3 @@ lib/libam2app.so
 lib/libam2server.so
 app/GfxEngine.apk
 app/FingerprintSensor.apk
-
-#tcmd
-bin/batch
-bin/tcmd
-bin/tcmdhelp
-lib/libtcmdcameraservice.so
