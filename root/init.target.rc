@@ -69,12 +69,6 @@ on post-fs-data
     write /data/tmp/bluedroid_ref 0
     chown system system /data/tmp/bluedroid_ref
 
-    mkdir /data/local/dbvc 0770 mot_tcmd shell
-    mkdir /data/local/12m 0771 mot_tcmd shell
-    mkdir /data/local/12m/batch 0771 mot_tcmd shell
-    chown mot_tcmd shell /data/local/12m
-    chown mot_tcmd shell /data/local/12m/batch
-
     setprop vold.post_fs_data_done 1
 
     exec /system/bin/logwrapper /system/bin/config_olympus_panel.sh
@@ -315,21 +309,6 @@ service aplogd /system/bin/aplogd
     # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
     # for kernel logging.
     disabled
-
-service tcmd /system/bin/tcmd
-    class main
-    group mot_tcmd radio mot_pwric input system log camera graphics mot_accy sdcard_rw audio inet bluetooth wifi compass net_bt_admin mot_tombstone mot_tpapi mount net_raw net_admin mot_whisper media shell mot_usb drmrpc
-    socket local_tcmd stream 0660 mot_tcmd mot_tcmd
-    socket batch_socket stream 0600 mot_tcmd mot_tcmd
-
-service tcmdhelp /system/bin/tcmdhelp
-    class main
-    socket tcmdhelp stream 0600 mot_tcmd mot_tcmd
-    oneshot
-    disabled
-
-on property:tcmd.start_tcmdhelp=1
-    start tcmdhelp
 
 on property:persist.log.aplogd.enable=1
     start aplogd
