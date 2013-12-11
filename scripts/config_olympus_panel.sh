@@ -218,7 +218,7 @@ fi
 
 loadCfgFile
 
-if [ "X$PROFILENUMBER" != "X" ] && [ "X$PROFILENUMBER" -ge 0 ]; then
+if [ "X$PROFILENUMBER" != "X" ] && [ $PROFILENUMBER -ge 0 ]; then
     loadPredefinedProfile $PROFILENUMBER
 fi
 dumpCurrentLoaded
